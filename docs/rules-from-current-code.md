@@ -1,5 +1,9 @@
 # VIO rebuild: rules taken from the current code
 
+Decision 2026-11-04: test the business at no extra cost. Keep Google Sheets and Apps Script, fix them, and add a free customer website on viosourcing.com. Paid hosting ($45/month estimate) is deferred until regular orders, the 100-a-day email limit or speed require it. Code lives in GitHub vioglobal1-jpg/Vio-Global.
+
+Done in the live app: order columns and Order_Events tab, required email, Source_Origin, freight by origin, In Sourcing status, stock quantities, stock and recommendation editing, publish off by default, RFQ photos visible to admins.
+
 Source: the 5 Apps Script files sent on 2026-11-04, plus the live "VIO - Product Database" column structure.
 Trading name in the code: VIO Trading. Domain bought: viosourcing.com.
 
@@ -56,7 +60,7 @@ Trading name in the code: VIO Trading. Domain bought: viosourcing.com.
 ## Fix in the rebuild
 
 1. Order conversion is broken on the live data. The Order_Events tab does not exist and Sales_Orders lacks the columns the code writes, so setupVIOOperations appears never to have run. Conversion would add an incomplete row, then fail. The customer order view filters on RFQ_ID, which is also missing.
-2. Quotes exclude customs, clearance and local delivery. extraUsd is hard-coded to 0 and those fields save as 0. Add them, with an estimate clearly labelled on the quote.
+2. Quotes exclude customs, clearance and local delivery by design. Decision: keep goods plus international freight, label it clearly, and add optional customs and delivery lines.
 3. Lead_Time_Settings is ignored by quotes. Customs and delivery days are hard-coded to 0, so that settings page has no effect on quotes.
 4. Quotes accept no origin. vioActiveRate_ defaults to China, so Egypt or UAE sourcing cannot be costed. Add origin to the RFQ and the costing.
 5. Request form allows Egypt or UAE only as destination, though 9 countries are configured.
