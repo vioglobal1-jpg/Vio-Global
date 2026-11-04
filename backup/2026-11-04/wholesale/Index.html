@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+
+
+
+<html>
+
+
+
+<head>
+
+
+
+  <base target="_top">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  <style>
+
+
+
+    :root{--gold:#c6a052;--darkgold:#a77d32;--bg:#f3f4f6;--ink:#292929;--muted:#6b7280;--line:#e5e7eb}
+
+
+
+    *{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--ink)}
+
+
+
+    header{background:#fff;padding:20px 6%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+
+
+
+    .brand{cursor:pointer}.logo{font-size:32px;font-weight:bold;color:var(--gold);letter-spacing:3px}.subtitle{font-size:10px;color:#777}
+
+
+
+    .language{color:#555;font-size:13px}.hero{padding:65px 6%;background:#fff;text-align:center}h1{font-size:38px;margin:10px 0}.gold{color:var(--darkgold)}.hero p{color:#777;line-height:1.7}
+
+
+
+    .btn{background:var(--gold);color:white;border:0;padding:13px 22px;border-radius:7px;cursor:pointer;font-weight:bold;font-size:14px}.btn:hover{background:var(--darkgold)}.btn.secondary{background:white;color:var(--darkgold);border:1px solid var(--gold)}.btn:disabled{opacity:.6;cursor:not-allowed}
+
+
+
+    .container{padding:35px 6%;max-width:1500px;margin:auto}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.card{background:#fff;padding:24px 20px;border-radius:12px;border:1px solid var(--line);transition:.2s}.service-card{cursor:pointer}.service-card:hover,.product-card:hover{border-color:var(--gold);transform:translateY(-3px)}.card h3{margin:8px 0}.card p{color:var(--muted);font-size:14px;line-height:1.5}.icon{font-size:30px}.small-link{color:var(--darkgold);font-weight:bold;font-size:14px}
+
+
+
+    .page-head{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}.page-head h2{margin:0 0 6px}.page-head p{margin:0;color:var(--muted)}.toolbar{display:flex;gap:12px;align-items:center;margin-bottom:22px;flex-wrap:wrap}.search{width:100%;max-width:540px;padding:14px;border:1px solid #d1d5db;border-radius:8px;font:inherit}.search:focus,input:focus,select:focus,textarea:focus{outline:2px solid #ead6a7;outline-offset:1px}
+
+
+
+    .product-card{padding:0;overflow:hidden;display:flex;flex-direction:column}.product-media{height:205px;background:#f8f8f8;display:flex;align-items:center;justify-content:center;color:#aaa;font-size:44px}.product-media img{width:100%;height:100%;object-fit:contain}.product-content{padding:20px;display:flex;flex-direction:column;flex:1}.category{color:var(--darkgold);font-size:11px;font-weight:bold;text-transform:uppercase;letter-spacing:.6px}.product-content h3{font-size:17px}.product-content .btn{width:100%;margin-top:auto}.details{font-size:13px;color:var(--muted);margin:10px 0 18px}.details div{margin:5px 0}.empty{background:#fff;border:1px solid var(--line);padding:25px;border-radius:10px;color:var(--muted)}
+
+
+
+    .overlay{position:fixed;inset:0;background:rgba(20,24,32,.62);display:none;align-items:center;justify-content:center;padding:18px;z-index:10}.overlay.open{display:flex}.modal{width:100%;max-width:560px;max-height:92vh;overflow:auto;background:white;border-radius:14px;padding:26px;box-shadow:0 18px 60px rgba(0,0,0,.2)}.modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}.modal-head h2{margin:0 0 8px}.close{border:0;background:#f3f4f6;border-radius:7px;padding:8px 12px;cursor:pointer;font-size:20px}.field{margin-top:15px}.field label{display:block;font-size:13px;font-weight:bold;margin-bottom:7px}.field input,.field select,.field textarea{width:100%;padding:12px;border:1px solid #d1d5db;border-radius:7px;font:inherit}.field textarea{resize:vertical;min-height:85px}.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.hint{font-size:12px;color:var(--muted);line-height:1.5}.notice{margin-top:16px;padding:12px;background:#fff8e7;border:1px solid #e9d8ac;border-radius:7px;font-size:12px;color:#6f5b34}.modal .btn{width:100%;margin-top:20px}
+
+
+
+    .upload-zone{border:2px dashed #d8bf8a;border-radius:10px;padding:18px;background:#fffcf6;text-align:center;margin-top:7px}.upload-zone input{width:100%;max-width:320px}.photo-previews{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}.photo-previews img{width:70px;height:70px;object-fit:cover;border:1px solid #ddd;border-radius:7px}.photo-previews .thumb{position:relative}.photo-previews .thumb button{position:absolute;right:-5px;top:-5px;border:0;border-radius:50%;background:#333;color:#fff;cursor:pointer}.feedback-ok{color:#176b45;font-weight:bold}.feedback-error{color:#b42318}
+
+
+
+    @media(max-width:1000px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:540px){.grid{grid-template-columns:1fr}.field-row{grid-template-columns:1fr}.hero{padding:48px 6%}h1{font-size:28px}header{padding:16px 6%}.modal{padding:18px}}
+
+
+
+    .step-heading{display:flex;align-items:center;gap:10px;font-weight:bold;font-size:16px;margin:25px 0 10px;padding-top:14px;border-top:1px solid var(--line)}
+
+
+
+    .step-heading span{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--gold);color:white}
+
+
+
+    .remember{display:flex;align-items:center;gap:9px;font-size:13px;margin-top:18px;color:var(--ink)}
+
+
+
+    .remember input{accent-color:var(--gold)}.optional{margin-top:18px;border:1px solid var(--line);padding:13px;border-radius:8px}
+
+
+
+    .optional summary{cursor:pointer;font-size:13px;font-weight:bold;color:var(--darkgold)}
+
+
+
+    .success-panel{text-align:center;padding:20px 0}.success-icon{font-size:32px;background:#e9f7ed;color:#15803d;border-radius:50%;width:65px;height:65px;line-height:65px;margin:0 auto 16px}
+
+
+
+    .success-panel p{color:var(--muted);line-height:1.6}.success-reference{background:#faf7f0;padding:18px;border-radius:9px;margin:20px 0;display:flex;flex-direction:column;gap:8px}
+
+
+
+    .success-reference small{color:var(--muted)}.success-reference strong{color:var(--darkgold);font-size:20px;overflow-wrap:anywhere}.success-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.success-actions .btn{margin-top:0}
+
+
+
+
+
+:root{--vio-bg:#f3f4f6;--vio-card:#fff;--vio-ink:#25272a;--vio-line:#e5e7eb;--vio-muted:#68707b}
+
+body{background:var(--vio-bg)!important;color:var(--vio-ink)!important}body.vio-dark{--vio-bg:#15171b;--vio-card:#202329;--vio-ink:#f0f1f4;--vio-line:#3b404a;--vio-muted:#b5bbc6;--bg:#15171b;--ink:#f0f1f4;--muted:#b5bbc6;--line:#3b404a}
+
+body.vio-dark header,body.vio-dark .panel,body.vio-dark .card,body.vio-dark .tile,body.vio-dark .modal,body.vio-dark .empty,body.vio-dark .hero,body.vio-dark .group{background:var(--vio-card)!important;color:var(--vio-ink)!important;border-color:var(--vio-line)!important}
+
+body.vio-dark input,body.vio-dark select,body.vio-dark textarea{background:#292d34;color:#f0f1f4;border-color:#505661}body.vio-dark .btn.secondary,body.vio-dark button.secondary{background:#30343c;color:#f2d9a4}body.vio-dark p,body.vio-dark .hint,body.vio-dark .muted,body.vio-dark small{color:var(--vio-muted)}body.vio-dark th{background:#30343c;color:#f0f1f4}body.vio-dark td{border-color:#42454b}
+
+.vio-brand-image{display:block;object-fit:contain;width:175px;height:66px;max-width:100%}.vio-brand-hero{width:min(520px,92vw);height:auto;max-height:250px;object-fit:contain;margin:0 auto 20px}.vio-footer{padding:26px 6%;border-top:1px solid var(--vio-line);background:var(--vio-card);color:var(--vio-ink);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}.vio-switch{display:inline-flex;gap:7px;align-items:center;flex-wrap:wrap}.vio-switch button{padding:7px 12px;border:1px solid #c6a052;border-radius:7px;background:transparent;color:inherit;cursor:pointer}html[dir=rtl] body{text-align:right}html[dir=rtl] th,html[dir=rtl] td{text-align:right}html[dir=rtl] .field label{text-align:right}
+
+.vio-wordmark{font-weight:800;letter-spacing:.14em;font-size:29px;color:#c6a052;display:flex;flex-direction:column;gap:2px}.vio-wordmark small{font-size:9px;letter-spacing:.24em;color:var(--vio-muted,#777)}.vio-wordmark-hero{font-size:clamp(50px,9vw,100px);align-items:center;margin:18px auto 25px}.vio-wordmark-hero small{font-size:12px}
+
+/* VIO hybrid customer design */
+
+.hero{position:relative;overflow:hidden;background:radial-gradient(circle at 18% 30%,rgba(198,160,82,.18),transparent 36%),linear-gradient(130deg,#fff 0%,#fbf7ee 100%)!important;border-bottom:1px solid rgba(198,160,82,.22)}
+
+.hero::after{content:'✦';position:absolute;right:8%;top:9%;font-size:105px;color:rgba(198,160,82,.11);pointer-events:none}
+
+.hero h1{letter-spacing:-1.1px}.hero p{max-width:690px;margin:15px auto 23px}
+
+.service-card{position:relative;overflow:hidden;box-shadow:0 8px 26px rgba(30,34,43,.045);border-radius:17px!important}
+
+.service-card::before{content:'';position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,#a77d32,#e5c98c)}
+
+.service-card .icon{display:inline-flex;align-items:center;justify-content:center;width:58px;height:58px;border-radius:14px;background:rgba(198,160,82,.12)}
+
+.service-card:hover{box-shadow:0 16px 36px rgba(30,34,43,.12);transform:translateY(-5px)}
+
+.product-card{box-shadow:0 7px 22px rgba(30,34,43,.055);border-radius:16px!important}
+
+.product-card:hover{box-shadow:0 13px 30px rgba(30,34,43,.13)}
+
+body.vio-dark .hero{background:radial-gradient(circle at 20% 20%,rgba(198,160,82,.12),transparent 40%),#202329!important}
+
+body.vio-dark .service-card::before{opacity:.9}
+
+@media(prefers-reduced-motion:reduce){.service-card,.product-card{transition:none!important}}
+
+
+
+/* VIO premium global sourcing homepage */
+
+.vio-hero-new{padding:62px 5% 70px!important;text-align:left!important;background:radial-gradient(circle at 12% 25%,#f8edcf,transparent 42%),linear-gradient(115deg,#fff 5%,#f6f2e9 100%)!important}
+
+.vio-hero-new::after{display:none}.vio-hero-inner{max-width:1440px;margin:auto;display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}.vio-hero-copy{max-width:700px}.vio-eyebrow{font-size:12px;letter-spacing:.17em;color:#a77d32;font-weight:800;margin-bottom:18px}.vio-hero-brand{font-size:50px;line-height:1;display:inline-flex;margin:0 0 23px}.vio-hero-brand small{font-size:9px;margin-top:7px}.vio-hero-new h1{font-size:clamp(36px,4.1vw,62px);line-height:1.12;letter-spacing:-1.9px;margin:0;color:#202936}.vio-hero-new p{max-width:630px;margin:22px 0 28px;font-size:17px;line-height:1.8;color:#626b77}.vio-hero-actions{display:flex;gap:12px;flex-wrap:wrap}.vio-hero-actions .btn{padding:15px 25px;border-radius:9px}.vio-hero-trust{display:flex;gap:17px;flex-wrap:wrap;margin-top:27px;font-size:12px;color:#58616c}.vio-hero-trust>span{white-space:nowrap}.vio-hero-trust>span:first-letter{color:#b88c3d}.vio-hero-art{position:relative;max-width:660px;margin:auto;width:100%}.vio-hero-art svg{width:100%;height:auto;display:block;filter:drop-shadow(0 25px 25px rgba(35,41,50,.08))}.vio-art-caption{text-align:center;font-size:12px;letter-spacing:.1em;color:#8a6e40;margin-top:-5px}
+
+.vio-services{padding-top:65px;padding-bottom:65px}.vio-section-heading{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:27px}.vio-section-heading .vio-eyebrow{margin-bottom:8px}.vio-section-heading h2{font-size:30px;letter-spacing:-.7px;margin:0}.vio-section-heading p{font-size:14px;color:var(--muted);max-width:350px;line-height:1.6}.vio-services .grid{gap:20px}.vio-services .service-card{min-height:240px;padding:26px!important;display:flex;flex-direction:column}.vio-services .service-card h3{font-size:19px;margin:19px 0 4px}.vio-services .service-card p{flex:1}.vio-services .service-card .small-link{margin-top:16px}.vio-services .service-card .icon{font-size:27px;background:#f6eedc}
+
+.vio-journey{padding-top:20px;padding-bottom:90px}.vio-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.vio-step{position:relative;padding:25px;background:#fff;border:1px solid #e7e4de;border-radius:17px;box-shadow:0 8px 25px rgba(35,41,50,.04)}.vio-step>span{font-weight:800;font-size:12px;color:#b88c3d}.vio-step-icon{font-size:30px;margin:18px 0 12px}.vio-step h3{margin:0 0 9px;font-size:18px}.vio-step p{font-size:13px;color:#6b7280;line-height:1.6;margin:0}.vio-step:not(:last-child)::after{content:'→';position:absolute;right:-13px;top:45%;color:#b88c3d;font-weight:bold;z-index:1;font-size:22px}
+
+body.vio-dark .vio-hero-new{background:radial-gradient(circle at 10% 20%,rgba(198,160,82,.12),transparent 43%),#202329!important}body.vio-dark .vio-hero-new h1{color:#f3f4f6}body.vio-dark .vio-step{background:#202329;border-color:#3b404a}body.vio-dark .vio-step p{color:#b5bbc6}body.vio-dark .vio-hero-new p{color:#b5bbc6}
+
+html[dir=rtl] .vio-hero-new{text-align:right!important}html[dir=rtl] .vio-hero-inner{direction:rtl}html[dir=rtl] .vio-step:not(:last-child)::after{content:'←';right:auto;left:-13px}
+
+@media(max-width:1000px){.vio-hero-inner{grid-template-columns:1fr}.vio-hero-art{max-width:560px}.vio-steps{grid-template-columns:repeat(2,1fr)}.vio-step::after{display:none}}@media(max-width:650px){.vio-hero-new{padding:43px 6%!important}.vio-hero-new h1{font-size:35px}.vio-hero-new p{font-size:15px}.vio-hero-art{max-width:420px}.vio-section-heading{display:block}.vio-steps{grid-template-columns:1fr}.vio-hero-trust{gap:10px}.vio-services{padding-top:45px}}
+
+</style>
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+<header>
+
+
+
+  <div class="brand" onclick="backToHome()" role="button" tabindex="0" aria-label="VIO home">
+
+
+
+    <div class="vio-wordmark" aria-label="VIO YOUR BEST CHOICE">VIO <small>YOUR BEST CHOICE</small></div><div class="subtitle">GLOBAL SOURCING &amp; WHOLESALE</div>
+
+
+
+  </div>
+
+
+
+  <div class="vio-switch"><button onclick="vioLanguage('en')">English</button><button onclick="vioLanguage('ar')">العربية</button></div>
+
+
+
+</header>
+
+
+
+<section class="hero vio-hero-new" id="hero">
+
+  <div class="vio-hero-inner">
+
+    <div class="vio-hero-copy">
+
+      <div class="vio-eyebrow" data-vio-en="YOUR GLOBAL SOURCING PARTNER" data-vio-ar="شريكك في التوريد العالمي">YOUR GLOBAL SOURCING PARTNER</div>
+
+      <div class="vio-wordmark vio-hero-brand" aria-label="VIO YOUR BEST CHOICE">VIO <small>YOUR BEST CHOICE</small></div>
+
+      <h1 data-vio-en="Your Gateway to Global Sourcing &amp; Wholesale" data-vio-ar="بوابتك للتوريد العالمي وتجارة الجملة">Your Gateway to Global Sourcing &amp; Wholesale</h1>
+
+      <p data-vio-en="Discover competitive products, connect with trusted suppliers, and source with confidence. From product selection to international delivery, VIO helps your business grow." data-vio-ar="اكتشف منتجات تنافسية وتواصل مع موردين موثوقين وتوسع بثقة. من اختيار المنتجات إلى التوصيل الدولي، تساعدك VIO على تنمية أعمالك.">Discover competitive products, connect with trusted suppliers, and source with confidence. From product selection to international delivery, VIO helps your business grow.</p>
+
+      <div class="vio-hero-actions"><button class="btn" onclick="openChinaProducts()" data-vio-en="Explore Products" data-vio-ar="استكشف المنتجات">Explore Products</button><button class="btn secondary" onclick="openCustomRequest()" data-vio-en="Request Sourcing" data-vio-ar="اطلب التوريد">Request Sourcing</button></div>
+
+      <div class="vio-hero-trust"><span>✓ <span data-vio-en="Global reach" data-vio-ar="وصول عالمي">Global reach</span></span><span>✓ <span data-vio-en="Tailored sourcing" data-vio-ar="توريد حسب الطلب">Tailored sourcing</span></span><span>✓ <span data-vio-en="Wholesale focus" data-vio-ar="متخصصون في الجملة">Wholesale focus</span></span></div>
+
+    </div>
+
+    <div class="vio-hero-art" aria-hidden="true">
+
+      <svg viewBox="0 0 620 520" role="img" xmlns="http\://www.w3.org/2000/svg"><defs><linearGradient id="vioSky" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#fcf6e8"/><stop offset="1" stop-color="#e6eaf0"/></linearGradient><linearGradient id="vioGold" x1="0" x2="1"><stop stop-color="#a77d32"/><stop offset="1" stop-color="#e3c47e"/></linearGradient></defs>
+
+      <rect x="20" y="30" width="580" height="445" rx="36" fill="url(#vioSky)"/><circle cx="310" cy="224" r="154" fill="#fff" stroke="#e8d8b3" stroke-width="2"/><circle cx="310" cy="224" r="125" fill="none" stroke="#d8c5a1" stroke-dasharray="7 9"/><ellipse cx="310" cy="224" rx="65" ry="154" fill="none" stroke="#e0d0ae"/><path d="M156 224h308M178 155h264M178 293h264" stroke="#e0d0ae" stroke-width="2"/><path d="M226 125c35-20 73-19 86-10l20 21-17 20-41-7-24 22-32-8-9-20zM354 209l42-20 35 25-13 47-37 28-16 42-25-15 5-53-23-25zM245 267l31-12 32 26-4 44-26 26-30-23z" fill="#c6a052" opacity=".75"/>
+
+      <path d="M114 348C176 307 218 306 265 323M356 330c62-44 104-44 156-17" fill="none" stroke="#b88c3d" stroke-width="3" stroke-dasharray="7 9"/><circle cx="115" cy="348" r="9" fill="#c6a052"/><circle cx="510" cy="313" r="9" fill="#c6a052"/>
+
+      <g transform="translate(55 325)"><rect width="180" height="105" rx="14" fill="#fff" stroke="#e6dcc7"/><rect x="18" y="36" width="47" height="49" rx="4" fill="#b9914a"/><path d="M18 47h47M42 36v49" stroke="#f9f1de" stroke-width="3"/><rect x="77" y="19" width="83" height="12" rx="6" fill="#29323e"/><rect x="77" y="43" width="68" height="8" rx="4" fill="#a7b0ba"/><rect x="77" y="62" width="55" height="8" rx="4" fill="#d2d8df"/></g>
+
+      <g transform="translate(375 328)"><rect width="186" height="110" rx="14" fill="#fff" stroke="#e6dcc7"/><path d="M22 69h114v-32H22z" fill="#c6a052"/><path d="M136 48h24l13 21v16h-37z" fill="#33404c"/><path d="M34 43v22m16-22v22m16-22v22m16-22v22m16-22v22" stroke="#fff" opacity=".65"/><circle cx="53" cy="87" r="11" fill="#303945"/><circle cx="147" cy="87" r="11" fill="#303945"/><circle cx="53" cy="87" r="4" fill="#fff"/><circle cx="147" cy="87" r="4" fill="#fff"/></g>
+
+      <g transform="translate(399 61)"><rect width="143" height="63" rx="13" fill="#fff" stroke="#e6dcc7"/><circle cx="32" cy="31" r="16" fill="#f3e7c9"/><path d="M24 31h16m-8-8v16" stroke="#a77d32" stroke-width="3"/><rect x="59" y="20" width="67" height="8" rx="4" fill="#303945"/><rect x="59" y="36" width="47" height="6" rx="3" fill="#b8c0c9"/></g>
+
+      <g transform="translate(66 70)"><rect width="129" height="64" rx="13" fill="#fff" stroke="#e6dcc7"/><path d="M20 39l14-13 10 8 18-18" stroke="#b88c3d" stroke-width="5" fill="none" stroke-linecap="round"/><rect x="72" y="18" width="40" height="8" rx="4" fill="#303945"/><rect x="72" y="35" width="31" height="7" rx="3" fill="#b8c0c9"/></g>
+
+      <path d="M280 58l10-19 10 19 20 10-20 10-10 19-10-19-20-10z" fill="#c6a052" opacity=".5"/>
+
+      </svg>
+
+      <div class="vio-art-caption" data-vio-en="Sourcing • Logistics • Wholesale" data-vio-ar="توريد • شحن • تجارة الجملة">Sourcing • Logistics • Wholesale</div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="container vio-services" id="sections">
+
+  <div class="vio-section-heading"><div><div class="vio-eyebrow" data-vio-en="WHAT WE DO" data-vio-ar="خدماتنا">WHAT WE DO</div><h2 data-vio-en="Explore Our Services" data-vio-ar="استكشف خدماتنا">Explore Our Services</h2></div><p data-vio-en="Flexible sourcing and wholesale solutions for your market." data-vio-ar="حلول مرنة للتوريد وتجارة الجملة تناسب سوقك.">Flexible sourcing and wholesale solutions for your market.</p></div>
+
+  <div class="grid">
+
+    <div class="card service-card" onclick="openChinaProducts()"><div class="icon">🌐</div><h3 data-vio-en="Global Product Collection" data-vio-ar="مجموعة المنتجات العالمية">Global Product Collection</h3><p data-vio-en="Explore selected products and sourcing opportunities for your market." data-vio-ar="استكشف منتجات مختارة وفرص توريد تناسب سوقك.">Explore selected products and sourcing opportunities for your market.</p><span class="small-link" data-vio-en="Explore Products →" data-vio-ar="استكشف المنتجات ←">Explore Products →</span></div>
+
+    <div class="card service-card" onclick="openCustomRequest()"><div class="icon">🔎</div><h3 data-vio-en="Custom Sourcing" data-vio-ar="التوريد حسب الطلب">Custom Sourcing</h3><p data-vio-en="Tell us what you need. We'll help you find suitable products and suppliers." data-vio-ar="أخبرنا بما تحتاجه وسنساعدك في العثور على المنتجات والموردين المناسبين.">Tell us what you need. We'll help you find suitable products and suppliers.</p><span class="small-link" data-vio-en="Submit Request →" data-vio-ar="أرسل طلبك ←">Submit Request →</span></div>
+
+    <div class="card service-card" onclick="vioOpenMarket('Egypt')"><div class="icon">📦</div><h3 data-vio-en="Egypt Ready Stock" data-vio-ar="المخزون الجاهز في مصر">Egypt Ready Stock</h3><p data-vio-en="Browse available products for wholesale supply in Egypt." data-vio-ar="تصفح المنتجات المتاحة للتوريد بالجملة في مصر.">Browse available products for wholesale supply in Egypt.</p><span class="small-link" data-vio-en="Browse Stock →" data-vio-ar="تصفح المخزون ←">Browse Stock →</span></div>
+
+    <div class="card service-card" onclick="vioOpenMarket('Dubai')"><div class="icon">🚚</div><h3 data-vio-en="Dubai Ready Stock" data-vio-ar="المخزون الجاهز في دبي">Dubai Ready Stock</h3><p data-vio-en="Explore wholesale products available in Dubai." data-vio-ar="استكشف منتجات الجملة المتاحة في دبي.">Explore wholesale products available in Dubai.</p><span class="small-link" data-vio-en="Browse Stock →" data-vio-ar="تصفح المخزون ←">Browse Stock →</span></div>
+
+  </div>
+
+</section>
+
+<section class="vio-journey container" aria-label="How VIO works">
+
+  <div class="vio-section-heading"><div><div class="vio-eyebrow" data-vio-en="SIMPLE. CLEAR. CONNECTED." data-vio-ar="ببساطة ووضوح">SIMPLE. CLEAR. CONNECTED.</div><h2 data-vio-en="How VIO Works" data-vio-ar="كيف تعمل VIO">How VIO Works</h2></div><p data-vio-en="From your first inquiry to your next business opportunity." data-vio-ar="من أول استفسار حتى فرصتك التجارية القادمة.">From your first inquiry to your next business opportunity.</p></div>
+
+  <div class="vio-steps"><div class="vio-step"><span>01</span><div class="vio-step-icon">🔍</div><h3 data-vio-en="Discover" data-vio-ar="اكتشف">Discover</h3><p data-vio-en="Browse products or tell us what you need." data-vio-ar="تصفح المنتجات أو أخبرنا بما تحتاجه.">Browse products or tell us what you need.</p></div><div class="vio-step"><span>02</span><div class="vio-step-icon">📋</div><h3 data-vio-en="Request" data-vio-ar="اطلب">Request</h3><p data-vio-en="Share quantity, destination and requirements." data-vio-ar="حدد الكمية والوجهة ومتطلباتك.">Share quantity, destination and requirements.</p></div><div class="vio-step"><span>03</span><div class="vio-step-icon">🤝</div><h3 data-vio-en="Receive a Quote" data-vio-ar="استلم عرض السعر">Receive a Quote</h3><p data-vio-en="Our team reviews sourcing and delivery options." data-vio-ar="يراجع فريقنا خيارات التوريد والتوصيل.">Our team reviews sourcing and delivery options.</p></div><div class="vio-step"><span>04</span><div class="vio-step-icon">🚢</div><h3 data-vio-en="Move Forward" data-vio-ar="ابدأ التنفيذ">Move Forward</h3><p data-vio-en="Confirm the next steps with the VIO team." data-vio-ar="اتفق على الخطوات التالية مع فريق VIO.">Confirm the next steps with the VIO team.</p></div></div>
+
+</section>
+
+<section class="container" id="chinaPage" style="display:none">
+
+
+
+  <div class="page-head"><div><h2 data-vio-en="Global Product Collection" data-vio-ar="مجموعة المنتجات العالمية">Global Product Collection</h2><p data-vio-en="Explore selected products and sourcing opportunities for your market." data-vio-ar="استكشف منتجات مختارة وفرص توريد تناسب سوقك.">Explore selected products and sourcing opportunities for your market.</p></div><button class="btn secondary" onclick="backToHome()">← Back to Home</button></div>
+
+
+
+  <div class="toolbar"><input class="search" id="productSearch" type="search" placeholder="Search by product, category or description..." oninput="filterChinaProducts()" aria-label="Search products"><span id="productCount" class="hint"></span></div>
+
+
+
+  <div id="catalogMessage" class="empty">Loading products...</div>
+
+
+
+  <div id="chinaProductsGrid" class="grid"></div>
+
+
+
+</section>
+
+
+
+<div class="overlay" id="vioGallery" onclick="if(event.target===this)vioCloseGallery()"><div class="modal" style="max-width:850px" role="dialog" aria-modal="true" aria-label="Product gallery"><div class="modal-head"><h2 id="vioGalleryTitle">Product gallery</h2><button class="close" onclick="vioCloseGallery()" aria-label="Close gallery">×</button></div><div style="text-align:center;background:#f8f8f8;border-radius:9px;padding:12px;margin-top:12px"><img id="vioGalleryPhoto" alt="Product photo" style="max-width:100%;height:360px;object-fit:contain"><div id="vioGalleryEmpty" style="display:none;padding:80px">No photos available</div></div><div style="display:flex;align-items:center;justify-content:space-between;margin:12px 0"><button class="btn secondary" onclick="vioGalleryMove(-1)">← Previous</button><span id="vioGalleryCount"></span><button class="btn secondary" onclick="vioGalleryMove(1)">Next →</button></div><div id="vioGalleryLinks" style="display:flex;gap:12px;flex-wrap:wrap;margin:12px 0"></div><button class="btn" style="width:100%" onclick="vioQuoteFromGallery()">Request Quotation</button></div></div>
+
+<div class="overlay" id="quoteOverlay" onclick="if(event.target===this)closeQuote()">
+
+
+
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="quoteTitle">
+
+
+
+    <div class="modal-head"><div><h2 id="quoteTitle">Request a Quotation</h2><p class="hint">Tell us what you need. We will handle the sourcing.</p></div><button class="close" onclick="closeQuote()" aria-label="Close">×</button></div>
+
+
+
+          <form id="quoteForm" onsubmit="submitQuotation(event)">
+
+
+
+        <div class="step-heading"><span>1</span> What do you need?</div>
+
+
+
+        <div class="field"><label for="qProduct">Product name</label><input id="qProduct" maxlength="200" placeholder="e.g. Wireless Bluetooth Earbuds"><div class="hint" id="productNameHint">Enter the product name or upload photos.</div></div>
+
+
+
+        <div class="field"><label for="qPhotos">Product photos (up to 5)</label><div class="upload-zone"><div style="font-size:26px">📷</div><div class="hint">JPG, PNG or WEBP — max 5 MB each</div><input id="qPhotos" type="file" accept="image/jpeg,image/png,image/webp" multiple onchange="previewRFQPhotos()"><div id="photoPreviews" class="photo-previews"></div></div></div>
+
+
+
+        <div class="field"><label for="qQty">Required quantity *</label><input id="qQty" type="number" min="1" step="1" required placeholder="e.g. 1000"></div>
+
+
+
+        <div class="step-heading"><span>2</span> Where do you need it?</div>
+
+
+
+        <div class="field-row"><div class="field"><label for="qCountry">Destination *</label><select id="qCountry" required><option value="">Select country</option><option>Egypt</option><option>UAE</option></select></div><div class="field"><label for="qShipping">Shipping mode *</label><select id="qShipping" required><option value="">Select mode</option><option value="Sea Freight">Sea Freight</option><option value="Air Freight">Air Freight</option></select></div></div>
+
+
+
+        <div class="step-heading"><span>3</span> How can we contact you?</div>
+
+
+
+        <div class="field"><label for="qName">Your name *</label><input id="qName" required maxlength="120" autocomplete="name"></div>
+
+
+
+        <div class="field"><label for="qContact">Preferred contact method *</label><select id="qContact" required onchange="updateContactFields()"><option value="">Select contact method</option><option value="WhatsApp">WhatsApp</option><option value="Phone Call">Phone Call</option><option value="Email">Email</option></select></div>
+
+
+
+        <div class="field" id="phoneWrap" style="display:none"><label for="qPhone" id="phoneLabel">WhatsApp number *</label><input id="qPhone" type="tel" maxlength="35" placeholder="Include country code, e.g. +20..."></div>
+
+
+
+        <div class="field" id="emailWrap" style="display:none"><label for="qEmail">Email address *</label><input id="qEmail" type="email" maxlength="160" placeholder="name@company.com"></div>
+
+
+
+        <label class="remember"><input type="checkbox" id="qRemember" checked> Remember my contact details on this device</label>
+
+
+
+        <details class="optional"><summary>Additional details (optional)</summary><div class="field"><label for="qCompany">Company name</label><input id="qCompany" maxlength="120"></div><div class="field"><label for="qNotes">Additional product requirements</label><textarea id="qNotes" maxlength="2000" placeholder="Packaging, specifications, special requests..."></textarea></div></details>
+
+
+
+        <div id="quoteFeedback" class="hint" role="status" aria-live="polite" style="margin-top:12px"></div><button class="btn" id="quoteSubmit" type="submit">Submit Quotation Request</button>
+
+
+
+      </form>
+
+
+
+      <div id="quoteSuccess" class="success-panel" style="display:none"><div class="success-icon">✓</div><h2>Request Submitted Successfully!</h2><p>Thank you. Our VIO team will review your request and contact you.</p><div class="success-reference"><small>YOUR REQUEST REFERENCE</small><strong id="successReference"></strong></div><div class="success-actions"><button class="btn" type="button" onclick="openQuote(null)">+ Add New Request</button><button class="btn secondary" type="button" onclick="closeQuote()">Close</button></div></div>
+
+
+
+  </div>
+
+
+
+</div>
+
+
+
+<script>
+
+
+
+  let chinaProducts=[];
+
+
+
+  let selectedProduct=null;
+
+
+
+  let selectedPhotos=[];
+
+
+
+    const customerFields=['qName','qPhone','qEmail','qCompany','qContact'];
+
+
+
+  function rememberCustomer(){
+
+
+
+    try{
+
+
+
+      if(!document.getElementById('qRemember').checked){localStorage.removeItem('vioCustomer');return;}
+
+
+
+      localStorage.setItem('vioCustomer',JSON.stringify(Object.fromEntries(customerFields.map(id=>[id,document.getElementById(id).value]))));
+
+
+
+    }catch(e){}
+
+
+
+  }
+
+
+
+  function restoreCustomer(){
+
+
+
+    try{
+
+
+
+      const saved=JSON.parse(localStorage.getItem('vioCustomer')||'{}');
+
+
+
+      customerFields.forEach(id=>{if(saved[id])document.getElementById(id).value=saved[id];});
+
+
+
+    }catch(e){}
+
+
+
+    updateContactFields();
+
+
+
+  }
+
+
+
+  function updateContactFields(){
+
+
+
+    const method=document.getElementById('qContact').value;
+
+
+
+    const isEmail=method==='Email';
+
+
+
+    document.getElementById('phoneWrap').style.display=method&&!isEmail?'block':'none';
+
+
+
+    document.getElementById('emailWrap').style.display=isEmail?'block':'none';
+
+
+
+    document.getElementById('qPhone').required=!!method&&!isEmail;
+
+
+
+    document.getElementById('qEmail').required=isEmail;
+
+
+
+    document.getElementById('phoneLabel').textContent=method==='Phone Call'?'Phone number *':'WhatsApp number *';
+
+
+
+  }
+
+
+
+function goToSections(){document.getElementById('sections').scrollIntoView({behavior:'smooth'});}
+
+
+
+  function backToHome(){vioCloseGallery();document.getElementById('chinaPage').style.display='none';document.getElementById('hero').style.display='block';document.getElementById('sections').style.display='block';window.scrollTo(0,0);}
+
+
+
+  function showComingSoon(name){alert(name+' will be available in a future step.');}
+
+
+
+  function openChinaProducts(){return vioOpenMarket('China');}
+
+  function vioOldOpenChinaProducts(){
+
+
+
+    document.getElementById('hero').style.display='none';
+
+
+
+    document.getElementById('sections').style.display='none';
+
+
+
+    document.getElementById('chinaPage').style.display='block';
+
+
+
+    document.getElementById('catalogMessage').style.display='block';
+
+
+
+    document.getElementById('catalogMessage').textContent='Loading products...';
+
+
+
+    document.getElementById('chinaProductsGrid').replaceChildren();
+
+
+
+    document.getElementById('productSearch').value='';
+
+
+
+    window.scrollTo(0,0);
+
+
+
+    if(typeof google==='undefined'||!google.script||!google.script.run){
+
+
+
+      showCatalogMessage('Open this page through your Google Apps Script web app to load products.');return;
+
+
+
+    }
+
+
+
+    google.script.run.withSuccessHandler(function(products){
+
+
+
+      chinaProducts=Array.isArray(products)?products:[];
+
+
+
+      renderChinaProducts(chinaProducts);
+
+
+
+    }).withFailureHandler(function(err){showCatalogMessage('Unable to load products: '+(err&&err.message?err.message:'Unknown error'));}).getChinaProducts();
+
+
+
+  }
+
+
+
+  function showCatalogMessage(message){const el=document.getElementById('catalogMessage');el.textContent=message;el.style.display='block';document.getElementById('productCount').textContent='';}
+
+
+
+  function renderChinaProducts(products){
+
+
+
+    const grid=document.getElementById('chinaProductsGrid');grid.replaceChildren();
+
+
+
+    document.getElementById('productCount').textContent=products.length+' product(s)';
+
+
+
+    if(!products.length){showCatalogMessage('No products found.');return;}
+
+
+
+    document.getElementById('catalogMessage').style.display='none';
+
+
+
+    products.forEach(function(product){
+
+
+
+      const card=document.createElement('article');card.className='card product-card';
+
+
+
+      const media=document.createElement('div');media.className='product-media';
+
+
+
+      if(product.Image_URL && /^https:\/\//i.test(String(product.Image_URL))){
+
+
+
+        const img=document.createElement('img');img.src=product.Image_URL;img.alt=product.Product_Name||'Product';img.onerror=function(){media.textContent='📦';};media.appendChild(img);
+
+
+
+      }else{media.textContent='📦';}
+
+
+
+      // Additional recommendation media, without exposing internal supplier records.
+
+
+
+      if(Array.isArray(product.Media)&&product.Media.length){
+
+
+
+        const photos=product.Media.filter(m=>m.type==='image'&&/^https:\/\//i.test(m.url));
+
+
+
+        if(photos.length){media.replaceChildren();const pic=document.createElement('img');let idx=0;
+
+
+
+          pic.src=photos[0].url;pic.alt=product.Product_Name||'Recommendation photo';media.appendChild(pic);
+
+
+
+          if(photos.length>1){const next=document.createElement('button');next.type='button';next.textContent='❯ '+photos.length+' photos';
+
+
+
+            next.style.cssText='position:absolute;bottom:8px;right:8px;background:#c6a052;color:white;border:0;border-radius:6px;padding:7px;cursor:pointer';
+
+
+
+            media.style.position='relative';next.onclick=()=>{idx=(idx+1)%photos.length;pic.src=photos[idx].url;next.textContent='❯ '+(idx+1)+' / '+photos.length};media.appendChild(next)}
+
+
+
+        }
+
+
+
+      }
+
+
+
+      media.style.cursor='pointer';media.title='Click to view product photos';media.onclick=function(e){if(e.target.tagName!=='BUTTON')vioShowGallery(product);};
+
+      const content=document.createElement('div');content.className='product-content';
+
+
+
+      const category=document.createElement('div');category.className='category';category.textContent=product.Category||'China Sourcing';
+
+
+
+      const title=document.createElement('h3');title.textContent=product.Product_Name||'Unnamed product';
+
+
+
+      const description=document.createElement('p');description.textContent=product.Description||'Details available on request';
+
+
+
+      const details=document.createElement('div');details.className='details';
+
+
+
+      [['MOQ',product.MOQ||'On request'],['Lead time',product.Lead_Time_Days?product.Lead_Time_Days+' days':'On request']].forEach(function(item){const line=document.createElement('div');line.textContent=item[0]+': '+item[1];details.appendChild(line);});
+
+
+
+      if(product.Specifications){const specs=document.createElement('div');specs.textContent='Specs: '+product.Specifications;details.appendChild(specs);}
+
+
+
+      if(Array.isArray(product.Media))product.Media.filter(m=>m.type==='video'||m.type==='catalog').forEach(m=>{
+
+
+
+        const a=document.createElement('a');a.href=m.url;a.target='_blank';a.rel='noopener noreferrer';
+
+
+
+        a.textContent=m.type==='video'?'▶ View product video':'📄 View product catalog';
+
+
+
+        a.style.cssText='display:block;margin:8px 0;color:#a77d32;font-weight:bold;font-size:13px';content.appendChild(a);
+
+
+
+      });
+
+
+
+      const preview=document.createElement('button');preview.className='btn secondary';preview.style.marginBottom='9px';preview.textContent='View Photos & Details';preview.onclick=()=>vioShowGallery(product);
+
+      const btn=document.createElement('button');btn.className='btn';btn.textContent='Request Quotation';btn.onclick=function(){openQuote(product);};
+
+
+
+      content.append(category,title,description,details,preview,btn);card.append(media,content);grid.appendChild(card);
+
+
+
+    });
+
+
+
+  }
+
+
+
+  function filterChinaProducts(){const query=document.getElementById('productSearch').value.trim().toLowerCase();renderChinaProducts(chinaProducts.filter(function(p){return [p.Product_Name,p.Category,p.Description,p.Specifications,p.Product_ID].some(function(v){return String(v||'').toLowerCase().includes(query);});}));}
+
+
+
+function openQuote(product) {
+
+
+
+    selectedProduct=product||null;
+
+
+
+    quoteSubmissionKey='RFQ-'+Date.now()+'-'+Math.random().toString(36).slice(2);
+
+
+
+    document.getElementById('quoteForm').reset();
+
+
+
+    document.getElementById('quoteForm').style.display='block';
+
+
+
+    document.getElementById('quoteSuccess').style.display='none';
+
+
+
+    selectedPhotos=[];
+
+
+
+    document.getElementById('photoPreviews').replaceChildren();
+
+
+
+    const feedback=document.getElementById('quoteFeedback');feedback.textContent='';feedback.className='hint';
+
+
+
+    const btn=document.getElementById('quoteSubmit');btn.disabled=false;btn.textContent='Submit Quotation Request';
+
+
+
+    document.getElementById('qProduct').value=product?(product.Product_Name||''):'';
+
+
+
+    document.getElementById('productNameHint').textContent=product?'Originally selected: '+(product.Product_Name||'')+'. You can change the product name.':'Enter a product name or upload reference photos.';
+
+
+
+    document.getElementById('quoteTitle').textContent=product?'Request a Quotation':'Request a Product';
+
+
+
+    restoreCustomer();
+
+
+
+    document.getElementById('quoteOverlay').classList.add('open');
+
+
+
+    document.querySelector('#quoteOverlay .modal').scrollTop=0;
+
+
+
+  }
+
+
+
+function openCustomRequest(){openQuote(null);}
+
+
+
+  function closeQuote(){document.getElementById('quoteOverlay').classList.remove('open');}
+
+
+
+  function previewRFQPhotos(){
+
+
+
+    const input=document.getElementById('qPhotos');
+
+
+
+    const feedback=document.getElementById('quoteFeedback');
+
+
+
+    const chosen=Array.from(input.files||[]);
+
+
+
+    if(chosen.length>5){feedback.textContent='Please select no more than 5 photos.';input.value='';return;}
+
+
+
+    for(const file of chosen){
+
+
+
+      if(!['image/jpeg','image/png','image/webp'].includes(file.type)||file.size>5*1024*1024||file.size===0){
+
+
+
+        feedback.textContent='Use JPG, PNG or WEBP photos, maximum 5 MB each.';input.value='';return;
+
+
+
+      }
+
+
+
+    }
+
+
+
+    selectedPhotos=chosen;
+
+
+
+    feedback.textContent='';
+
+
+
+    const preview=document.getElementById('photoPreviews');preview.replaceChildren();
+
+
+
+    chosen.forEach(file=>{
+
+
+
+      const img=document.createElement('img');img.alt=file.name;
+
+
+
+      const url=URL.createObjectURL(file);img.src=url;img.onload=()=>URL.revokeObjectURL(url);
+
+
+
+      preview.appendChild(img);
+
+
+
+    });
+
+
+
+  }
+
+
+
+  function fileToBase64(file){return new Promise((resolve,reject)=>{
+
+
+
+    const reader=new FileReader();
+
+
+
+    reader.onload=()=>resolve(String(reader.result).split(',')[1]);
+
+
+
+    reader.onerror=()=>reject(new Error('Could not read '+file.name));
+
+
+
+    reader.readAsDataURL(file);
+
+
+
+  });}
+
+
+
+  let quoteSending=false;
+
+
+
+  async function submitQuotation(event){
+
+
+
+    event.preventDefault();
+
+
+
+    if(quoteSending)return;
+
+
+
+    if(typeof google==='undefined'||!google.script||!google.script.run){document.getElementById('quoteFeedback').textContent='Please open the deployed VIO web app.';return;}
+
+
+
+    if(!document.getElementById('qProduct').value.trim()&&!selectedPhotos.length){document.getElementById('quoteFeedback').textContent='Enter a product name or attach a photo.';return;}
+
+
+
+    const form=document.getElementById('quoteForm');if(!form.reportValidity())return;
+
+
+
+    const payload={
+
+
+
+      productId:selectedProduct?selectedProduct.Product_ID:'',
+
+      productSource:selectedProduct?selectedProduct.Product_Source||'China':'Customer Request',
+
+
+
+        productName:document.getElementById('qProduct').value.trim(),
+
+
+
+        preferredContact:document.getElementById('qContact').value,
+
+
+
+      name:document.getElementById('qName').value.trim(),
+
+
+
+      phone:document.getElementById('qPhone').value.trim(),
+
+
+
+      quantity:Number(document.getElementById('qQty').value),
+
+
+
+      country:document.getElementById('qCountry').value,
+
+
+
+      shippingMode:document.getElementById('qShipping').value,
+
+
+
+      email:document.getElementById('qEmail').value.trim(),
+
+
+
+      company:document.getElementById('qCompany').value.trim(),
+
+
+
+      notes:document.getElementById('qNotes').value.trim(),
+
+
+
+      submissionKey:quoteSubmissionKey
+
+
+
+    };
+
+
+
+    quoteSending=true;
+
+
+
+    const btn=document.getElementById('quoteSubmit');btn.disabled=true;btn.textContent='Submitting...';
+
+
+
+    const feedback=document.getElementById('quoteFeedback');feedback.textContent='Saving your request...';
+
+
+
+    try{payload.photos=await Promise.all(selectedPhotos.map(async file=>({
+
+
+
+      name:file.name,mimeType:file.type,base64:await fileToBase64(file)
+
+
+
+    })));}catch(err){quoteSending=false;btn.disabled=false;btn.textContent='Submit Quotation Request';feedback.textContent=err.message;return;}
+
+
+
+    feedback.textContent='Uploading photos and saving request...';
+
+
+
+          google.script.run.withSuccessHandler(function(result){
+
+
+
+        quoteSending=false;btn.textContent='Submit Quotation Request';
+
+
+
+        if(result&&result.ok){
+
+
+
+          rememberCustomer();
+
+
+
+          document.getElementById('successReference').textContent=result.rfqId;
+
+
+
+          document.getElementById('quoteForm').style.display='none';
+
+
+
+          document.getElementById('quoteSuccess').style.display='block';
+
+
+
+          document.querySelector('#quoteOverlay .modal').scrollTop=0;
+
+
+
+          selectedPhotos=[];
+
+
+
+          quoteSubmissionKey='';
+
+
+
+        }else{btn.disabled=false;feedback.textContent='Unable to submit. Please try again.';}
+
+
+
+}).withFailureHandler(function(err){
+
+
+
+      quoteSending=false;btn.disabled=false;btn.textContent='Submit Quotation Request';
+
+
+
+      feedback.textContent='Submission not confirmed: '+(err&&err.message?err.message:'Please try again.');
+
+
+
+    }).submitPriceInquiry(payload);
+
+
+
+  }
+
+
+
+  let quoteSubmissionKey='';
+
+
+
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeQuote();});
+
+
+
+
+
+
+
+// Phase 2 catalog gallery and live stock sections.
+
+let vioMarket='China',vioGalleryProduct=null,vioGalleryImages=[],vioGalleryIndex=0;
+
+function vioOpenMarket(market){
+
+ vioMarket=market;
+
+ document.getElementById('hero').style.display='none';document.getElementById('sections').style.display='none';
+
+ document.getElementById('chinaPage').style.display='block';
+
+ document.querySelector('#chinaPage .page-head h2').textContent=market==='China'?(document.documentElement.lang==='ar'?'مجموعة المنتجات العالمية':'Global Product Collection'):market+' Available Stock';
+
+ document.querySelector('#chinaPage .page-head p').textContent=market==='China'?(document.documentElement.lang==='ar'?'استكشف منتجات مختارة وفرص توريد تناسب سوقك.':'Explore selected products and sourcing opportunities for your market.'):'Browse products currently available in '+market+'.';
+
+ document.getElementById('productSearch').value='';showCatalogMessage('Loading products...');document.getElementById('chinaProductsGrid').replaceChildren();window.scrollTo(0,0);
+
+ const request=google.script.run.withSuccessHandler(products=>{chinaProducts=(Array.isArray(products)?products:[]).map(p=>({...p,Product_Source:market}));renderChinaProducts(chinaProducts);}).withFailureHandler(e=>showCatalogMessage('Unable to load products: '+(e.message||e)));
+
+ if(market==='China')request.getChinaProducts();else request.getVIOPublicStock(market);
+
+}
+
+function vioShowGallery(product){vioGalleryProduct=product;const media=(Array.isArray(product.Media)?product.Media:[]).filter(m=>m.type==='image'&&/^https:\/\//i.test(String(m.url||''))).map(m=>m.url);vioGalleryImages=[...new Set([product.Image_URL,...media].filter(url=>/^https:\/\//i.test(String(url||''))))];vioGalleryIndex=0;const box=document.getElementById('vioGallery');box.classList.add('open');document.getElementById('vioGalleryTitle').textContent=product.Product_Name||'Product gallery';vioRenderGallery();}
+
+function vioRenderGallery(){const photo=document.getElementById('vioGalleryPhoto'),empty=document.getElementById('vioGalleryEmpty');photo.style.display=vioGalleryImages.length?'block':'none';empty.style.display=vioGalleryImages.length?'none':'block';if(vioGalleryImages.length)photo.src=vioGalleryImages[vioGalleryIndex];document.getElementById('vioGalleryCount').textContent=vioGalleryImages.length?(vioGalleryIndex+1)+' / '+vioGalleryImages.length:'No photos';const links=document.getElementById('vioGalleryLinks');links.replaceChildren();(vioGalleryProduct.Media||[]).filter(m=>['video','catalog'].includes(m.type)&&/^https:\/\//i.test(m.url)).forEach(m=>{const a=document.createElement('a');a.href=m.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=m.type==='video'?'▶ Open product video':'📄 Open PDF catalog';links.append(a);});}
+
+function vioGalleryMove(n){if(vioGalleryImages.length){vioGalleryIndex=(vioGalleryIndex+n+vioGalleryImages.length)%vioGalleryImages.length;vioRenderGallery();}}
+
+function vioCloseGallery(){document.getElementById('vioGallery').classList.remove('open');}
+
+function vioQuoteFromGallery(){const p=vioGalleryProduct;vioCloseGallery();openQuote(p);}
+
+document.addEventListener('keydown',e=>{if(e.key==='Escape')vioCloseGallery();if(document.getElementById('vioGallery').classList.contains('open')){if(e.key==='ArrowRight')vioGalleryMove(1);if(e.key==='ArrowLeft')vioGalleryMove(-1);}});
+
+
+
+const VIO_LOGO_LIGHT='';const VIO_LOGO_DARK='';
+
+function vioTheme(mode){document.body.classList.toggle('vio-dark',mode==='dark');try{localStorage.setItem('vioTheme',mode)}catch(e){};document.querySelectorAll('.vio-brand-image,.vio-brand-hero').forEach(img=>{if(VIO_LOGO_LIGHT)img.src=mode==='dark'?VIO_LOGO_DARK:VIO_LOGO_LIGHT})}
+
+function vioLanguage(lang){document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';try{localStorage.setItem('vioLang',lang)}catch(e){};document.querySelectorAll('[data-vio-en]').forEach(el=>{el.textContent=lang==='ar'?el.getAttribute('data-vio-ar'):el.getAttribute('data-vio-en')});}
+
+function vioInitializePreferences(){let theme='light',lang='en';try{theme=localStorage.getItem('vioTheme')||'light';lang=localStorage.getItem('vioLang')||'en'}catch(e){}vioTheme(theme);vioLanguage(lang)}
+
+
+
+const vioOriginalRenderChinaProducts=renderChinaProducts;
+
+renderChinaProducts=function(products){vioOriginalRenderChinaProducts(products);if(vioMarket==='China')return;const cards=document.querySelectorAll('#chinaProductsGrid .product-card');cards.forEach((card,i)=>{const p=products[i];if(!p)return;const content=card.querySelector('.product-content');if(!content)return;const detail=document.createElement('div');detail.className='details';const price=p.Price_Visibility==='Show'?p.Currency+' '+Number(p.Selling_Price).toFixed(2):'Price on request';detail.textContent=price+' · '+(p.Availability||'Availability on request')+' · MOQ '+p.MOQ;content.insertBefore(detail,content.querySelector('button'));const btn=content.querySelector('.btn:not(.secondary)');if(btn){btn.textContent='Inquire About Stock';}if(p.Availability==='Out of Stock'){const tag=document.createElement('strong');tag.textContent='Out of Stock';tag.style.color='#b45309';content.insertBefore(tag,detail);}})};
+
+
+
+
+
+const vioTranslations={"Explore Our Services": "استكشف خدماتنا", "China Recommendations": "ترشيحات المنتجات من الصين", "Request a Product": "اطلب منتجاً", "Egypt Available Stock": "المخزون المتاح في مصر", "Dubai Available Stock": "المخزون المتاح في دبي", "Explore Products →": "استكشف المنتجات ←", "Submit Request →": "إرسال طلب ←", "Browse Stock →": "تصفح المخزون ←", "Explore VIO": "استكشف VIO", "Source Smarter. Trade Better.": "توريد أفضل وتجارة أذكى", "YOUR GLOBAL SOURCING PARTNER": "شريكك في التوريد العالمي", "Discover selected products from China.": "اكتشف منتجات مختارة من الصين.", "Tell us what you need us to source.": "أخبرنا بالمنتج الذي تريد توريده.", "Explore ready-to-supply inventory.": "تصفح المنتجات المتاحة للتوريد.", "Browse wholesale products in Dubai.": "تصفح منتجات الجملة في دبي.", "Request a Quotation": "طلب عرض سعر", "What do you need?": "ما المنتج المطلوب؟", "Product name": "اسم المنتج", "Product photos (up to 5)": "صور المنتج (حتى ٥)", "Required quantity *": "الكمية المطلوبة *", "Where do you need it?": "أين تريد التوريد؟", "Destination *": "الوجهة *", "Shipping mode *": "طريقة الشحن *", "How can we contact you?": "كيف نتواصل معك؟", "Your name *": "اسمك *", "Preferred contact method *": "وسيلة التواصل المفضلة *", "Additional details (optional)": "تفاصيل إضافية (اختياري)", "Company name": "اسم الشركة", "Additional product requirements": "متطلبات إضافية للمنتج", "Submit Quotation Request": "إرسال طلب عرض السعر", "Request Submitted Successfully!": "تم إرسال الطلب بنجاح!", "YOUR REQUEST REFERENCE": "رقم الطلب", "Close": "إغلاق", "Product gallery": "معرض الصور", "Request Quotation": "طلب عرض سعر", "Recommendations": "الترشيحات", "Pending RFQs": "طلبات الأسعار", "Customers": "العملاء", "Shipping Rates": "أسعار الشحن", "Permissions": "الصلاحيات", "RFQ Workflow": "متابعة طلبات الأسعار", "Landed Cost": "التكلفة النهائية", "Egypt Stock": "مخزون مصر", "Dubai Stock": "مخزون دبي", "Supplier Quotations": "عروض الموردين", "Quotation Approvals": "اعتماد عروض الأسعار", "Refresh": "تحديث", "Quick Recommendations Upload": "رفع ترشيحات المنتجات", "Existing Recommendations": "الترشيحات الحالية", "Customer RFQs": "طلبات عروض أسعار العملاء", "Customer Master": "سجل العملاء", "Team Permissions": "صلاحيات الفريق", "RFQ Workflow & Follow-up": "متابعة طلبات الأسعار", "Landed Cost Calculator": "حاسبة التكلفة النهائية", "Automatic Exchange Rates": "أسعار الصرف التلقائية", "Supplier Quotation & Landed Cost": "عرض المورد والتكلفة النهائية", "Customer Quotations & Management Approval": "عروض العملاء والاعتماد الإداري", "Route Lead-Time Settings": "إعدادات المدد الزمنية للشحن", "Shipping mode": "طريقة الشحن", "Destination": "الوجهة", "Supplier currency": "عملة المورد", "Quantity PCS": "الكمية بالقطعة", "Unit cost": "تكلفة القطعة", "MOQ": "الحد الأدنى للطلب", "PCS / carton": "عدد القطع في الكرتون", "Gross KG / carton": "الوزن الإجمالي للكرتون", "Net KG / piece": "الوزن الصافي للقطعة", "Production days": "أيام الإنتاج", "Gross margin %": "هامش الربح الإجمالي %", "Other charges USD": "مصاريف أخرى بالدولار", "Customs USD": "الجمارك بالدولار", "Clearance USD": "التخليص بالدولار", "Local delivery USD": "التوصيل المحلي بالدولار", "Validity (days)": "مدة صلاحية العرض (أيام)", "Preview Cost & Lead Time": "معاينة التكلفة والمدة", "Save & Request Approval": "حفظ وطلب الاعتماد", "Approve": "اعتماد", "Email Customer": "إرسال للعميل", "Availability": "التوفر", "Selling price (EGP)": "سعر البيع (جنيه مصري)", "Selling price (AED)": "سعر البيع (درهم إماراتي)", "Price visibility": "إظهار السعر", "In Stock": "متوفر", "Out of Stock": "غير متوفر", "On Request": "عند الطلب", "Show": "إظهار", "Add Product": "إضافة منتج", "Save Changes": "حفظ التغييرات"};
+
+const vioOriginalLanguage=vioLanguage;
+
+vioLanguage=function(lang){vioOriginalLanguage(lang);const root=document.body;if(!root)return;const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);let n;while(n=walker.nextNode()){if(n.parentElement&&['SCRIPT','STYLE','OPTION'].includes(n.parentElement.tagName))continue;const v=n.nodeValue,trim=v.trim();if(!trim)continue;const original=n.__vioOriginalText||trim;if(!n.__vioOriginalText)n.__vioOriginalText=original;if(vioTranslations[original])n.nodeValue=v.replace(trim,lang==='ar'?vioTranslations[original]:original);}};
+
+
+
+setTimeout(vioInitializePreferences,0);
+
+/* VIO shared interface localization: no network requests, no user data translation. */
+
+(function(){
+
+ const dictionary={"Recommendations":"الترشيحات","Pending RFQs":"طلبات عروض الأسعار المعلقة","Customers":"العملاء","Shipping Rates":"أسعار الشحن","Permissions":"الصلاحيات","RFQ Workflow":"متابعة طلبات الأسعار","Landed Cost":"التكلفة النهائية","Egypt Stock":"مخزون مصر","Dubai Stock":"مخزون دبي","Supplier Quotations":"عروض الموردين","Quotation Approvals":"اعتماد عروض الأسعار","Refresh":"تحديث","Quick Recommendations Upload":"رفع ترشيحات المنتجات","Existing Recommendations":"الترشيحات الحالية","Customer RFQs":"طلبات عروض الأسعار من العملاء","Customer Master":"سجل العملاء","Team Permissions":"صلاحيات الفريق","RFQ Workflow & Follow-up":"متابعة طلبات الأسعار","Landed Cost Calculator":"حاسبة التكلفة النهائية","Automatic Exchange Rates":"أسعار الصرف التلقائية","Update Exchange Rates":"تحديث أسعار الصرف","Save Calculation":"حفظ الحساب","Calculate":"احسب","Add USD Rate":"إضافة سعر بالدولار","Freight Estimate":"تقدير تكلفة الشحن","Calculate Freight":"احسب الشحن","Save Permission":"حفظ الصلاحية","Product name":"اسم المنتج","Product Name":"اسم المنتج","Category":"الفئة","Description":"الوصف","Supplier reference (internal, optional)":"مرجع المورد (داخلي، اختياري)","Supplier (private)":"المورد (خاص)","Supplier currency":"عملة المورد","Supplier unit price":"سعر الوحدة من المورد","Unit cost":"تكلفة الوحدة","Unit price":"سعر الوحدة","Quantity PCS":"الكمية بالقطعة","Total pieces":"إجمالي القطع","PCS / carton":"عدد القطع في الكرتون","Carton L (cm)":"طول الكرتون (سم)","Carton W (cm)":"عرض الكرتون (سم)","Carton H (cm)":"ارتفاع الكرتون (سم)","Gross KG / carton":"الوزن الإجمالي للكرتون (كجم)","Net KG / piece":"الوزن الصافي للقطعة (كجم)","Destination":"الوجهة","Shipping mode":"طريقة الشحن","Mode":"الطريقة","Goods":"نوع البضاعة","Goods type":"نوع البضاعة","Sea Freight":"شحن بحري","Air Freight":"شحن جوي","Normal":"عادي","Dangerous Goods":"مواد خطرة","Production days":"أيام الإنتاج","Gross margin %":"هامش الربح الإجمالي %","Target gross margin %":"هامش الربح المستهدف %","Other charges USD":"مصاريف أخرى بالدولار","Customs USD":"الجمارك بالدولار","Clearance USD":"التخليص بالدولار","Local delivery USD":"التوصيل المحلي بالدولار","Validity (days)":"مدة صلاحية العرض (أيام)","Payment terms (private)":"شروط الدفع (خاصة)","Supplier media URLs (private)":"روابط وسائط المورد (خاصة)","Customer commercial terms":"الشروط التجارية للعميل","Preview Cost & Lead Time":"معاينة التكلفة والمدة","Save & Request Approval":"حفظ وطلب الاعتماد","Customer Quotations & Management Approval":"عروض أسعار العملاء والاعتماد الإداري","Route Lead-Time Settings":"إعدادات مدة الشحن","Transit days":"أيام النقل","Customs days":"أيام التخليص الجمركي","Local delivery days":"أيام التوصيل المحلي","Save Route Estimates":"حفظ مدد الشحن","Approve":"اعتماد","Email Customer":"إرسال للعميل","Availability":"التوفر","Selling price (EGP)":"سعر البيع (جنيه مصري)","Selling price (AED)":"سعر البيع (درهم إماراتي)","Price visibility":"عرض السعر","In Stock":"متوفر","Out of Stock":"غير متوفر","On Request":"عند الطلب","Show":"إظهار","Add Product":"إضافة منتج","Save Changes":"حفظ التعديلات","Active":"نشط","Draft":"مسودة","Archived":"مؤرشف","Price":"السعر","Status":"الحالة","MOQ":"الحد الأدنى للطلب","Image HTTPS URL":"رابط الصورة HTTPS","Add Stock Product":"إضافة منتج للمخزون","Existing Stock":"المخزون الحالي","No stock products.":"لا توجد منتجات بالمخزون","No recommendations yet.":"لا توجد ترشيحات بعد","No products found.":"لم يتم العثور على منتجات","Explore Our Services":"استكشف خدماتنا","China Recommendations":"ترشيحات من الصين","Request a Product":"اطلب منتجًا","Egypt Available Stock":"المخزون المتاح في مصر","Dubai Available Stock":"المخزون المتاح في دبي","Explore Products →":"استكشف المنتجات ←","Submit Request →":"أرسل الطلب ←","Browse Stock →":"تصفح المخزون ←","Explore VIO":"استكشف VIO","YOUR GLOBAL SOURCING PARTNER":"شريكك في التوريد العالمي","Global Sourcing & Wholesale":"التوريد العالمي وتجارة الجملة","Request a Quotation":"اطلب عرض سعر","Request Quotation":"اطلب عرض سعر","Submit Quotation Request":"إرسال طلب عرض السعر","Product photos (up to 5)":"صور المنتج (حتى 5)","Required quantity *":"الكمية المطلوبة *","Destination *":"الوجهة *","Shipping mode *":"طريقة الشحن *","Your name *":"الاسم *","Preferred contact method *":"طريقة التواصل المفضلة *","WhatsApp number *":"رقم واتساب *","Phone number *":"رقم الهاتف *","Email address *":"البريد الإلكتروني *","Remember my contact details on this device":"تذكر بيانات التواصل على هذا الجهاز","Additional details (optional)":"تفاصيل إضافية (اختياري)","Company name":"اسم الشركة","Additional product requirements":"متطلبات إضافية للمنتج","Request Submitted Successfully!":"تم إرسال الطلب بنجاح!","YOUR REQUEST REFERENCE":"رقم مرجع طلبك","+ Add New Request":"+ طلب جديد","Close":"إغلاق","Next →":"التالي ←","← Previous":"→ السابق","View Photos & Details":"عرض الصور والتفاصيل","Product gallery":"معرض صور المنتج","No photos available":"لا توجد صور","Loading products...":"جارٍ تحميل المنتجات...","Search products":"البحث عن المنتجات","Search by product, category or description...":"ابحث باسم المنتج أو الفئة أو الوصف...","Back to Home":"العودة للرئيسية","← Back to Home":"العودة للرئيسية →","Explore products sourced by VIO from China.":"استكشف المنتجات التي توفرها VIO من الصين.","Discover selected products from China.":"اكتشف منتجات مختارة من الصين.","Tell us what you need us to source.":"أخبرنا بالمنتج الذي تريد توريده.","Explore ready-to-supply inventory.":"استكشف المنتجات الجاهزة للتوريد.","Browse wholesale products in Dubai.":"تصفح منتجات الجملة في دبي.","Add more photos":"إضافة صور أخرى","Upload Photos":"رفع الصور","Remove photo":"حذف الصورة","Remove":"حذف","Save":"حفظ","Edit":"تعديل","Cancel":"إلغاء","Select country":"اختر الدولة","Select mode":"اختر طريقة الشحن","Select contact method":"اختر طريقة التواصل","Phone Call":"مكالمة هاتفية","Email":"البريد الإلكتروني","Egypt":"مصر","UAE":"الإمارات","Dubai":"دبي","China":"الصين","English":"English","العربية":"العربية","Light":"فاتح","Dark":"داكن","In Sourcing":"قيد التوريد","New Request":"طلب جديد","Quoted":"تم تقديم عرض","Closed":"مغلق","Pending Approval":"بانتظار الاعتماد","Approved":"معتمد","Rejected":"مرفوض","Sent":"تم الإرسال","RFQ ID":"رقم طلب السعر","Customer":"العميل","Supplier":"المورد","Notes":"ملاحظات","Contact":"التواصل","Created":"تاريخ الإنشاء","Updated":"تاريخ التحديث","Currency":"العملة","Available quantity":"الكمية المتاحة","Stock product":"منتج المخزون","Upload product photos":"رفع صور المنتج","Product photos":"صور المنتج","Existing Egypt Stock":"مخزون مصر الحالي","Existing Dubai Stock":"مخزون دبي الحالي","No active shipping rate in Shipping_Rates":"لا يوجد سعر شحن نشط","Enter the cost and shipping details to calculate.":"أدخل التكلفة وتفاصيل الشحن للحساب."};
+
+ const originalText=new WeakMap(), originalAttrs=new WeakMap();
+
+ let lang='en', processing=false, queued=false;
+
+ function translate(root){if(processing)return;processing=true;try{
+
+  const scope=root||document.body;if(!scope)return;
+
+  const walk=document.createTreeWalker(scope,NodeFilter.SHOW_TEXT);let n;
+
+  while(n=walk.nextNode()){const p=n.parentElement;if(!p||['SCRIPT','STYLE','NOSCRIPT','TEXTAREA'].includes(p.tagName)||p.closest('[data-vio-no-translate]'))continue;
+
+   const value=n.nodeValue,trim=value.trim();if(!trim)continue;
+
+   let english=originalText.get(n);if(!english){if(lang==='ar'&&Object.values(dictionary).includes(trim))continue;english=trim;originalText.set(n,english)}
+
+   const ar=dictionary[english];if(ar){const replacement=lang==='ar'?ar:english;if(trim!==replacement)n.nodeValue=value.replace(trim,replacement)}
+
+  }
+
+  const elements=scope.querySelectorAll('[placeholder],[title],[aria-label],[data-vio-en]');
+
+  elements.forEach(el=>{if(el.closest('[data-vio-no-translate]'))return;
+
+   for(const attr of ['placeholder','title','aria-label']){if(!el.hasAttribute(attr))continue;let originals=originalAttrs.get(el);if(!originals){originals={};originalAttrs.set(el,originals)}if(!(attr in originals))originals[attr]=el.getAttribute(attr);const english=originals[attr],ar=dictionary[english];if(ar)el.setAttribute(attr,lang==='ar'?ar:english)}
+
+   if(el.hasAttribute('data-vio-en')&&el.hasAttribute('data-vio-ar')&&el.children.length===0){el.textContent=el.getAttribute(lang==='ar'?'data-vio-ar':'data-vio-en')}
+
+  });
+
+ }finally{processing=false}}
+
+ function apply(next){lang=next==='ar'?'ar':'en';document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';try{localStorage.setItem('vioLang',lang)}catch(e){}translate(document.body)}
+
+ const previous=window.vioLanguage;window.vioLanguage=function(next){if(typeof previous==='function'){try{previous(next)}catch(e){console.warn('Previous localization:',e)}}apply(next)};
+
+ function start(){try{lang=localStorage.getItem('vioLang')==='ar'?'ar':'en'}catch(e){}apply(lang);const observer=new MutationObserver(()=>{if(processing||queued)return;queued=true;requestAnimationFrame(()=>{queued=false;translate(document.body)})});observer.observe(document.body,{childList:true,subtree:true});}
+
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
+
+})();
+
+</script>
+
+
+
+<footer class="vio-footer"><span>VIO · YOUR BEST CHOICE</span><div class="vio-switch"><button type="button" onclick="vioLanguage('en')">English</button><button type="button" onclick="vioLanguage('ar')">العربية</button><button type="button" onclick="vioTheme('light')">☀ Light</button><button type="button" onclick="vioTheme('dark')">☾ Dark</button></div></footer><style>
+#vioCPLauncher{position:fixed;right:18px;bottom:18px;z-index:900;background:#c6a052;color:#fff;border:0;border-radius:30px;padding:15px 20px;box-shadow:0 7px 22px #0003;font-weight:700;cursor:pointer}#vioCPPanel{position:fixed;inset:0;z-index:950;background:#0009;display:none;overflow:auto;padding:3vh 12px}#vioCPPanel.open{display:block}#vioCPBox{max-width:900px;margin:auto;background:var(--vio-card,#fff);color:var(--vio-ink,#292929);padding:25px;border-radius:16px;min-height:350px}#vioCPBox input,#vioCPBox textarea,#vioCPBox select{padding:11px;border:1px solid #ccc;border-radius:8px;width:100%;margin:5px 0 12px;background:var(--vio-card,#fff);color:var(--vio-ink,#292929)}#vioCPBox button{background:#c6a052;color:#fff;padding:10px 16px;border:0;border-radius:8px;cursor:pointer;margin:3px}#vioCPBox .cp-card{border:1px solid #ddd;border-radius:10px;padding:13px;margin:12px 0}#vioCPBox .cp-msg{border-bottom:1px solid #ddd;padding:9px 0}#vioCPBox .cp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:700px){#vioCPBox .cp-grid{grid-template-columns:1fr}}
+</style>
+<button id="vioCPLauncher" onclick="vioCPOpen()">✉ My VIO · Messages</button>
+<div id="vioCPPanel" role="dialog" aria-modal="true" aria-label="VIO Customer Portal"><div id="vioCPBox"><div style="display:flex;justify-content:space-between;align-items:center"><h2 style="color:#c6a052">VIO · Customer Portal</h2><button onclick="vioCPClose()">✕ Close</button></div><div id="vioCPContent"></div></div></div>
+<script>
+(function(){
+let token=sessionStorage.getItem('vio_cp_token')||'',email=sessionStorage.getItem('vio_cp_email')||'',data=null,rfqId='';
+const $=id=>document.getElementById(id),esc=v=>String(v==null?'':v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const run=(fn,arg)=>new Promise((resolve,reject)=>{const r=google.script.run.withSuccessHandler(resolve).withFailureHandler(e=>reject(Error(e.message||String(e))));r[fn](arg)});
+function message(s){const el=$('vioCPStatus');if(el)el.textContent=s;}
+window.vioCPOpen=()=>{$('vioCPPanel').classList.add('open');token?load():login()};window.vioCPClose=()=>{$('vioCPPanel').classList.remove('open')};
+function login(){token='';$('vioCPContent').innerHTML='<p>Sign in using the email address you used when requesting a quotation. We will email you a one-time code.</p><label>Email address</label><input id="vioCPEmail" type="email" value="'+esc(email)+'" placeholder="name@company.com"><button onclick="vioCPGetCode()">Send sign-in code</button><div id="vioCPStatus"></div>';}
+window.vioCPGetCode=async()=>{email=$('vioCPEmail').value.trim();message('Sending code...');try{await run('vioCPRequestCode',email);$('vioCPContent').innerHTML='<p>Check your email for a 6-digit code (valid 10 minutes).</p><input id="vioCPCode" inputmode="numeric" maxlength="6" placeholder="6-digit code"><button onclick="vioCPVerify()">Verify and sign in</button><button onclick="vioCPGetCode()">Resend code</button><div id="vioCPStatus"></div>'}catch(e){message(e.message)}};
+window.vioCPVerify=async()=>{message('Verifying...');try{const r=await run('vioCPVerifyCode',{email,code:$('vioCPCode').value});token=r.token;sessionStorage.setItem('vio_cp_token',token);sessionStorage.setItem('vio_cp_email',email);await load()}catch(e){message(e.message)}};
+async function load(){try{data=await run('vioCPDashboard',token);render()}catch(e){sessionStorage.removeItem('vio_cp_token');token='';login();message(e.message)}}
+function render(){const r=data||{};$('vioCPContent').innerHTML='<p>Signed in as <b>'+esc(r.email)+'</b> <button onclick="vioCPLogout()">Sign out</button></p><div class="cp-grid"><div><h3>My requests</h3>'+(r.rfqs||[]).map(x=>'<div class="cp-card"><b>'+esc(x.product)+'</b><p>'+esc(x.id)+' · '+esc(x.status)+'</p><button onclick="vioCPSelect(\''+esc(x.id)+'\')">Open conversation</button></div>').join('')+'<h3>Orders</h3>'+(r.orders||[]).map(o=>'<div class="cp-card"><b>'+esc(o.id)+'</b><p>'+esc(o.product)+' · '+esc(o.status)+'</p><small>Shipment: '+esc(o.shipmentStatus)+' · ETA: '+esc(o.eta||'Not set')+'</small></div>').join('')+'</div><div><h3>Quotation & messages</h3><div id="vioCPDetail">Select a request to view its quotations and conversation.</div></div></div><div id="vioCPStatus"></div>';if(rfqId)select(rfqId)}
+window.vioCPSelect=id=>{rfqId=id;select(id)};
+function select(id){const quotes=(data.quotes||[]).filter(q=>q.rfqId===id),messages=(data.messages||[]).filter(m=>m.rfqId===id),negs=(data.negotiations||[]).filter(n=>n.rfqId===id);$('vioCPDetail').innerHTML='<h4>'+esc(id)+'</h4>'+(quotes.map(q=>'<div class="cp-card"><b>'+esc(q.product)+' · V'+esc(q.revision)+'</b><p>'+esc(q.currency)+' '+esc(q.total)+' · '+esc(q.quantity)+' PCS</p><p>Status: '+esc(q.decision||'Awaiting your response')+'</p>'+(q.decision==='Accepted'?'':q.decision==='Revision Requested'?'<small>Negotiation requested</small>':'<button onclick="vioCPRespond(\''+esc(q.id)+'\',\'Accepted\')">Accept</button><button onclick="vioCPRespond(\''+esc(q.id)+'\',\'Revision Requested\')">Negotiate</button><button onclick="vioCPRespond(\''+esc(q.id)+'\',\'Rejected\')">Reject</button>')+'</div>').join('')||'<p>No approved quotations yet.</p>')+'<h4>Negotiation history</h4>'+(negs.map(n=>'<div class="cp-msg">'+esc(n.status)+' · '+esc(n.message||'Counteroffer submitted')+'</div>').join('')||'<p>No negotiations yet.</p>')+'<h4>Conversation</h4><div style="max-height:260px;overflow:auto">'+(messages.map(m=>'<div class="cp-msg"><small>'+esc(m.senderType)+' · '+esc(m.createdAt)+'</small><div>'+esc(m.message)+'</div></div>').join('')||'<p>No messages yet.</p>')+'</div><textarea id="vioCPMessage" rows="3" placeholder="Ask VIO about this request..."></textarea><button onclick="vioCPSend()">Send message</button>';}
+window.vioCPSend=async()=>{try{await run('vioCPSendMessage',{token,rfqId,message:$('vioCPMessage').value});await load();message('Message sent')}catch(e){message(e.message)}};
+window.vioCPRespond=async(id,decision)=>{const payload={token,quotationId:id,decision,requestedTotal:'',requestedQuantity:'',terms:'',message:''};if(decision==='Revision Requested'){const offer=prompt('Your requested total price (optional)','');if(offer===null)return;payload.requestedTotal=offer;const note=prompt('What would you like to negotiate? Price, quantity, delivery, payment terms...','');if(note===null)return;payload.message=note;}else if(!confirm('Confirm: '+decision+' quotation '+id+'?'))return;try{await run('vioCPDecision',payload);await load();message('Response recorded')}catch(e){message(e.message)}};
+window.vioCPLogout=async()=>{try{await run('vioCPLogout',token)}catch(e){}sessionStorage.removeItem('vio_cp_token');sessionStorage.removeItem('vio_cp_email');token='';rfqId='';login()};
+})();
+</script>
+
+</body>
+
+
+
+</html>
