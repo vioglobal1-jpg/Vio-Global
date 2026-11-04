@@ -347,7 +347,7 @@ function openCustomRequest(){openQuote(null);}
 let vioMarket='China',vioGalleryProduct=null,vioGalleryImages=[],vioGalleryIndex=0;
 function vioOpenMarket(market){
  vioMarket=market;
- vioHomeVisible(false);
+ vioHomeVisible(false);document.getElementById('chinaPage').style.display='block';
  const vioHead={China:['Global Product Collection','مجموعة المنتجات العالمية','Explore selected products and sourcing opportunities for your market.','استكشف منتجات مختارة وفرص توريد تناسب سوقك.'],Egypt:['Egypt Ready Stock','المخزون الجاهز في مصر','Products available now from our Egypt warehouse.','منتجات متوفرة الآن في مستودعنا في مصر.'],Dubai:['UAE Ready Stock','المخزون الجاهز في الإمارات','Products available now from our UAE warehouse.','منتجات متوفرة الآن في مستودعنا في الإمارات.']}[market];
  const vioH=document.querySelector('#chinaPage .page-head h2'),vioP=document.querySelector('#chinaPage .page-head p'),vioAr=document.documentElement.lang==='ar';
  vioH.setAttribute('data-vio-en',vioHead[0]);vioH.setAttribute('data-vio-ar',vioHead[1]);vioP.setAttribute('data-vio-en',vioHead[2]);vioP.setAttribute('data-vio-ar',vioHead[3]);vioH.textContent=vioAr?vioHead[1]:vioHead[0];vioP.textContent=vioAr?vioHead[3]:vioHead[2];
@@ -419,7 +419,7 @@ setTimeout(vioInitializePreferences,0);
 .vio-feature-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}.vio-feature-card{background:var(--vio-card);border:1px solid var(--vio-line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;text-align:start;padding:0;cursor:pointer;color:var(--vio-ink);font:inherit}.vio-feature-card:focus-visible{outline:2px solid #c6a052;outline-offset:2px}.vio-feature-card img{width:100%;height:190px;object-fit:contain;background:#fff}.vio-feature-photo{height:190px;display:flex;align-items:center;justify-content:center;background:#f7f4ec;color:#a77d32;font-weight:700}.vio-feature-body{padding:13px 14px 15px;display:flex;flex-direction:column;gap:5px}.vio-feature-body small{color:#a77d32;font-weight:700;letter-spacing:.06em;text-transform:uppercase}.vio-feature-body b{font-size:15px;line-height:1.3}.vio-feature-body span{color:var(--vio-muted);font-size:13px}
 .vio-feature-note{color:var(--vio-muted);grid-column:1/-1}.vio-stock-heading{margin-top:38px}.vio-trust-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.vio-trust-grid>div{background:var(--vio-card);border:1px solid var(--vio-line);border-radius:14px;padding:20px}.vio-trust-grid p{color:var(--vio-muted);margin:8px 0 0}
 .vio-contact-card{background:var(--vio-card);border:1px solid var(--vio-line);border-radius:16px;padding:26px;display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap}.vio-contact-card h2{margin:0 0 8px}.vio-contact-card p{margin:4px 0;color:var(--vio-muted);overflow-wrap:anywhere}.vio-contact-card a:not(.btn){color:#a77d32}.vio-contact-card .btn{text-decoration:none}
-.vio-legal{display:flex;gap:14px;flex-wrap:wrap}.vio-legal a{color:inherit;font-size:13px}
+#vioContact{padding-bottom:20px}.vio-footer{padding-bottom:84px}.vio-legal{display:flex;gap:14px;flex-wrap:wrap}.vio-legal a{color:inherit;font-size:13px}
 @media(max-width:900px){header{flex-wrap:wrap;gap:10px}.vio-nav{order:3;width:100%;overflow-x:auto;flex-wrap:nowrap}.vio-nav button{white-space:nowrap}.vio-trust-grid{grid-template-columns:1fr}}
 </style>
 <script>
