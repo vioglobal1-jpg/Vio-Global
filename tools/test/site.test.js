@@ -42,6 +42,7 @@ for(const [name,vp] of [['phone',{width:390,height:844}],['desktop',{width:1280,
  for(const [q,w] of [['عايز اعرف الدفع ازاي','30'],['do you deliver to kuwait?','Kuwait|الكويت'],['xyzzy','WhatsApp|واتساب'],['الحد الأدنى كام','الحد الأدنى|minimum']]){await p.fill('#chatInput',q);await p.press('#chatInput','Enter');const tx=await p.locator('#chatLog .bubble').last().innerText();ok(new RegExp(w).test(tx),name+' chat: '+q)}
  await p.screenshot({path:`/tmp/vio-${name}-chat.png`});
  await p.click('#chatX');
+ await p.goto(url+'#/');await p.waitForSelector('.hero-map');await p.locator('.stop[data-c="Kuwait"]:visible').click();ok(/الكويت|Kuwait/.test(await p.innerText('#routeCap')),name+' route picks Kuwait');await p.click('#routeGo');await p.waitForSelector('#country');ok(await p.inputValue('#country')==='Kuwait',name+' route presets country');
  ok(errs.length===0,name+' no page errors '+errs.join('|'));await c.close();
 }
 await b.close();srv.close()})().catch(e=>{console.log('ERROR',e.message);process.exit(1)});
