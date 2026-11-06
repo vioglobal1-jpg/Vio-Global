@@ -9,6 +9,10 @@
 <meta property="og:description" content="Send a product photo and get a clear price. China to Egypt and the GCC.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://viosourcing.com/">
+<meta property="og:image" content="https://viosourcing.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" sizes="48x48" href="/assets/icon-48.png">
 <link rel="apple-touch-icon" href="/assets/icon-192.png">
 <meta name="theme-color" content="#0b0c0f">
@@ -26,6 +30,7 @@
       <a href="#/stock/Egypt" data-t="navStock"></a>
       <a href="#/request" data-t="navRequest"></a>
       <a href="#/account" data-t="navOrders"></a>
+      <a href="#/calculator" data-t="navCalc"></a>
     </nav>
     <div class="top-actions">
       <button type="button" class="lang" id="langBtn"></button>
@@ -37,7 +42,7 @@
 <footer class="foot">
   <div class="wrap foot-row">
     <div><p data-t="footShip"></p><p>VIO Trading · <span data-t="footCity"></span></p></div>
-    <div class="foot-links"><a href="/privacy.html" data-t="privacy"></a><a href="/terms.html" data-t="terms"></a></div>
+    <div class="foot-links"><a href="#/calculator" data-t="navCalc"></a><a id="linkPrivacy" href="/privacy-ar.html" data-t="privacy"></a><a id="linkTerms" href="/terms-ar.html" data-t="terms"></a></div>
   </div>
 </footer>
 <nav class="bottom-nav" aria-label="Mobile">
@@ -46,6 +51,7 @@
   <a href="#/request" data-t="navRequestShort"></a>
   <a href="#/account" data-t="navOrders"></a>
 </nav>
+<div id="chat"></div>
 <dialog id="productDialog" aria-labelledby="pdTitle"></dialog>
 <script src="/app.js"></script>
 </body>

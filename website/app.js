@@ -22,8 +22,15 @@ signTitle:'طلباتي',signLead:'ادخل بالبريد الإلكتروني 
 tabRequests:'الطلبات',tabQuotes:'عروض الأسعار',tabOrders:'الشحنات',noRequests:'لا توجد طلبات بعد.',noQuotes:'لا توجد عروض أسعار بعد.',noOrders:'لا توجد شحنات بعد.',
 total:'الإجمالي',unit:'سعر القطعة',validity:'صلاحية العرض',lead:'مدة التوريد المتوقعة',accept:'قبول العرض',reject:'رفض',counter:'طلب تعديل',confirmAccept:'هل تريد قبول هذا العرض؟',confirmReject:'هل تريد رفض هذا العرض؟',yes:'نعم، تأكيد',no:'لا',counterText:'اكتب طلبك',counterTotal:'السعر الإجمالي المطلوب (اختياري)',sendCounter:'إرسال الطلب',decisionSaved:'تم حفظ ردك.',track:'تتبع الطلب',
 aboutTitle:'شريكك في التوريد',aboutText:'شركة توريد وتجارة جملة مقرها القاهرة، تعمل مع البائعين والمتاجر في مصر ودول الخليج.',aboutAddr:'٢٩ شارع النصر، المعادي الجديدة، القاهرة، مصر',contactUs:'تواصل معنا',orderTitle:'تتبع الطلب',eta:'الوصول المتوقع',tracking:'رقم التتبع',payment:'الدفع',statusNow:'الحالة الآن',messages:'الرسائل',writeMsg:'اكتب رسالتك',sendMsg:'إرسال',back:'رجوع',cancelled:'تم إلغاء هذا الطلب.',
+navCalc:'حاسبة الربح',
+payTitle:'طريقة الدفع',payChina:'التوريد من الصين',payChinaText:'30% مقدم لبدء الطلب، و70% بعد الفحص وقبل الشحن.',payStock:'المخزون الجاهز',payStockText:'الدفع كاملًا قبل الشحن.',payWays:'وسائل الدفع',payWaysText:'مصر: تحويل بنكي، إنستاباي أو فودافون كاش. الخليج: تحويل بنكي.',payNote:'شروط كل طلب مكتوبة في عرض السعر.',
+calcBandTitle:'اعرف ربحك قبل ما تطلب',calcBandText:'احسب ربح القطعة وسعر التعادل في أقل من دقيقة.',calcOpen:'افتح حاسبة الربح',
+calcTitle:'حاسبة الربح',calcLead:'أدخل أرقامك بعملة واحدة لتعرف ربحك المتوقع.',calcCost:'تكلفة القطعة',calcSell:'سعر البيع للقطعة',calcShip:'تكلفة توصيل الطلب لعميلك',calcAds:'تكلفة الإعلان لكل طلب',calcReturns:'نسبة المرتجعات %',calcQty:'الكمية',calcProfit:'الربح لكل قطعة',calcMargin:'هامش الربح',calcTotal:'إجمالي الربح المتوقع',calcBreak:'سعر التعادل',calcHint:'هذه الأرقام تقديرية. نحسب تكلفة التوصيل والإعلان على كل طلب، حتى لو رجع.',calcCta:'اطلب سعر القطعة من VIO',
+waFollow:'أرسل الطلب على واتساب',waFollowText:'أسرع طريقة للمتابعة معنا.',waReq:(id,n,q)=>`مرحبًا VIO، أرسلت طلب سعر رقم ${id}${n?` للمنتج: ${n}`:''}${q?`، الكمية: ${q}`:''}.`,waQuote:(n)=>`مرحبًا VIO، لدي سؤال عن عرض السعر: ${n}`,waProduct:(n)=>`مرحبًا VIO، أريد الاستفسار عن: ${n}`,askQuote:'اسأل على واتساب',askProduct:'اسأل على واتساب',share:'شارك على واتساب',copyLink:'انسخ الرابط',copied:'تم نسخ الرابط',notFound:'هذا المنتج غير متاح الآن.',allProducts:'كل المنتجات',
+stInspection:'فحص الجودة',stCustoms:'التخليص الجمركي',
+chatOpen:'اسأل VIO',chatTitle:'مساعد VIO',chatSub:'مساعد آلي للأسئلة الشائعة',chatHello:'أهلًا بك في VIO. اختر سؤالًا أو اكتب سؤالك.',chatPlaceholder:'اكتب سؤالك',chatSend:'إرسال',chatNo:'لم أفهم سؤالك بالكامل. فريقنا يجيبك على واتساب.',
 stConfirmed:'تأكيد الطلب',stProduction:'الإنتاج',stReady:'جاهز للشحن',stTransit:'في الطريق',stDelivered:'التسليم',doneLbl:'تم',nowLbl:'الآن',nextLbl:'لاحقًا',
-status:{'New Request':'طلب جديد','In Sourcing':'جارٍ التوريد','Quoted':'تم إرسال السعر','Closed':'مغلق','Sent':'بانتظار ردك','Accepted':'مقبول','Rejected':'مرفوض','Revision Requested':'طلب تعديل','Confirmed':'مؤكد','In Production':'في الإنتاج','Ready to Ship':'جاهز للشحن','In Transit':'في الطريق','Delivered':'تم التسليم','Cancelled':'ملغي','Unpaid':'غير مدفوع','Partially Paid':'مدفوع جزئيًا','Paid':'مدفوع'}},
+status:{'New Request':'طلب جديد','In Sourcing':'جارٍ التوريد','Quoted':'تم إرسال السعر','Closed':'مغلق','Sent':'بانتظار ردك','Accepted':'مقبول','Rejected':'مرفوض','Revision Requested':'طلب تعديل','Confirmed':'مؤكد','In Production':'في الإنتاج','Quality Inspection':'فحص الجودة','Customs Clearance':'التخليص الجمركي','Ready to Ship':'جاهز للشحن','In Transit':'في الطريق','Delivered':'تم التسليم','Cancelled':'ملغي','Unpaid':'غير مدفوع','Partially Paid':'مدفوع جزئيًا','Paid':'مدفوع'}},
 en:{skip:'Skip to content',navHome:'Home',navProducts:'Products',navStock:'Ready stock',navRequest:'Get a price',navRequestShort:'Get a price',navOrders:'My orders',whatsapp:'WhatsApp',footShip:'We deliver to Egypt, UAE, Saudi Arabia, Kuwait, Qatar, Bahrain and Oman.',footCity:'Cairo',privacy:'Privacy',terms:'Terms',
 kicker:'For social sellers and online stores',heroTitle:'Send a product photo and get its price delivered to your door',heroLead:'Sourcing from China to Egypt and the GCC, with ready stock in Egypt and the UAE.',ctaQuote:'Get a price now',ctaStock:'See ready stock',
 quickTitle:'Quick quote',quickHint:'Add a photo or a product name in the next step.',
@@ -40,6 +47,13 @@ signTitle:'My orders',signLead:'Enter the email you used on your request and we 
 tabRequests:'Requests',tabQuotes:'Quotes',tabOrders:'Orders',noRequests:'No requests yet.',noQuotes:'No quotes yet.',noOrders:'No orders yet.',
 total:'Total',unit:'Unit price',validity:'Valid for',lead:'Estimated lead time',accept:'Accept quote',reject:'Reject',counter:'Ask for a change',confirmAccept:'Accept this quote?',confirmReject:'Reject this quote?',yes:'Yes, confirm',no:'No',counterText:'What would you like to change?',counterTotal:'Requested total (optional)',sendCounter:'Send',decisionSaved:'Your response was saved.',track:'Track order',
 aboutTitle:'Your sourcing partner',aboutText:'A sourcing and wholesale company based in Cairo, working with sellers and stores across Egypt and the GCC.',aboutAddr:'29 Al Nasr Street, New Maadi, Cairo, Egypt',contactUs:'Contact us',orderTitle:'Track order',eta:'Estimated arrival',tracking:'Tracking number',payment:'Payment',statusNow:'Current status',messages:'Messages',writeMsg:'Write a message',sendMsg:'Send',back:'Back',cancelled:'This order was cancelled.',
+navCalc:'Profit calculator',
+payTitle:'How payment works',payChina:'Sourcing from China',payChinaText:'30% deposit to start, and 70% after inspection and before shipping.',payStock:'Ready stock',payStockText:'Full payment before dispatch.',payWays:'Ways to pay',payWaysText:'Egypt: bank transfer, InstaPay or Vodafone Cash. GCC: bank transfer.',payNote:'The terms for each order are written on your quote.',
+calcBandTitle:'Know your profit before you order',calcBandText:'Work out profit per piece and your break-even price in under a minute.',calcOpen:'Open the calculator',
+calcTitle:'Profit calculator',calcLead:'Enter your numbers in one currency to see your expected profit.',calcCost:'Cost per piece',calcSell:'Selling price per piece',calcShip:'Delivery cost per order',calcAds:'Ad cost per order',calcReturns:'Return rate %',calcQty:'Quantity',calcProfit:'Profit per piece',calcMargin:'Profit margin',calcTotal:'Expected total profit',calcBreak:'Break-even price',calcHint:'These are estimates. Delivery and ad costs count on every order, even if it comes back.',calcCta:'Get a unit price from VIO',
+waFollow:'Send your request on WhatsApp',waFollowText:'The fastest way to follow up with us.',waReq:(id,n,q)=>`Hello VIO, I sent price request ${id}${n?` for: ${n}`:''}${q?`, quantity: ${q}`:''}.`,waQuote:(n)=>`Hello VIO, I have a question about my quote: ${n}`,waProduct:(n)=>`Hello VIO, I would like to ask about: ${n}`,askQuote:'Ask on WhatsApp',askProduct:'Ask on WhatsApp',share:'Share on WhatsApp',copyLink:'Copy link',copied:'Link copied',notFound:'This product is not available right now.',allProducts:'All products',
+stInspection:'Quality inspection',stCustoms:'Customs clearance',
+chatOpen:'Ask VIO',chatTitle:'VIO assistant',chatSub:'Automated help for common questions',chatHello:'Welcome to VIO. Pick a question or type your own.',chatPlaceholder:'Type your question',chatSend:'Send',chatNo:'I could not fully understand that. Our team can help on WhatsApp.',
 stConfirmed:'Order confirmed',stProduction:'Production',stReady:'Ready to ship',stTransit:'In transit',stDelivered:'Delivered',doneLbl:'Done',nowLbl:'Now',nextLbl:'Later',
 status:{}}
 };
@@ -54,6 +68,7 @@ const app=$('#app');
 const money=(c,v)=>`${esc(c||'')} ${Number(v||0).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}`;
 const uuid=()=>(crypto.randomUUID?crypto.randomUUID():String(Date.now())+Math.random().toString(16).slice(2)).replace(/[^a-zA-Z0-9-]/g,'');
 const httpsUrl=u=>/^https:\/\//i.test(String(u||''))?String(u):'';
+const waLink=text=>`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(text)}`;
 const countryLabel=c=>({Egypt:t('egypt'),UAE:t('uae'),'Saudi Arabia':t('Saudi'),Kuwait:t('Kuwait'),Qatar:t('Qatar'),Bahrain:t('Bahrain'),Oman:t('Oman')}[c]||c);
 
 async function api(fn,...args){
@@ -91,23 +106,43 @@ function fillGrid(id,items,list,labelFn,subFn){
 }
 document.addEventListener('click',e=>{const b=e.target.closest('.item');if(b)openProduct(lists[b.dataset.list][Number(b.dataset.idx)])});
 
-function openProduct(p){
-  const dlg=$('#productDialog');
+function productHTML(p,page){
   const media=(Array.isArray(p.Media)?p.Media:[]).filter(m=>m.type==='image').map(m=>httpsUrl(m.url));
   const imgs=[...new Set([httpsUrl(p.Image_URL),...media].filter(Boolean))];
   const stockItem=p.Product_Source==='Egypt'||p.Product_Source==='Dubai';
-  dlg.innerHTML=`<div class="pd"><div class="pd-top"><h2 id="pdTitle">${esc(p.Product_Name)}</h2><button type="button" class="close" id="pdClose" aria-label="${esc(t('close'))}">×</button></div>
+  const shareUrl=p.Product_ID?`${location.origin}/p/${encodeURIComponent(p.Product_ID)}`:'';
+  return `<div class="pd"><div class="pd-top"><h2 id="pdTitle">${esc(p.Product_Name)}</h2>${page?'':`<button type="button" class="close" id="pdClose" aria-label="${esc(t('close'))}">×</button>`}</div>
   ${imgs.length?`<img class="pd-main" id="pdMain" src="${esc(imgs[0])}" alt="${esc(p.Product_Name)}">`:'<span class="nophoto">VIO</span>'}
   ${imgs.length>1?`<div class="pd-strip">${imgs.map((u,i)=>`<button type="button" data-u="${esc(u)}" aria-label="${i+1}"><img src="${esc(u)}" alt=""></button>`).join('')}</div>`:''}
   <p><b>${esc(catLabel(p))}</b></p>
   ${p.Description&&p.Description!=='Details available on request'?`<p>${esc(p.Description)}</p>`:''}
   ${p.Specifications?`<p class="note">${esc(p.Specifications)}</p>`:''}
   <p>${esc(t('moq'))}: ${esc(p.MOQ||t('onRequest'))}${stockItem?` · ${esc(priceText(p))}`:''}${p.Lead_Time_Days?` · ${esc(t('leadDays'))}: ${esc(p.Lead_Time_Days)} ${esc(t('days'))}`:''}</p>
-  <a class="btn gold block" id="pdReq" href="#/request">${esc(t('requestThis'))}</a></div>`;
-  $('#pdClose').onclick=()=>dlg.close();
-  $('#pdReq').onclick=()=>{selected=p;dlg.close()};
-  dlg.querySelectorAll('.pd-strip button').forEach(b=>b.onclick=()=>{$('#pdMain').src=b.dataset.u});
+  <a class="btn gold block" id="pdReq" href="#/request">${esc(t('requestThis'))}</a>
+  <a class="btn line block" target="_blank" rel="noopener" href="${esc(waLink(t('waProduct',p.Product_Name)))}">${esc(t('askProduct'))}</a>
+  ${shareUrl?`<div class="share"><a class="btn line small" id="pdShare" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(`${p.Product_Name} ${shareUrl}`)}">${esc(t('share'))}</a><button type="button" class="btn line small" id="pdCopy" data-u="${esc(shareUrl)}">${esc(t('copyLink'))}</button></div>`:''}</div>`;
+}
+function bindProduct(root,p,done){
+  $('#pdReq',root).onclick=()=>{selected=p;done&&done()};
+  root.querySelectorAll('.pd-strip button').forEach(b=>b.onclick=()=>{$('#pdMain',root).src=b.dataset.u});
+  const c=$('#pdCopy',root);
+  if(c)c.onclick=async()=>{try{await navigator.clipboard.writeText(c.dataset.u);c.textContent=t('copied')}catch(e){c.textContent=c.dataset.u}};
+}
+function openProduct(p){
+  const dlg=$('#productDialog');
+  dlg.innerHTML=productHTML(p,false);
+  $('#pdClose',dlg).onclick=()=>dlg.close();
+  bindProduct(dlg,p,()=>dlg.close());
   dlg.showModal();
+}
+async function productPage(id){
+  app.innerHTML=`<div class="wrap page"><p class="note">${esc(t('loading'))}</p></div>`;
+  const parts=await Promise.all([china().then(l=>l.map(x=>({...x,Product_Source:'China'}))).catch(()=>[]),...['Egypt','Dubai'].map(m=>stock(m).then(l=>l.map(x=>({...x,Product_Source:m}))).catch(()=>[]))]);
+  const p=parts.flat().find(x=>String(x.Product_ID)===String(id));
+  if(!location.hash.startsWith('#/product/'))return;
+  if(!p){app.innerHTML=`<div class="wrap page"><div class="narrow stack"><p class="empty">${esc(t('notFound'))}</p><a class="btn" href="#/products">${esc(t('allProducts'))}</a></div></div>`;return}
+  app.innerHTML=`<div class="wrap page"><div class="narrow card product-page">${productHTML(p,true)}</div></div>`;
+  bindProduct(app,p);
 }
 let selected=null,pendingFiles=[];
 
@@ -121,6 +156,8 @@ function home(){
   <section class="block"><div class="sec-head"><h2>${esc(t('trendTitle'))}</h2><a href="#/products">${esc(t('seeAll'))}</a></div><div class="grid" id="trend"><p class="note">${esc(t('loading'))}</p></div></section>
   <section class="block"><div class="sec-head"><h2>${esc(t('stockTitle'))}</h2><a href="#/stock/Egypt">${esc(t('seeAll'))}</a></div><div class="grid" id="ready"><p class="note">${esc(t('loading'))}</p></div></section>
   <section class="block"><div class="sec-head"><h2>${esc(t('howTitle'))}</h2></div><ol class="steps">${[1,2,3,4].map(n=>`<li class="card"><small>${esc(t('step'))} ${n}</small><h3>${esc(t('s'+n))}</h3><p>${esc(t('s'+n+'t'))}</p></li>`).join('')}</ol></section>
+  <section class="block" id="payment"><div class="sec-head"><h2>${esc(t('payTitle'))}</h2></div><div class="promises flat"><div class="card"><h3>${esc(t('payChina'))}</h3><p>${esc(t('payChinaText'))}</p></div><div class="card"><h3>${esc(t('payStock'))}</h3><p>${esc(t('payStockText'))}</p></div><div class="card"><h3>${esc(t('payWays'))}</h3><p>${esc(t('payWaysText'))}</p></div></div><p class="note pay-note">${esc(t('payNote'))}</p></section>
+  <section class="block"><div class="band"><div><h2>${esc(t('calcBandTitle'))}</h2><p>${esc(t('calcBandText'))}</p></div><a class="btn" href="#/calculator">${esc(t('calcOpen'))}</a></div></section>
   <section class="block"><div class="about"><div><h2>${esc(t('aboutTitle'))}</h2><p>${esc(t('aboutText'))}</p></div><div class="about-side"><p>${esc(t('aboutAddr'))}</p><a class="btn gold" href="https://wa.me/${CONFIG.whatsapp}" target="_blank" rel="noopener">${esc(t('contactUs'))}</a></div></div></section></div>`;
   $('#homePhotos').onchange=e=>{pendingFiles=[...e.target.files].slice(0,5);location.hash='#/request'};
   china().then(l=>fillGrid('trend',l.slice(0,4),'trend',catLabel,chinaSub)).catch(()=>fillGrid('trend',[],'trend',catLabel,chinaSub));
@@ -197,7 +234,7 @@ function request(){
       const data={productId:p?p.Product_ID:'',productSource:p?p.Product_Source:'Customer Request',productName:$('#pname').value.trim()||($('#plink').value.trim()?'Product from link':''),preferredContact:'WhatsApp',name:$('#name').value.trim(),phone:$('#phone').value.trim(),email:$('#email').value.trim(),company:$('#company').value.trim(),quantity:Number($('#qty').value),country:$('#country').value,sourceOrigin:p?'':$('#origin').value,shippingMode:$('#ship').value,notes,submissionKey:key,website:f.website.value,photos};
       const r=await api('submitPriceInquiry',data);
       store.set('vioBuyer',JSON.stringify({name:data.name,phone:data.phone,email:data.email,company:data.company,country:data.country,city:$('#city').value.trim()}));
-      app.innerHTML=`<div class="wrap page"><div class="narrow card done"><h1 class="page-title">${esc(t('sent'))}</h1><p class="note">${esc(t('sentText'))}</p><p class="ref">${esc(r.rfqId)}</p><a class="btn" href="#/account">${esc(t('viewOrders'))}</a><a href="#/request" id="again">${esc(t('newReq'))}</a></div></div>`;
+      app.innerHTML=`<div class="wrap page"><div class="narrow card done"><h1 class="page-title">${esc(t('sent'))}</h1><p class="note">${esc(t('sentText'))}</p><p class="ref">${esc(r.rfqId)}</p><a class="btn gold" id="waFollow" target="_blank" rel="noopener" href="${esc(waLink(t('waReq',r.rfqId,data.productName,data.quantity)))}">${esc(t('waFollow'))}</a><p class="note">${esc(t('waFollowText'))}</p><a class="btn" href="#/account">${esc(t('viewOrders'))}</a><a href="#/request" id="again">${esc(t('newReq'))}</a></div></div>`;
       app.focus();
     }catch(x){btn.disabled=false;btn.textContent=t('send');err(x.message)}
   };
@@ -225,7 +262,7 @@ async function account(){
 function drawDash(msg){
   const tabs=[['quotes',t('tabQuotes')],['orders',t('tabOrders')],['requests',t('tabRequests')]];
   let body='';
-  if(dashTab==='quotes')body=dash.quotes.length?dash.quotes.map(q=>`<div class="row"><div class="row-top"><b>${esc(q.product)}</b><span class="pill">${esc(st(q.decision||q.status))}</span></div><p>${esc(t('total'))}: <b dir="ltr">${money(q.currency,q.total)}</b> · ${esc(t('qty'))}: ${esc(q.quantity)}</p><p class="note">${esc(t('lead'))}: ${esc(q.leadDays)} ${esc(t('days'))} · ${esc(t('validity'))}: ${esc(q.validityDays)} ${esc(t('days'))}</p>${q.decision?'':`<div class="actions"><button class="btn gold small" data-act="accept" data-id="${esc(q.id)}">${esc(t('accept'))}</button><button class="btn line small" data-act="counter" data-id="${esc(q.id)}">${esc(t('counter'))}</button><button class="btn line small" data-act="reject" data-id="${esc(q.id)}">${esc(t('reject'))}</button></div>`}<div id="box-${esc(q.id)}"></div></div>`).join(''):`<p class="empty">${esc(t('noQuotes'))}</p>`;
+  if(dashTab==='quotes')body=dash.quotes.length?dash.quotes.map(q=>`<div class="row"><div class="row-top"><b>${esc(q.product)}</b><span class="pill">${esc(st(q.decision||q.status))}</span></div><p>${esc(t('total'))}: <b dir="ltr">${money(q.currency,q.total)}</b> · ${esc(t('qty'))}: ${esc(q.quantity)}</p><p class="note">${esc(t('lead'))}: ${esc(q.leadDays)} ${esc(t('days'))} · ${esc(t('validity'))}: ${esc(q.validityDays)} ${esc(t('days'))}</p>${q.decision?'':`<div class="actions"><button class="btn gold small" data-act="accept" data-id="${esc(q.id)}">${esc(t('accept'))}</button><button class="btn line small" data-act="counter" data-id="${esc(q.id)}">${esc(t('counter'))}</button><button class="btn line small" data-act="reject" data-id="${esc(q.id)}">${esc(t('reject'))}</button></div>`}<a class="ask" target="_blank" rel="noopener" href="${esc(waLink(t('waQuote',`${q.product} (${q.id})`)))}">${esc(t('askQuote'))}</a><div id="box-${esc(q.id)}"></div></div>`).join(''):`<p class="empty">${esc(t('noQuotes'))}</p>`;
   if(dashTab==='orders')body=dash.orders.length?dash.orders.map(o=>`<div class="row"><div class="row-top"><b>${esc(o.product)}</b><span class="pill">${esc(st(o.status))}</span></div><p class="note" dir="ltr" style="text-align:start">${esc(o.id)}</p><a class="btn small" href="#/order/${encodeURIComponent(o.id)}">${esc(t('track'))}</a></div>`).join(''):`<p class="empty">${esc(t('noOrders'))}</p>`;
   if(dashTab==='requests')body=dash.rfqs.length?dash.rfqs.map(r=>`<div class="row"><div class="row-top"><b>${esc(r.product)}</b><span class="pill">${esc(st(r.status))}</span></div><p class="note"><span dir="ltr">${esc(r.id)}</span> · ${esc(t('qty'))}: ${esc(r.quantity)}</p></div>`).join(''):`<p class="empty">${esc(t('noRequests'))}</p>`;
   app.innerHTML=`<div class="wrap page"><div class="narrow stack"><div class="sec-head"><h1 class="page-title">${esc(t('signTitle'))}</h1><button type="button" class="btn line small" id="out">${esc(t('signOut'))}</button></div>${msg?`<p class="msg good" role="status">${esc(msg)}</p>`:''}<div class="tabs">${tabs.map(([k,v])=>`<button type="button" class="tab" aria-pressed="${k===dashTab}" data-tab="${k}">${esc(v)}</button>`).join('')}</div><div class="rows">${body}</div></div></div>`;
@@ -248,7 +285,7 @@ function quoteAction(act,id){
   box.querySelector('#n').onclick=()=>{box.innerHTML=''};
   box.querySelector('#y').onclick=e=>submit(accept?'Accepted':'Rejected',{},e.target);
 }
-const STAGES=[['Confirmed','stConfirmed'],['In Production','stProduction'],['Ready to Ship','stReady'],['In Transit','stTransit'],['Delivered','stDelivered']];
+const STAGES=[['Confirmed','stConfirmed'],['In Production','stProduction'],['Quality Inspection','stInspection'],['Ready to Ship','stReady'],['In Transit','stTransit'],['Customs Clearance','stCustoms'],['Delivered','stDelivered']];
 async function orderPage(id){
   if(!session.token)return signIn();
   if(!dash)try{dash=await api('vioCPDashboard',session.token)}catch(e){session.clear();return signIn()}
@@ -264,11 +301,65 @@ async function orderPage(id){
   $('#mForm').onsubmit=async e=>{e.preventDefault();const b=e.target.querySelector('button');b.disabled=true;
     try{await api('vioCPSendMessage',{token:session.token,rfqId:o.rfqId,message:$('#mText').value.trim()});dash=await api('vioCPDashboard',session.token);orderPage(id)}catch(x){b.disabled=false}};
 }
+function calculator(){
+  const field=(id,label,val='')=>`<label class="f">${esc(t(label))}<input id="${id}" type="number" min="0" step="any" inputmode="decimal" value="${val}"></label>`;
+  app.innerHTML=`<div class="wrap page"><div class="narrow stack"><div><h1 class="page-title">${esc(t('calcTitle'))}</h1><p class="note">${esc(t('calcLead'))}</p></div>
+  <form class="card stack" id="calc" novalidate><div class="two">${field('cCost','calcCost')}${field('cSell','calcSell')}</div><div class="two">${field('cShip','calcShip')}${field('cAds','calcAds')}</div><div class="two">${field('cRet','calcReturns',0)}${field('cQty','calcQty',100)}</div></form>
+  <div class="result" aria-live="polite"><div><span>${esc(t('calcProfit'))}</span><b id="rProfit">-</b></div><div><span>${esc(t('calcMargin'))}</span><b id="rMargin">-</b></div><div><span>${esc(t('calcTotal'))}</span><b id="rTotal">-</b></div><div><span>${esc(t('calcBreak'))}</span><b id="rBreak">-</b></div></div>
+  <p class="note">${esc(t('calcHint'))}</p><a class="btn gold block" href="#/request">${esc(t('calcCta'))}</a></div></div>`;
+  const n=id=>Math.max(0,Number($('#'+id).value)||0);
+  const fmt=v=>v.toLocaleString('en-US',{maximumFractionDigits:2});
+  const draw=()=>{const r=calcProfit({cost:n('cCost'),sell:n('cSell'),ship:n('cShip'),ads:n('cAds'),returns:n('cRet'),qty:n('cQty')});
+    const on=r&&n('cSell')>0;
+    $('#rProfit').textContent=on?fmt(r.profit):'-';$('#rMargin').textContent=on?`${fmt(r.margin)}%`:'-';$('#rTotal').textContent=on?fmt(r.total):'-';$('#rBreak').textContent=on?fmt(r.breakEven):'-';
+    ['rProfit','rTotal'].forEach(i=>$('#'+i).classList.toggle('neg',!!on&&r.profit<0))};
+  $('#calc').oninput=draw;$('#calc').onsubmit=e=>e.preventDefault();draw();
+}
+function calcProfit({cost,sell,ship,ads,returns,qty}){
+  const keep=1-Math.min(returns,95)/100;
+  const profit=keep*(sell-cost)-ship-ads;
+  return {profit,margin:sell>0?profit/(keep*sell)*100:0,total:profit*qty,breakEven:cost+(ship+ads)/keep};
+}
+const FAQ=[
+ {k:['كيف اطلب','طريقه الطلب','اطلب','ابدا','صوره','how order','how do i','order','start','photo'],ar:'أرسل صورة أو رابط المنتج مع الكمية ومكان التوصيل، وسنرسل لك عرض سعر مكتوب.',en:'Send a product photo or link with the quantity and delivery location, and we will send you a written quote.',a:['ctaQuote','#/request']},
+ {k:['سعر','عرض','تكلفه','بكام','quote','price','cost'],ar:'نرسل عرض سعر مكتوب خلال 48 ساعة في أيام العمل، ويوضح تكلفة البضاعة والشحن.',en:'We send a written quote within 48 hours on working days, showing the goods and shipping cost.',a:['ctaQuote','#/request']},
+ {k:['حد ادني','الحد الادني','اقل كميه','اقل عدد','moq','minimum'],ar:'الحد الأدنى يختلف حسب المنتج، ويظهر في صفحة كل منتج. يمكنك أيضًا طلب كمية محددة وسنرد عليك بالمتاح.',en:'The minimum depends on the product and is shown on each product page. You can also ask for a specific quantity and we will tell you what is possible.',a:['allProducts','#/products']},
+ {k:['دفع','ادفع','مقدم','عربون','انستاباي','فودافون','تحويل','payment','pay','deposit','instapay','vodafone','transfer'],ar:'التوريد من الصين: 30% مقدم و70% بعد الفحص وقبل الشحن. المخزون الجاهز: الدفع كاملًا قبل الشحن. في مصر: تحويل بنكي أو إنستاباي أو فودافون كاش. في الخليج: تحويل بنكي.',en:'Sourcing from China: 30% deposit and 70% after inspection, before shipping. Ready stock: full payment before dispatch. Egypt: bank transfer, InstaPay or Vodafone Cash. GCC: bank transfer.'},
+ {k:['مده','كام يوم','متي','يوصل امتي','وقت','how long','when','lead time','arrive','days'],ar:'المدة تختلف حسب المنتج وطريقة الشحن، بحري أو جوي، وتكون مكتوبة في عرض السعر. المخزون الجاهز يشحن أسرع.',en:'It depends on the product and on sea or air shipping, and it is written on your quote. Ready stock ships faster.'},
+ {k:['شحن','توصيل','دول','السعوديه','الكويت','قطر','البحرين','عمان','الامارات','باب','ship','deliver','country','countries','door','saudi','kuwait','qatar','bahrain','oman','uae'],ar:'نوصل من الباب للباب إلى مصر، الإمارات، السعودية، الكويت، قطر، البحرين وعُمان.',en:'We deliver door to door to Egypt, UAE, Saudi Arabia, Kuwait, Qatar, Bahrain and Oman.'},
+ {k:['تتبع','طلبي','شحنتي','فين','track','my order','shipment'],ar:'من صفحة طلباتي يمكنك متابعة كل مرحلة، بالبريد الذي استخدمته في طلبك.',en:'You can follow every stage in My orders, using the email from your request.',a:['navOrders','#/account']},
+ {k:['مخزون','جاهز','متاح','stock','available','ready'],ar:'لدينا مخزون جاهز في مصر والإمارات، ويمكنك تصفحه الآن.',en:'We have ready stock in Egypt and the UAE, and you can browse it now.',a:['navStock','#/stock/Egypt']},
+ {k:['منتجات','الكترونيات','تجميل','منزليه','products','electronics','cosmetics','home'],ar:'نعمل في الإلكترونيات، مستحضرات التجميل، والمنتجات المنزلية.',en:'We work in electronics, cosmetics and home products.',a:['navProducts','#/products']},
+ {k:['ربح','مكسب','حاسبه','profit','margin','calculator'],ar:'استخدم حاسبة الربح لتعرف ربح القطعة وسعر التعادل.',en:'Use the profit calculator to see your profit per piece and break-even price.',a:['navCalc','#/calculator']}
+];
+const CHIPS={ar:[['كيف أطلب؟',0],['طريقة الدفع؟',3],['كم مدة التوريد؟',4],['إلى أين توصلون؟',5],['كيف أتابع طلبي؟',6]],en:[['How do I order?',0],['How do I pay?',3],['How long does it take?',4],['Where do you deliver?',5],['How do I track my order?',6]]};
+const normAr=x=>String(x).toLowerCase().replace(/[\u064B-\u0652]/g,'').replace(/[أإآ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').replace(/\s+/g,' ').trim();
+function faqMatch(q){const n=normAr(q);let best=-1,score=0;FAQ.forEach((f,i)=>{const sc=f.k.reduce((v,w)=>{const nw=normAr(w);return v+((/^[a-z ]+$/.test(nw)?new RegExp(`\\b${nw}\\b`).test(n):n.includes(nw))?nw.length:0)},0);if(sc>score){score=sc;best=i}});return best}
+function initChat(){
+  const root=$('#chat');
+  const addMsg=(html,me)=>{const box=$('#chatLog');box.insertAdjacentHTML('beforeend',`<div class="bubble ${me?'me':''}">${html}</div>`);box.scrollTop=box.scrollHeight};
+  const reply=(i,q)=>{const use=q&&/[\u0600-\u06FF]/.test(q)?'ar':lang;if(i<0){addMsg(`${esc(I18N[use].chatNo)}<a class="chat-link" target="_blank" rel="noopener" href="https://wa.me/${CONFIG.whatsapp}">${esc(t('whatsapp'))}</a>`);return}
+    const f=FAQ[i];addMsg(`${esc(f[use])}${f.a?`<a class="chat-link" href="${f.a[1]}">${esc(t(f.a[0]))}</a>`:''}`)};
+  const draw=()=>{root.innerHTML=`<button type="button" class="chat-btn" id="chatBtn" aria-expanded="false" aria-controls="chatPanel">${esc(t('chatOpen'))}</button>
+  <div class="chat-panel" id="chatPanel" hidden><div class="chat-head"><div><b>${esc(t('chatTitle'))}</b><small>${esc(t('chatSub'))}</small></div><button type="button" class="chat-x" id="chatX" aria-label="${esc(t('close'))}">×</button></div>
+  <div class="chat-log" id="chatLog" aria-live="polite"><div class="bubble">${esc(t('chatHello'))}</div></div>
+  <div class="chips">${CHIPS[lang].map(([l,i])=>`<button type="button" class="chip" data-i="${i}">${esc(l)}</button>`).join('')}</div>
+  <form class="chat-form" id="chatForm"><input id="chatInput" maxlength="200" aria-label="${esc(t('chatPlaceholder'))}" placeholder="${esc(t('chatPlaceholder'))}"><button class="btn small">${esc(t('chatSend'))}</button></form></div>`;
+    const toggle=open=>{$('#chatPanel').hidden=!open;$('#chatBtn').hidden=open;$('#chatBtn').setAttribute('aria-expanded',String(open));if(open)$('#chatInput').focus();else $('#chatBtn').focus()};
+    $('#chatBtn').onclick=()=>toggle(true);$('#chatX').onclick=()=>toggle(false);
+    root.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{addMsg(esc(c.textContent),true);reply(Number(c.dataset.i))});
+    $('#chatForm').onsubmit=e=>{e.preventDefault();const v=$('#chatInput').value.trim();if(!v)return;addMsg(esc(v),true);$('#chatInput').value='';reply(faqMatch(v),v)};
+  };
+  root.addEventListener('click',e=>{const l=e.target.closest('.chat-link');if(l&&l.getAttribute('href').startsWith('#')){$('#chatPanel').hidden=true;$('#chatBtn').hidden=false}});
+  initChat.draw=draw;draw();
+}
 function applyChrome(){
   document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';
   document.querySelectorAll('[data-t]').forEach(el=>{el.textContent=t(el.dataset.t)});
   $('#langBtn').textContent=lang==='ar'?'English':'العربية';
   $('#waTop').href=`https://wa.me/${CONFIG.whatsapp}`;
+  $('#linkPrivacy').href=lang==='ar'?'/privacy-ar.html':'/privacy.html';$('#linkTerms').href=lang==='ar'?'/terms-ar.html':'/terms.html';
+  if(initChat.draw)initChat.draw();
 }
 function route(){
   const parts=decodeURIComponent(location.hash.replace(/^#\/?/,'')).split('/').filter(Boolean);
@@ -280,10 +371,12 @@ function route(){
   else if(r==='request')request();
   else if(r==='account')account();
   else if(r==='order')orderPage(parts[1]);
+  else if(r==='product')productPage(parts[1]);
+  else if(r==='calculator')calculator();
   else home();
   window.scrollTo(0,0);
   return path;
 }
 $('#langBtn').onclick=()=>{lang=lang==='ar'?'en':'ar';store.set('vioLang',lang);applyChrome();route()};
 window.addEventListener('hashchange',route);
-applyChrome();route();
+initChat();applyChrome();route();

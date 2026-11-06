@@ -22,16 +22,26 @@ for(const [name,vp] of [['phone',{width:390,height:844}],['desktop',{width:1280,
   await p.goto(url+'#/request');await p.waitForSelector('#reqForm');await p.reload();await p.waitForSelector('#origin');
   await p.fill('#pname','Widget');await p.fill('#qty','500');await p.fill('#city','Cairo');await p.fill('#name','Test');await p.fill('#phone','+201000000000');await p.fill('#email','a@b.co');
   await p.screenshot({path:'/tmp/vio-request.png',fullPage:true});
-  await p.click('#sendBtn');await p.waitForSelector('.ref');ok(sent&&sent.sourceOrigin==='China'&&sent.preferredContact==='WhatsApp'&&/City: Cairo/.test(sent.notes),'request sent with origin and city');ok(sent.submissionKey.length>=12,'submission key');
-  await p.click('.done .btn');await p.waitForSelector('#mailForm');await p.fill('#mail','a@b.co');await p.click('#mailForm button');await p.waitForSelector('#codeForm');await p.fill('#code','123456');await p.click('#codeForm button');await p.waitForSelector('[data-act=accept]');
+  await p.click('#sendBtn');await p.waitForSelector('.ref');ok((await p.getAttribute('#waFollow','href')).includes('VIO-RFQ-TEST'),'WhatsApp follow-up has reference');ok(sent&&sent.sourceOrigin==='China'&&sent.preferredContact==='WhatsApp'&&/City: Cairo/.test(sent.notes),'request sent with origin and city');ok(sent.submissionKey.length>=12,'submission key');
+  await p.click('.done a[href="#/account"]');await p.waitForSelector('#mailForm');await p.fill('#mail','a@b.co');await p.click('#mailForm button');await p.waitForSelector('#codeForm');await p.fill('#code','123456');await p.click('#codeForm button');await p.waitForSelector('[data-act=accept]');
   ok((await p.innerHTML('.rows')).includes('&lt;b&gt;Test'),'product names escaped');
   await p.click('[data-act=accept]');await p.click('#y');await p.waitForSelector('.msg.good');ok(decision&&decision.decision==='Accepted'&&decision.quotationId==='Q1','quote accept sent');
-  await p.click('[data-tab=orders]');await p.click('.rows .btn');await p.waitForSelector('.timeline');ok((await p.locator('.dot.done').count())===3&&(await p.locator('.dot.now').count())===1,'tracker stage correct');
+  await p.click('[data-tab=orders]');await p.click('.rows .btn');await p.waitForSelector('.timeline');ok((await p.locator('.dot.done').count())===4&&(await p.locator('.dot.now').count())===1&&(await p.locator('.timeline li').count())===7,'tracker stage correct');
   await p.screenshot({path:'/tmp/vio-tracker.png',fullPage:true});
   await p.click('#langBtn');await p.waitForSelector('.timeline');ok(await p.getAttribute('html','dir')==='ltr','English switch');
  }else{
   await p.goto(url+'#/stock/Egypt');await p.waitForSelector('#list .item');ok((await p.innerText('#list')).includes('Test Camera'),'Egypt stock');await p.goto(url+'#/stock/Dubai');await p.waitForSelector('#list .empty');ok(true,'UAE empty message');await p.goto(url+'#/products/cosmetics');await p.waitForSelector('#list .item');ok((await p.locator('#list .item').count())===1,'category filter');
  }
+ await p.goto(url+'#/product/VIO-STK-1');await p.reload();await p.waitForSelector('#pdShare');ok((await p.innerText('.pd')).includes('Test Camera'),name+' product page');ok((await p.getAttribute('#pdShare','href')).includes('%2Fp%2FVIO-STK-1'),name+' share link');
+ await p.goto(url+'#/product/NOPE');await p.reload();await p.waitForSelector('.empty');ok(true,name+' missing product message');
+ await p.goto(url+'#/calculator');await p.reload();await p.waitForSelector('#cCost');await p.fill('#cCost','100');await p.fill('#cSell','200');await p.fill('#cShip','20');await p.fill('#cAds','10');await p.fill('#cRet','10');await p.fill('#cQty','100');
+ ok(await p.innerText('#rProfit')==='60'&&await p.innerText('#rTotal')==='6,000'&&await p.innerText('#rBreak')==='133.33',name+' calculator '+await p.innerText('#rProfit')+' '+await p.innerText('#rTotal')+' '+await p.innerText('#rBreak'));
+ const lc=await p.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth);ok(lc<=0,name+' calculator no sideways scroll');
+ await p.screenshot({path:`/tmp/vio-${name}-calc.png`,fullPage:true});
+ await p.goto(url+'#/');await p.click('#chatBtn');await p.click('.chip[data-i="3"]');ok(/30/.test(await p.innerText('#chatLog')),name+' chat chip answers payment');
+ for(const [q,w] of [['عايز اعرف الدفع ازاي','30'],['do you deliver to kuwait?','Kuwait|الكويت'],['xyzzy','WhatsApp|واتساب'],['الحد الأدنى كام','الحد الأدنى|minimum']]){await p.fill('#chatInput',q);await p.press('#chatInput','Enter');const tx=await p.locator('#chatLog .bubble').last().innerText();ok(new RegExp(w).test(tx),name+' chat: '+q)}
+ await p.screenshot({path:`/tmp/vio-${name}-chat.png`});
+ await p.click('#chatX');
  ok(errs.length===0,name+' no page errors '+errs.join('|'));await c.close();
 }
 await b.close();srv.close()})().catch(e=>{console.log('ERROR',e.message);process.exit(1)});
