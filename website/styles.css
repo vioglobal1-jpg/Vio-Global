@@ -57,10 +57,10 @@ section.block{padding:40px 0 0}
 .page{padding-block:28px 96px}
 form.stack,.stack{display:grid;gap:14px}
 .narrow{max-width:640px;margin:0 auto}
-label.f{display:grid;gap:6px;font-weight:500}
+label.f{display:grid;gap:6px;font-weight:500;align-content:end}
 input,select,textarea{font:inherit;color:var(--ink);padding:12px;border:1px solid #bfc3cb;border-radius:8px;background:#fff;width:100%;min-height:48px}
 input[type=file]{padding:10px}
-.two{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.two{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr));align-items:end}
 .drop{border:1px dashed var(--gold-text);background:#fbf7f3;border-radius:12px;padding:18px;display:grid;gap:8px;font-weight:700;cursor:pointer;text-align:center}
 .drop input{position:absolute;opacity:0;width:1px;height:1px;min-height:0;padding:0}
 .drop small{font-weight:400;color:var(--muted)}
