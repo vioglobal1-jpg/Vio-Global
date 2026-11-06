@@ -76,6 +76,7 @@ dialog{border:0;border-radius:14px;padding:0;width:min(560px,calc(100vw - 24px))
 .bottom-nav{position:fixed;bottom:0;inset-inline:0;background:#fff;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));z-index:20}
 .bottom-nav a{min-height:56px;display:flex;align-items:center;justify-content:center;color:var(--ink);text-decoration:none;font-size:14px;text-align:center;padding:4px}.bottom-nav a[aria-current=page]{font-weight:700;color:var(--gold-text)}
 .result{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.result>div{background:var(--ink);color:#fff;border-radius:12px;padding:14px;display:grid;gap:2px;min-width:0}.result span{color:var(--soft);font-size:14px}.result b{font-size:24px;color:var(--gold-light);direction:ltr;text-align:start;overflow-wrap:anywhere}.result b.neg{color:#ff9d8f}
+.market{color:var(--ink)}.market-search{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}.market-search a{font-weight:700}.market-search a.off{color:var(--muted);text-decoration:none}.market-search small{flex-basis:100%}
 .share{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.product-page{padding:0}.ask{font-size:15px}
 #waFollow{justify-self:center}
 .chat-btn{position:fixed;bottom:72px;inset-inline-end:14px;z-index:30;min-height:46px;padding:8px 18px;border-radius:99px;border:1px solid var(--gold);background:var(--ink);color:#fff;font:inherit;font-weight:700;cursor:pointer;box-shadow:0 6px 18px rgba(11,12,15,.28)}
