@@ -7,21 +7,21 @@ const CONFIG={
 };
 const I18N={
 ar:{skip:'تخطى إلى المحتوى',navHome:'الرئيسية',navProducts:'المنتجات',navStock:'مخزون جاهز',navRequest:'اطلب سعر',navRequestShort:'اطلب سعر',navOrders:'طلباتي',whatsapp:'واتساب',footShip:'نوصل إلى مصر، الإمارات، السعودية، الكويت، قطر، البحرين وعُمان.',footCity:'القاهرة',privacy:'الخصوصية',terms:'الشروط',
-kicker:'لأصحاب صفحات البيع والمتاجر الإلكترونية',heroTitle:'ابعت صورة المنتج، واعرف سعره واصل لباب مخزنك',heroLead:'توريد من الصين إلى مصر ودول الخليج، ومخزون جاهز في مصر والإمارات.',ctaQuote:'اطلب سعر الآن',ctaStock:'شوف المخزون الجاهز',
-quickTitle:'طلب سعر سريع',quickHint:'ارفع صورة أو اكتب اسم المنتج في الخطوة التالية.',
-speed:'سرعة',speedText:h=>`عرض سعر مكتوب خلال ${h} ساعة.`,price:'سعر واضح',priceText:'تعرف تكلفة البضاعة والشحن قبل ما تأكد.',door:'من الباب للباب',doorText:'نتابع الشحن حتى تصل بضاعتك لمخزنك.',
+kicker:'لأصحاب صفحات البيع والمتاجر الإلكترونية',heroTitle:'أرسل صورة المنتج، واحصل على سعره حتى باب مخزنك',heroLead:'توريد من الصين إلى مصر ودول الخليج، ومخزون جاهز في مصر والإمارات.',ctaQuote:'اطلب سعر الآن',ctaStock:'تصفح المخزون الجاهز',
+quickTitle:'طلب سعر سريع',quickHint:'ارفع صورة المنتج وأكمل طلبك في خطوة واحدة.',
+speed:'سرعة',speedText:h=>`عرض سعر مكتوب خلال ${h} ساعة.`,price:'سعر واضح',priceText:'اعرف تكلفة البضاعة والشحن قبل تأكيد الطلب.',door:'من الباب للباب',doorText:'نتابع الشحن حتى تصل بضاعتك لمخزنك.',
 catsTitle:'تسوق حسب القسم',catAll:'الكل',catElectronics:'إلكترونيات',catCosmetics:'مستحضرات تجميل',catHome:'منتجات منزلية',catElectronicsText:'إكسسوارات وأجهزة مطلوبة للبيع أونلاين',catCosmeticsText:'منتجات مختارة للعناية والجمال',catHomeText:'أدوات عملية للبيت والمطبخ',
-trendTitle:'الأكثر طلبًا',stockTitle:'مخزون جاهز للشحن',seeAll:'عرض الكل',egypt:'مصر',uae:'الإمارات',
-howTitle:'كيف تعمل VIO',step:'الخطوة',s1:'ابعت الطلب',s1t:'صورة أو رابط، مع الكمية ومكان التوصيل.',s2:'استلم السعر',s2t:'عرض واضح بالعربية بعملتك.',s3:'أكد الطلب',s3t:'وافق واتفق على طريقة الدفع.',s4:'تابع لحد التسليم',s4t:'شوف كل مرحلة من صفحة طلباتي.',
-loading:'جارٍ التحميل...',noProducts:'منتجات جديدة قريبًا. ابعت لنا المنتج اللي تحتاجه ونوفره لك.',loadError:'تعذر التحميل. حاول مرة أخرى.',retry:'حاول مرة أخرى',search:'ابحث عن منتج',productsTitle:'المنتجات',stockPage:'المخزون الجاهز',
+trendTitle:'منتجات مختارة',stockTitle:'مخزون جاهز للشحن',seeAll:'عرض الكل',egypt:'مصر',uae:'الإمارات',
+howTitle:'كيف تعمل VIO',step:'الخطوة',s1:'أرسل طلبك',s1t:'صورة أو رابط، مع الكمية ومكان التوصيل.',s2:'استلم السعر',s2t:'عرض واضح بالعربية بعملتك.',s3:'أكد الطلب',s3t:'وافق واتفق على طريقة الدفع.',s4:'تابع حتى التسليم',s4t:'شوف كل مرحلة من صفحة طلباتي.',
+loading:'جارٍ التحميل...',noProducts:'منتجات جديدة قريبًا. أرسل لنا المنتج الذي تحتاجه وسنوفره لك.',loadError:'تعذر التحميل. حاول مرة أخرى.',retry:'حاول مرة أخرى',search:'ابحث عن منتج',productsTitle:'المنتجات',stockPage:'المخزون الجاهز',
 moq:'الحد الأدنى',onRequest:'عند الطلب',priceOnRequest:'السعر عند الطلب',leadDays:'مدة التوريد',days:'يوم',requestThis:'اطلب هذا المنتج',close:'إغلاق',outOfStock:'غير متوفر حاليًا',
-reqTitle:'اطلب سعر',reqLead:h=>`عرض سعر مكتوب خلال ${h} ساعة.`,photoLabel:'صور المنتج أو ارفع صورة',photoHint:'حتى 5 صور: JPG أو PNG أو WEBP',productName:'اسم المنتج',link:'رابط المنتج (اختياري)',qty:'الكمية',category:'القسم',source:'مصدر التوريد',bestOption:'الأفضل لي',china:'الصين',dest:'التوصيل إلى',city:'المدينة',shipping:'طريقة الشحن',sea:'بحري',air:'جوي',name:'الاسم',company:'اسم الصفحة أو المتجر (اختياري)',wa:'رقم واتساب',email:'البريد الإلكتروني',emailHint:'نرسل عليه عرض السعر ورمز دخول حسابك.',notes:'ملاحظات (اختياري)',send:'إرسال الطلب',sending:'جارٍ الإرسال...',needProduct:'أضف صورة أو اكتب اسم المنتج.',tooMany:'يمكنك رفع 5 صور كحد أقصى.',badPhoto:'استخدم صورة JPG أو PNG أو WEBP.',
+reqTitle:'اطلب سعر',reqLead:h=>`عرض سعر مكتوب خلال ${h} ساعة.`,photoLabel:'التقط صورة للمنتج أو ارفعها',photoHint:'حتى 5 صور: JPG أو PNG أو WEBP',productName:'اسم المنتج',link:'رابط المنتج (اختياري)',qty:'الكمية',category:'القسم',source:'مصدر التوريد',bestOption:'الأفضل لي',china:'الصين',dest:'التوصيل إلى',city:'المدينة',shipping:'طريقة الشحن',sea:'بحري',air:'جوي',name:'الاسم',company:'اسم الصفحة أو المتجر (اختياري)',wa:'رقم واتساب',email:'البريد الإلكتروني',emailHint:'نرسل عليه عرض السعر ورمز دخول حسابك.',notes:'ملاحظات (اختياري)',send:'إرسال الطلب',sending:'جارٍ الإرسال...',needProduct:'أضف صورة أو اكتب اسم المنتج.',tooMany:'يمكنك رفع 5 صور كحد أقصى.',badPhoto:'استخدم صورة JPG أو PNG أو WEBP.',
 sent:'تم إرسال طلبك',sentText:'سنراجع طلبك ونرسل لك عرض السعر. احتفظ برقم الطلب.',viewOrders:'تابع طلباتك',newReq:'طلب جديد',
 Saudi:'السعودية',Kuwait:'الكويت',Qatar:'قطر',Bahrain:'البحرين',Oman:'عُمان',
 signTitle:'طلباتي',signLead:'ادخل بالبريد الإلكتروني الذي استخدمته في طلبك، وسنرسل لك رمزًا.',sendCode:'إرسال الرمز',code:'الرمز المكون من 6 أرقام',verify:'دخول',changeEmail:'تغيير البريد',signOut:'خروج',codeSent:'تم إرسال الرمز إذا كان البريد صحيحًا.',
 tabRequests:'الطلبات',tabQuotes:'عروض الأسعار',tabOrders:'الشحنات',noRequests:'لا توجد طلبات بعد.',noQuotes:'لا توجد عروض أسعار بعد.',noOrders:'لا توجد شحنات بعد.',
 total:'الإجمالي',unit:'سعر القطعة',validity:'صلاحية العرض',lead:'مدة التوريد المتوقعة',accept:'قبول العرض',reject:'رفض',counter:'طلب تعديل',confirmAccept:'هل تريد قبول هذا العرض؟',confirmReject:'هل تريد رفض هذا العرض؟',yes:'نعم، تأكيد',no:'لا',counterText:'اكتب طلبك',counterTotal:'السعر الإجمالي المطلوب (اختياري)',sendCounter:'إرسال الطلب',decisionSaved:'تم حفظ ردك.',track:'تتبع الطلب',
-orderTitle:'تتبع الطلب',eta:'الوصول المتوقع',tracking:'رقم التتبع',payment:'الدفع',statusNow:'الحالة الآن',messages:'الرسائل',writeMsg:'اكتب رسالتك',sendMsg:'إرسال',back:'رجوع',cancelled:'تم إلغاء هذا الطلب.',
+aboutTitle:'شريكك في التوريد',aboutText:'شركة توريد وتجارة جملة مقرها القاهرة، تعمل مع البائعين والمتاجر في مصر ودول الخليج.',aboutAddr:'٢٩ شارع النصر، المعادي الجديدة، القاهرة، مصر',contactUs:'تواصل معنا',orderTitle:'تتبع الطلب',eta:'الوصول المتوقع',tracking:'رقم التتبع',payment:'الدفع',statusNow:'الحالة الآن',messages:'الرسائل',writeMsg:'اكتب رسالتك',sendMsg:'إرسال',back:'رجوع',cancelled:'تم إلغاء هذا الطلب.',
 stConfirmed:'تأكيد الطلب',stProduction:'الإنتاج',stReady:'جاهز للشحن',stTransit:'في الطريق',stDelivered:'التسليم',doneLbl:'تم',nowLbl:'الآن',nextLbl:'لاحقًا',
 status:{'New Request':'طلب جديد','In Sourcing':'جارٍ التوريد','Quoted':'تم إرسال السعر','Closed':'مغلق','Sent':'بانتظار ردك','Accepted':'مقبول','Rejected':'مرفوض','Revision Requested':'طلب تعديل','Confirmed':'مؤكد','In Production':'في الإنتاج','Ready to Ship':'جاهز للشحن','In Transit':'في الطريق','Delivered':'تم التسليم','Cancelled':'ملغي','Unpaid':'غير مدفوع','Partially Paid':'مدفوع جزئيًا','Paid':'مدفوع'}},
 en:{skip:'Skip to content',navHome:'Home',navProducts:'Products',navStock:'Ready stock',navRequest:'Get a price',navRequestShort:'Get a price',navOrders:'My orders',whatsapp:'WhatsApp',footShip:'We deliver to Egypt, UAE, Saudi Arabia, Kuwait, Qatar, Bahrain and Oman.',footCity:'Cairo',privacy:'Privacy',terms:'Terms',
@@ -29,7 +29,7 @@ kicker:'For social sellers and online stores',heroTitle:'Send a product photo an
 quickTitle:'Quick quote',quickHint:'Add a photo or a product name in the next step.',
 speed:'Fast',speedText:h=>`A written quote within ${h} hours.`,price:'Clear price',priceText:'Know the goods and shipping cost before you confirm.',door:'Door to door',doorText:'We follow your shipment until it reaches your door.',
 catsTitle:'Shop by category',catAll:'All',catElectronics:'Electronics',catCosmetics:'Cosmetics',catHome:'Home',catElectronicsText:'Accessories and devices for online sellers',catCosmeticsText:'Selected beauty and care products',catHomeText:'Practical products for home and kitchen',
-trendTitle:'Most requested',stockTitle:'Ready to ship',seeAll:'See all',egypt:'Egypt',uae:'UAE',
+trendTitle:'Selected products',stockTitle:'Ready to ship',seeAll:'See all',egypt:'Egypt',uae:'UAE',
 howTitle:'How VIO works',step:'Step',s1:'Send your request',s1t:'A photo or link, with quantity and delivery location.',s2:'Get your price',s2t:'A clear quote in your currency.',s3:'Confirm',s3t:'Accept and agree payment.',s4:'Track to delivery',s4t:'Follow every stage in My orders.',
 loading:'Loading...',noProducts:'New products are coming soon. Tell us what you need and we will source it.',loadError:'Could not load. Please try again.',retry:'Try again',search:'Search products',productsTitle:'Products',stockPage:'Ready stock',
 moq:'MOQ',onRequest:'On request',priceOnRequest:'Price on request',leadDays:'Lead time',days:'days',requestThis:'Request this product',close:'Close',outOfStock:'Out of stock',
@@ -39,10 +39,11 @@ Saudi:'Saudi Arabia',Kuwait:'Kuwait',Qatar:'Qatar',Bahrain:'Bahrain',Oman:'Oman'
 signTitle:'My orders',signLead:'Enter the email you used on your request and we will send a code.',sendCode:'Send code',code:'6-digit code',verify:'Sign in',changeEmail:'Change email',signOut:'Sign out',codeSent:'If that email is correct, your code is on its way.',
 tabRequests:'Requests',tabQuotes:'Quotes',tabOrders:'Orders',noRequests:'No requests yet.',noQuotes:'No quotes yet.',noOrders:'No orders yet.',
 total:'Total',unit:'Unit price',validity:'Valid for',lead:'Estimated lead time',accept:'Accept quote',reject:'Reject',counter:'Ask for a change',confirmAccept:'Accept this quote?',confirmReject:'Reject this quote?',yes:'Yes, confirm',no:'No',counterText:'What would you like to change?',counterTotal:'Requested total (optional)',sendCounter:'Send',decisionSaved:'Your response was saved.',track:'Track order',
-orderTitle:'Track order',eta:'Estimated arrival',tracking:'Tracking number',payment:'Payment',statusNow:'Current status',messages:'Messages',writeMsg:'Write a message',sendMsg:'Send',back:'Back',cancelled:'This order was cancelled.',
+aboutTitle:'Your sourcing partner',aboutText:'A sourcing and wholesale company based in Cairo, working with sellers and stores across Egypt and the GCC.',aboutAddr:'29 Al Nasr Street, New Maadi, Cairo, Egypt',contactUs:'Contact us',orderTitle:'Track order',eta:'Estimated arrival',tracking:'Tracking number',payment:'Payment',statusNow:'Current status',messages:'Messages',writeMsg:'Write a message',sendMsg:'Send',back:'Back',cancelled:'This order was cancelled.',
 stConfirmed:'Order confirmed',stProduction:'Production',stReady:'Ready to ship',stTransit:'In transit',stDelivered:'Delivered',doneLbl:'Done',nowLbl:'Now',nextLbl:'Later',
 status:{}}
 };
+const ICONS={Electronics:'<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>',Cosmetics:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v5H9zM8 8h8l1 13H7z"/></svg>',Home:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 11 12 4l8.5 7M6 9.5V20h12V9.5"/></svg>'};
 const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}},sget(k){try{return sessionStorage.getItem(k)}catch(e){return null}},sset(k,v){try{sessionStorage.setItem(k,v)}catch(e){}},sdel(k){try{sessionStorage.removeItem(k)}catch(e){}}};
 let lang=store.get('vioLang')==='en'?'en':'ar';
 const t=(k,...a)=>{const v=I18N[lang][k];return typeof v==='function'?v(...a):(v===undefined?k:v)};
@@ -108,18 +109,20 @@ function openProduct(p){
   dlg.querySelectorAll('.pd-strip button').forEach(b=>b.onclick=()=>{$('#pdMain').src=b.dataset.u});
   dlg.showModal();
 }
-let selected=null;
+let selected=null,pendingFiles=[];
 
 function home(){
-  app.innerHTML=`<section class="hero"><div class="wrap hero-grid"><div><p class="kicker">${esc(t('kicker'))}</p><h1>${esc(t('heroTitle'))}</h1><p class="lead">${esc(t('heroLead'))}</p><div class="hero-actions"><a class="btn gold" href="#/request">${esc(t('ctaQuote'))}</a><a class="btn line-light" href="#/stock/Egypt">${esc(t('ctaStock'))}</a></div></div>
-  <div class="quick"><h2>${esc(t('quickTitle'))}</h2><p class="note">${esc(t('quickHint'))}</p><a class="drop" href="#/request" style="color:inherit;text-decoration:none"><span>${esc(t('photoLabel'))}</span><small>${esc(t('photoHint'))}</small></a><a class="btn block" href="#/request">${esc(t('ctaQuote'))}</a></div></div></section>
+  app.innerHTML=`<section class="hero"><div class="wrap hero-grid"><div><p class="kicker">${esc(t('kicker'))}</p><h1>${esc(t('heroTitle'))}</h1><p class="lead">${esc(t('heroLead'))}</p><a class="btn line-light" href="#/stock/Egypt">${esc(t('ctaStock'))}</a></div>
+  <div class="quick"><h2>${esc(t('quickTitle'))}</h2><p class="note">${esc(t('quickHint'))}</p><label class="drop"><span>${esc(t('photoLabel'))}</span><small>${esc(t('photoHint'))}</small><input type="file" id="homePhotos" accept="image/jpeg,image/png,image/webp" multiple></label><a class="btn gold block" href="#/request">${esc(t('ctaQuote'))}</a></div></div></section>
   <div class="wrap"><div class="promises">
   <div class="card"><h3>${esc(t('speed'))}</h3><p>${esc(t('speedText',CONFIG.quoteHours))}</p></div><div class="card"><h3>${esc(t('price'))}</h3><p>${esc(t('priceText'))}</p></div><div class="card"><h3>${esc(t('door'))}</h3><p>${esc(t('doorText'))}</p></div></div>
   <section class="block"><div class="sec-head"><h2>${esc(t('catsTitle'))}</h2></div><div class="cats">
-  ${['Electronics','Cosmetics','Home'].map(c=>`<a class="cat" href="#/products/${c.toLowerCase()}"><b>${esc(t('cat'+c))}</b><span>${esc(t('cat'+c+'Text'))}</span></a>`).join('')}</div></section>
+  ${['Electronics','Cosmetics','Home'].map(c=>`<a class="cat" href="#/products/${c.toLowerCase()}">${ICONS[c]}<b>${esc(t('cat'+c))}</b><span>${esc(t('cat'+c+'Text'))}</span></a>`).join('')}</div></section>
   <section class="block"><div class="sec-head"><h2>${esc(t('trendTitle'))}</h2><a href="#/products">${esc(t('seeAll'))}</a></div><div class="grid" id="trend"><p class="note">${esc(t('loading'))}</p></div></section>
   <section class="block"><div class="sec-head"><h2>${esc(t('stockTitle'))}</h2><a href="#/stock/Egypt">${esc(t('seeAll'))}</a></div><div class="grid" id="ready"><p class="note">${esc(t('loading'))}</p></div></section>
-  <section class="block"><div class="sec-head"><h2>${esc(t('howTitle'))}</h2></div><ol class="steps">${[1,2,3,4].map(n=>`<li class="card"><small>${esc(t('step'))} ${n}</small><h3>${esc(t('s'+n))}</h3><p>${esc(t('s'+n+'t'))}</p></li>`).join('')}</ol></section></div>`;
+  <section class="block"><div class="sec-head"><h2>${esc(t('howTitle'))}</h2></div><ol class="steps">${[1,2,3,4].map(n=>`<li class="card"><small>${esc(t('step'))} ${n}</small><h3>${esc(t('s'+n))}</h3><p>${esc(t('s'+n+'t'))}</p></li>`).join('')}</ol></section>
+  <section class="block"><div class="about"><div><h2>${esc(t('aboutTitle'))}</h2><p>${esc(t('aboutText'))}</p></div><div class="about-side"><p>${esc(t('aboutAddr'))}</p><a class="btn gold" href="https://wa.me/${CONFIG.whatsapp}" target="_blank" rel="noopener">${esc(t('contactUs'))}</a></div></div></section></div>`;
+  $('#homePhotos').onchange=e=>{pendingFiles=[...e.target.files].slice(0,5);location.hash='#/request'};
   china().then(l=>fillGrid('trend',l.slice(0,4),'trend',catLabel,chinaSub)).catch(()=>fillGrid('trend',[],'trend',catLabel,chinaSub));
   Promise.all(['Egypt','Dubai'].map(m=>stock(m).then(l=>l.map(p=>({...p,Product_Source:m}))).catch(()=>[]))).then(a=>{
     const l=a.flat().filter(p=>p.Availability==='In Stock').slice(0,4);
@@ -178,9 +181,11 @@ function request(){
   <label class="f">${esc(t('notes'))}<textarea id="notes" rows="3" maxlength="1500"></textarea></label>
   <p class="msg" id="err" role="alert" hidden></p>
   <button class="btn gold block" id="sendBtn">${esc(t('send'))}</button></form></div></div>`;
-  let files=[];
+  let files=pendingFiles;pendingFiles=[];
+  const showPrev=()=>$('#prev').replaceChildren(...files.map(f=>{const i=new Image();i.src=URL.createObjectURL(f);i.alt='';return i}));
+  showPrev();
   const err=m=>{const e=$('#err');e.textContent=m;e.hidden=!m;if(m)e.scrollIntoView({block:'center'})};
-  $('#photos').onchange=e=>{const add=[...e.target.files];if(files.length+add.length>5){err(t('tooMany'));return}err('');files=files.concat(add);$('#prev').replaceChildren(...files.map(f=>{const i=new Image();i.src=URL.createObjectURL(f);i.alt='';return i}))};
+  $('#photos').onchange=e=>{const add=[...e.target.files];if(files.length+add.length>5){err(t('tooMany'));return}err('');files=files.concat(add);showPrev()};
   $('#reqForm').onsubmit=async e=>{
     e.preventDefault();err('');const f=e.target;
     if(!$('#pname').value.trim()&&!files.length&&!$('#plink').value.trim())return err(t('needProduct'));
