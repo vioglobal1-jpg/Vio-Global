@@ -27,7 +27,7 @@ import openpyxl,sys
 w=openpyxl.Workbook();s=w.active
 s.append(['Code','Name English','Name Arabic','Location','Category','Category Arabic','Qty','Price','MOQ','Lead Days','Description English','Description Arabic'])
 s.append(['EXAMPLE-1','Solar Camera','','Egypt','Electronics','',1,1,1,None,'',''])
-s.append(['EL-001','Camera','كاميرا','مصر','إلكترونيات','',200,990.5,50,None,'Nice & clear',''])
+s.append(['EL-001','Camera','كاميرا','مصر','إلكترونيات','',200,990.5,50,'15 days','Nice & clear',''])
 s.append(['H-1',None,'مقلاة','China','Toys','',None,None,None,30,'',''])
 s.append(['BAD 1',None,None,'Mars','','',-1,None,None,None,'',''])
 s.append(['EL-001','Twin','','Egypt','Electronics','',1,1,None,None,'',''])
@@ -36,7 +36,7 @@ w.save(sys.argv[1])`,fixture]);
 const html=fs.readFileSync(path.join(__dirname,'../../apps-script/admin/AdminIndex.html'),'utf8');
 const script=html.slice(html.lastIndexOf('<script>')+8,html.lastIndexOf('</script>'));
 (async()=>{const b=await chromium.launch();const p=await b.newPage();await p.setContent('<div></div>');await p.addScriptTag({content:'window.escapeHtml=x=>String(x);window.run=()=>{};'+script});
-const res=await p.evaluate(async b64=>{const L=window.vioBulkLib;const buf=Uint8Array.from(atob(b64),c=>c.charCodeAt(0)).buffer;const rows=await L.readXlsx(buf);const v=L.validate(rows,['EL-001.jpg','el-001-2.PNG','H-1.jpg','other.jpg'],{'H-1':{location:'China',id:'P1'}});const blob=L.writeXlsx([{code:'A-1',nameEn:'Tom & Jerry <x>',nameAr:'عربي',location:'Egypt',category:'Home',categoryAr:'',qty:5,price:9.5,moq:'',leadDays:'',descEn:'',descAr:''}]);const out=btoa(String.fromCharCode(...new Uint8Array(await blob.arrayBuffer())));const round=await L.readXlsx(await blob.arrayBuffer());return{rows,v,out,round}},fs.readFileSync(fixture).toString('base64'));
+const res=await p.evaluate(async b64=>{const L=window.vioBulkLib;const buf=Uint8Array.from(atob(b64),c=>c.charCodeAt(0)).buffer;const rows=await L.readXlsx(buf);const v=L.validate(rows,['EL-001.jpg','\u200Fel\u2011001 (2).PNG','H-1.jpg','other.jpg'],{'H-1':{location:'China',id:'P1'}});const blob=L.writeXlsx([{code:'A-1',nameEn:'Tom & Jerry <x>',nameAr:'عربي',location:'Egypt',category:'Home',categoryAr:'',qty:5,price:9.5,moq:'',leadDays:'',descEn:'',descAr:''}]);const out=btoa(String.fromCharCode(...new Uint8Array(await blob.arrayBuffer())));const round=await L.readXlsx(await blob.arrayBuffer());return{rows,v,out,round}},fs.readFileSync(fixture).toString('base64'));
 ok(res.rows.length===6&&res.rows[1].nameAr==='كاميرا'&&res.rows[1].price==='990.5','reads Excel with Arabic');
 const by=(i)=>res.v.rows[i];ok(res.v.rows.length===5,'example row ignored');ok(by(0).location==='Egypt'&&by(0).category==='إلكترونيات'&&by(0).problems.length===0&&by(0).photoNames.length===2,'Arabic location, category and photos matched');ok(!by(1).isNew&&by(1).problems.length===0&&by(1).location==='China','existing China product recognised');ok(by(2).problems.length>=3,'bad row reports problems');ok(by(3).problems.includes('Code appears twice in the file'),'duplicate code found');ok(by(4).problems.includes('Add a price')&&by(4).location==='Dubai','UAE maps to Dubai and needs a price');ok(res.v.unusedPhotos.join()==='other.jpg','unmatched photo listed');
 ok(res.round[0].nameEn==='Tom & Jerry <x>'&&res.round[0].price==='9.5','written file reads back');
