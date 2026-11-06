@@ -230,7 +230,7 @@ function getChinaProducts() {
 
 
 
-    .map(p=>({Product_ID:String(p.Product_ID),Product_Name:String(p.Product_Name||''),Product_Name_AR:String(p.Product_Name_AR||''),Description_AR:String(p.Description_AR||''),Category:String(p.Category||''),
+    .map(p=>({Product_ID:String(p.Product_ID),Product_Name:String(p.Product_Name||''),Product_Name_AR:String(p.Product_Name_AR||''),Description_AR:String(p.Description_AR||''),Category_AR:String(p.Category_AR||''),Category:String(p.Category||''),
 
 
 
@@ -1732,7 +1732,7 @@ function getVIOPublicStock(market){
       const images=[...new Set([main,...media].filter(Boolean))].slice(0,12);
       const availability=String(r.Availability||'').trim()||((Number(r.Available_Qty)||0)>0?'In Stock':'Out of Stock');
       return {
-        Product_ID:String(r.Stock_ID||''),Product_Name:String(r.Product_Name||''),Product_Name_AR:String(r.Product_Name_AR||''),Description_AR:String(r.Description_AR||''),
+        Product_ID:String(r.Stock_ID||''),Product_Name:String(r.Product_Name||''),Product_Name_AR:String(r.Product_Name_AR||''),Description_AR:String(r.Description_AR||''),Category_AR:String(r.Category_AR||''),
         Category:String(r.Category||''),Description:String(r.Description||''),
         Image_URL:images[0]||'',MOQ:Number(r.MOQ)||1,Availability:availability,
         Price_Visibility:String(r.Price_Visibility||'On Request'),

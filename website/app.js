@@ -22,7 +22,7 @@ signTitle:'طلباتي',signLead:'ادخل بالبريد الإلكتروني 
 tabRequests:'الطلبات',tabQuotes:'عروض الأسعار',tabOrders:'الشحنات',noRequests:'لا توجد طلبات بعد.',noQuotes:'لا توجد عروض أسعار بعد.',noOrders:'لا توجد شحنات بعد.',
 total:'الإجمالي',unit:'سعر القطعة',validity:'صلاحية العرض',lead:'مدة التوريد المتوقعة',accept:'قبول العرض',reject:'رفض',counter:'طلب تعديل',confirmAccept:'هل تريد قبول هذا العرض؟',confirmReject:'هل تريد رفض هذا العرض؟',yes:'نعم، تأكيد',no:'لا',counterText:'اكتب طلبك',counterTotal:'السعر الإجمالي المطلوب (اختياري)',sendCounter:'إرسال الطلب',decisionSaved:'تم حفظ ردك.',track:'تتبع الطلب',
 aboutTitle:'شريكك في التوريد',aboutText:'شركة توريد وتجارة جملة مقرها القاهرة، تعمل مع البائعين والمتاجر في مصر ودول الخليج.',aboutAddr:'٢٩ شارع النصر، المعادي الجديدة، القاهرة، مصر',contactUs:'تواصل معنا',orderTitle:'تتبع الطلب',eta:'الوصول المتوقع',tracking:'رقم التتبع',payment:'الدفع',statusNow:'الحالة الآن',messages:'الرسائل',writeMsg:'اكتب رسالتك',sendMsg:'إرسال',back:'رجوع',cancelled:'تم إلغاء هذا الطلب.',
-navCalc:'حاسبة الربح',doorStock:'اشترِ من المخزون الجاهز',doorStockText:'بضاعة موجودة الآن في مصر والإمارات.',doorChina:'ورّد من الصين',doorChinaText:'أرسل طلبك واحصل على عرض سعر مكتوب.',photoTitle:'معك صورة منتج؟',photoText:'ارفعها وسنرسل لك عرض سعر مكتوب.',payLinkText:'مقدم ورصيد واضحان، ووسائل دفع معروفة.',calcLinkText:'احسب ربح القطعة قبل أن تطلب.',learnMore:'اعرف التفاصيل',routeCaption:c=>`من الصين إلى ${c}`,routeCta:'اطلب سعرًا لهذا المسار',routeHint:'اختر وجهتك على الخريطة',payDeposit:'30% لبدء الطلب',payBalance:'70% بعد الفحص وقبل الشحن',payFull:'100% قبل الشحن',
+navCalc:'حاسبة الربح',itemsWord:'منتج',askTitle:'لم تجد ما تبحث عنه؟',askText:'أخبرنا بالمنتج أو القسم الذي تريده، وسنوفره لك.',askCta:'اطلبه الآن',catOptional:'القسم (اختياري)',doorStock:'اشترِ من المخزون الجاهز',doorStockText:'بضاعة موجودة الآن في مصر والإمارات.',doorChina:'ورّد من الصين',doorChinaText:'أرسل طلبك واحصل على عرض سعر مكتوب.',photoTitle:'معك صورة منتج؟',photoText:'ارفعها وسنرسل لك عرض سعر مكتوب.',payLinkText:'مقدم ورصيد واضحان، ووسائل دفع معروفة.',calcLinkText:'احسب ربح القطعة قبل أن تطلب.',learnMore:'اعرف التفاصيل',routeCaption:c=>`من الصين إلى ${c}`,routeCta:'اطلب سعرًا لهذا المسار',routeHint:'اختر وجهتك على الخريطة',payDeposit:'30% لبدء الطلب',payBalance:'70% بعد الفحص وقبل الشحن',payFull:'100% قبل الشحن',
 payTitle:'طريقة الدفع',payChina:'التوريد من الصين',payChinaText:'30% مقدم لبدء الطلب، و70% بعد الفحص وقبل الشحن.',payStock:'إذا كان المنتج في المخزون الجاهز',payStockText:'الدفع كاملًا قبل الشحن.',payWays:'وسائل الدفع',payWaysText:'مصر: تحويل بنكي، إنستاباي أو فودافون كاش. الخليج: تحويل بنكي.',payNote:'شروط كل طلب مكتوبة في عرض السعر.',
 calcBandTitle:'اعرف ربحك قبل ما تطلب',calcBandText:'احسب ربح القطعة وسعر التعادل في أقل من دقيقة.',calcOpen:'افتح حاسبة الربح',
 calcTitle:'حاسبة الربح',calcLead:'أدخل أرقامك بعملة واحدة لتعرف ربحك المتوقع.',calcCost:'تكلفة القطعة',calcSell:'سعر البيع للقطعة',calcShip:'تكلفة توصيل الطلب لعميلك',calcAds:'تكلفة الإعلان لكل طلب',calcReturns:'نسبة المرتجعات %',calcQty:'الكمية',calcProfit:'الربح لكل قطعة',calcMargin:'هامش الربح',calcTotal:'إجمالي الربح المتوقع',calcBreak:'سعر التعادل',calcHint:'هذه الأرقام تقديرية. نحسب تكلفة التوصيل والإعلان على كل طلب، حتى لو رجع.',calcCta:'اطلب سعر القطعة من VIO',
@@ -47,7 +47,7 @@ signTitle:'My orders',signLead:'Enter the email you used on your request and we 
 tabRequests:'Requests',tabQuotes:'Quotes',tabOrders:'Orders',noRequests:'No requests yet.',noQuotes:'No quotes yet.',noOrders:'No orders yet.',
 total:'Total',unit:'Unit price',validity:'Valid for',lead:'Estimated lead time',accept:'Accept quote',reject:'Reject',counter:'Ask for a change',confirmAccept:'Accept this quote?',confirmReject:'Reject this quote?',yes:'Yes, confirm',no:'No',counterText:'What would you like to change?',counterTotal:'Requested total (optional)',sendCounter:'Send',decisionSaved:'Your response was saved.',track:'Track order',
 aboutTitle:'Your sourcing partner',aboutText:'A sourcing and wholesale company based in Cairo, working with sellers and stores across Egypt and the GCC.',aboutAddr:'29 Al Nasr Street, New Maadi, Cairo, Egypt',contactUs:'Contact us',orderTitle:'Track order',eta:'Estimated arrival',tracking:'Tracking number',payment:'Payment',statusNow:'Current status',messages:'Messages',writeMsg:'Write a message',sendMsg:'Send',back:'Back',cancelled:'This order was cancelled.',
-navCalc:'Profit calculator',doorStock:'Buy from ready stock',doorStockText:'Goods available now in Egypt and the UAE.',doorChina:'Source from China',doorChinaText:'Send your request and get a written quote.',photoTitle:'Have a product photo?',photoText:'Upload it and we will send you a written quote.',payLinkText:'A clear deposit and balance, and familiar ways to pay.',calcLinkText:'Work out your profit per piece before you order.',learnMore:'See details',routeCaption:c=>`China to ${c}`,routeCta:'Get a price for this route',routeHint:'Pick your destination on the map',payDeposit:'30% to start',payBalance:'70% after inspection, before shipping',payFull:'100% before dispatch',
+navCalc:'Profit calculator',itemsWord:'products',askTitle:'Can’t find what you need?',askText:'Tell us the product or category you want, and we will source it.',askCta:'Request it now',catOptional:'Category (optional)',doorStock:'Buy from ready stock',doorStockText:'Goods available now in Egypt and the UAE.',doorChina:'Source from China',doorChinaText:'Send your request and get a written quote.',photoTitle:'Have a product photo?',photoText:'Upload it and we will send you a written quote.',payLinkText:'A clear deposit and balance, and familiar ways to pay.',calcLinkText:'Work out your profit per piece before you order.',learnMore:'See details',routeCaption:c=>`China to ${c}`,routeCta:'Get a price for this route',routeHint:'Pick your destination on the map',payDeposit:'30% to start',payBalance:'70% after inspection, before shipping',payFull:'100% before dispatch',
 payTitle:'How payment works',payChina:'Sourcing from China',payChinaText:'30% deposit to start, and 70% after inspection and before shipping.',payStock:'If it is in ready stock',payStockText:'Full payment before dispatch.',payWays:'Ways to pay',payWaysText:'Egypt: bank transfer, InstaPay or Vodafone Cash. GCC: bank transfer.',payNote:'The terms for each order are written on your quote.',
 calcBandTitle:'Know your profit before you order',calcBandText:'Work out profit per piece and your break-even price in under a minute.',calcOpen:'Open the calculator',
 calcTitle:'Profit calculator',calcLead:'Enter your numbers in one currency to see your expected profit.',calcCost:'Cost per piece',calcSell:'Selling price per piece',calcShip:'Delivery cost per order',calcAds:'Ad cost per order',calcReturns:'Return rate %',calcQty:'Quantity',calcProfit:'Profit per piece',calcMargin:'Profit margin',calcTotal:'Expected total profit',calcBreak:'Break-even price',calcHint:'These are estimates. Delivery and ad costs count on every order, even if it comes back.',calcCta:'Get a unit price from VIO',
@@ -57,7 +57,7 @@ chatOpen:'Ask VIO',chatTitle:'VIO assistant',chatSub:'Automated help for common 
 stConfirmed:'Order confirmed',stProduction:'Production',stReady:'Ready to ship',stTransit:'In transit',stDelivered:'Delivered',doneLbl:'Done',nowLbl:'Now',nextLbl:'Later',
 status:{}}
 };
-const ICONS={Electronics:'<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>',Cosmetics:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v5H9zM8 8h8l1 13H7z"/></svg>',Home:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 11 12 4l8.5 7M6 9.5V20h12V9.5"/></svg>'};
+const ICONS={box:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 8 12 3.5 20.5 8v8.5L12 21l-8.5-4.5zM3.5 8 12 12.5 20.5 8M12 12.5V21"/></svg>',electronics:'<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>',cosmetics:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v5H9zM8 8h8l1 13H7z"/></svg>',home:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 11 12 4l8.5 7M6 9.5V20h12V9.5"/></svg>',Electronics:'<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>',Cosmetics:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v5H9zM8 8h8l1 13H7z"/></svg>',Home:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 11 12 4l8.5 7M6 9.5V20h12V9.5"/></svg>'};
 const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}},sget(k){try{return sessionStorage.getItem(k)}catch(e){return null}},sset(k,v){try{sessionStorage.setItem(k,v)}catch(e){}},sdel(k){try{sessionStorage.removeItem(k)}catch(e){}}};
 let lang=store.get('vioLang')==='en'?'en':'ar';
 const t=(k,...a)=>{const v=I18N[lang][k];return typeof v==='function'?v(...a):(v===undefined?k:v)};
@@ -86,20 +86,20 @@ const stock=m=>load('stock'+m,()=>api('getVIOPublicStock',m));
 
 const pName=p=>lang==='ar'?(p.Product_Name_AR||p.Product_Name):(p.Product_Name||p.Product_Name_AR);
 const pDesc=p=>lang==='ar'?(p.Description_AR||p.Description):(p.Description||p.Description_AR);
-function catOf(p){
-  const c=`${p.Category||''}`.toLowerCase();
-  if(/electr|إلكتر|الكتر|security/.test(c))return'electronics';
-  if(/cosmet|beauty|تجميل/.test(c))return'cosmetics';
-  if(/home|منزل|مطبخ|kitchen/.test(c))return'home';
-  return'';
-}
+const CAT_AR={electronics:'إلكترونيات',cosmetics:'مستحضرات تجميل',home:'منتجات منزلية',security:'أنظمة أمان'};
+const catKey=p=>String(p.Category||p.Category_AR||'').trim().toLowerCase();
+const catName=p=>lang==='ar'?(p.Category_AR||CAT_AR[catKey(p)]||p.Category||''):(p.Category||p.Category_AR||'');
+function categories(list){const m=new Map();list.forEach(p=>{const k=catKey(p);if(!k)return;const c=m.get(k)||{key:k,name:catName(p),count:0,img:''};c.count++;c.img=c.img||httpsUrl(p.Image_URL);m.set(k,c)});return [...m.values()].sort((a,b)=>b.count-a.count)}
+const allProducts=()=>Promise.all([china().then(l=>l.map(x=>({...x,Product_Source:'China'}))).catch(()=>[]),...['Egypt','Dubai'].map(m=>stock(m).then(l=>l.map(x=>({...x,Product_Source:m}))).catch(()=>[]))]).then(a=>a.flat());
+const isStock=p=>p.Product_Source==='Egypt'||p.Product_Source==='Dubai';
+const askBox=()=>`<div class="ask-box"><div><h2>${esc(t('askTitle'))}</h2><p>${esc(t('askText'))}</p></div><div class="ask-actions"><a class="btn gold" href="#/request">${esc(t('askCta'))}</a><a class="btn line-light" target="_blank" rel="noopener" href="https://wa.me/${CONFIG.whatsapp}">${esc(t('whatsapp'))}</a></div></div>`;
 function card(p,label,sub,idx,list){
   const img=httpsUrl(p.Image_URL);
   return `<button type="button" class="item" data-list="${list}" data-idx="${idx}">${img?`<img class="thumb" loading="lazy" src="${esc(img)}" alt="${esc(pName(p))}">`:'<span class="nophoto">VIO</span>'}<span class="item-body"><small>${esc(label)}</small><b>${esc(pName(p))}</b><span>${esc(sub)}</span></span></button>`;
 }
 const priceText=p=>p.Availability==='Out of Stock'?t('outOfStock'):(p.Price_Visibility==='Show'&&Number(p.Selling_Price)>0?`${p.Currency} ${Number(p.Selling_Price).toLocaleString('en-US')}`:t('priceOnRequest'));
 const chinaSub=p=>`${t('moq')}: ${p.MOQ||t('onRequest')}`;
-const catLabel=p=>({electronics:t('catElectronics'),cosmetics:t('catCosmetics'),home:t('catHome')}[catOf(p)]||p.Category||'');
+const catLabel=p=>catName(p);
 const lists={};
 function fillGrid(id,items,list,labelFn,subFn){
   lists[list]=items;
@@ -139,8 +139,8 @@ function openProduct(p){
 }
 async function productPage(id){
   app.innerHTML=`<div class="wrap page"><p class="note">${esc(t('loading'))}</p></div>`;
-  const parts=await Promise.all([china().then(l=>l.map(x=>({...x,Product_Source:'China'}))).catch(()=>[]),...['Egypt','Dubai'].map(m=>stock(m).then(l=>l.map(x=>({...x,Product_Source:m}))).catch(()=>[]))]);
-  const p=parts.flat().find(x=>String(x.Product_ID)===String(id));
+  const list=await allProducts();
+  const p=list.find(x=>String(x.Product_ID)===String(id));
   if(!location.hash.startsWith('#/product/'))return;
   if(!p){app.innerHTML=`<div class="wrap page"><div class="narrow stack"><p class="empty">${esc(t('notFound'))}</p><a class="btn" href="#/products">${esc(t('allProducts'))}</a></div></div>`;return}
   app.innerHTML=`<div class="wrap page"><div class="narrow card product-page">${productHTML(p,true)}</div></div>`;
@@ -172,8 +172,7 @@ function home(){
   <div class="hero-map">${routeSvg('wide')}${routeSvg('tall')}<div class="route-foot"><b id="routeCap"></b><a id="routeGo" href="#/request">${esc(t('routeCta'))}</a></div></div></div></section>
   <div class="wrap"><div class="promises">
   <div><h3>${esc(t('speed'))}</h3><p>${esc(t('speedText',CONFIG.quoteHours))}</p></div><div><h3>${esc(t('price'))}</h3><p>${esc(t('priceText'))}</p></div><div><h3>${esc(t('door'))}</h3><p>${esc(t('doorText'))}</p></div></div>
-  <section class="block"><div class="sec-head"><h2>${esc(t('catsTitle'))}</h2></div><div class="cats">
-  ${['Electronics','Cosmetics','Home'].map(c=>`<a class="cat" data-cat="${c.toLowerCase()}" href="#/products/${c.toLowerCase()}"><span class="cat-art">${ICONS[c]}</span><span class="cat-t"><b>${esc(t('cat'+c))}</b><span>${esc(t('cat'+c+'Text'))}</span></span></a>`).join('')}</div></section>
+  <section class="block"><div class="sec-head"><h2>${esc(t('catsTitle'))}</h2></div><div class="cats" id="cats"><a class="cat ask" href="#/request"><span class="cat-t"><b>${esc(t('askTitle'))}</b><span>${esc(t('askText'))}</span></span></a></div></section>
   <section class="block"><div class="sec-head"><h2>${esc(t('stockTitle'))}</h2><a href="#/stock/Egypt">${esc(t('seeAll'))}</a></div><div class="grid" id="ready"><p class="note">${esc(t('loading'))}</p></div></section>
   <section class="block" id="trendSec"><div class="sec-head"><h2>${esc(t('trendTitle'))}</h2><a href="#/products">${esc(t('seeAll'))}</a></div><div class="grid" id="trend"><p class="note">${esc(t('loading'))}</p></div></section>
   <section class="block"><div class="sec-head"><h2>${esc(t('howTitle'))}</h2></div><ol class="steps">${[1,2,3,4].map(n=>`<li><span class="num" aria-hidden="true">${n}</span><h3>${esc(t('s'+n))}</h3><p>${esc(t('s'+n+'t'))}</p></li>`).join('')}</ol></section>
@@ -185,27 +184,27 @@ function home(){
   $('#routeGo').onclick=()=>{presetCountry=routePick};
   setRoute(routePick);
   const hideTrend=()=>{const x=$('#trendSec');if(x)x.hidden=true};
-  const catPhoto=l=>{app.querySelectorAll('.cat').forEach(a=>{const f=l.find(p=>catOf(p)===a.dataset.cat&&httpsUrl(p.Image_URL));const art=$('.cat-art',a);if(f&&art&&!art.querySelector('img'))art.innerHTML=`<img loading="lazy" src="${esc(httpsUrl(f.Image_URL))}" alt="">`})};
-  china().then(l=>{catPhoto(l);if(!l.length)return hideTrend();fillGrid('trend',l.slice(0,4),'trend',catLabel,chinaSub)}).catch(hideTrend);
+  allProducts().then(l=>{const box=$('#cats');if(!box)return;box.insertAdjacentHTML('afterbegin',categories(l).slice(0,5).map(c=>`<a class="cat" href="#/products/${encodeURIComponent(c.key)}"><span class="cat-art">${c.img?`<img loading="lazy" src="${esc(c.img)}" alt="">`:(ICONS[c.key]||ICONS.box)}</span><span class="cat-t"><b>${esc(c.name)}</b><span>${c.count} ${esc(t('itemsWord'))}</span></span></a>`).join(''))});
+  china().then(l=>{if(!l.length)return hideTrend();fillGrid('trend',l.slice(0,4),'trend',catLabel,chinaSub)}).catch(hideTrend);
   Promise.all(['Egypt','Dubai'].map(m=>stock(m).then(l=>l.map(p=>({...p,Product_Source:m}))).catch(()=>[]))).then(a=>{
-    catPhoto(a.flat());
     const l=a.flat().filter(p=>p.Availability==='In Stock').slice(0,4);
     fillGrid('ready',l,'ready',p=>p.Product_Source==='Egypt'?t('egypt'):t('uae'),priceText);
   });
 }
 function listing(kind,arg){
-  const isStock=kind==='stock';
-  const market=isStock?(arg==='Dubai'?'Dubai':'Egypt'):'';
-  let filter=isStock?'':(arg||'');
-  app.innerHTML=`<div class="page-head"><div class="wrap sec-head"><h1 class="page-title">${esc(isStock?t('stockPage'):t('productsTitle'))}</h1>
-  <div class="tabs">${isStock?`<a class="tab" href="#/stock/Egypt" ${market==='Egypt'?'aria-current="page"':''}>${esc(t('egypt'))}</a><a class="tab" href="#/stock/Dubai" ${market==='Dubai'?'aria-current="page"':''}>${esc(t('uae'))}</a>`:[['',t('catAll')],['electronics',t('catElectronics')],['cosmetics',t('catCosmetics')],['home',t('catHome')]].map(([k,v])=>`<a class="tab" href="#/products${k?'/'+k:''}" ${filter===k?'aria-current="page"':''}>${esc(v)}</a>`).join('')}</div></div></div><div class="wrap page">
+  const onStock=kind==='stock';
+  const market=onStock?(arg==='Dubai'?'Dubai':'Egypt'):'';
+  let filter=onStock?'':(arg||'');
+  app.innerHTML=`<div class="page-head"><div class="wrap sec-head"><h1 class="page-title">${esc(onStock?t('stockPage'):t('productsTitle'))}</h1>
+  <div class="tabs" id="tabs">${onStock?`<a class="tab" href="#/stock/Egypt" ${market==='Egypt'?'aria-current="page"':''}>${esc(t('egypt'))}</a><a class="tab" href="#/stock/Dubai" ${market==='Dubai'?'aria-current="page"':''}>${esc(t('uae'))}</a>`:''}</div></div></div><div class="wrap page">
   <label class="f" style="margin-bottom:14px"><span class="hp">${esc(t('search'))}</span><input id="q" type="search" placeholder="${esc(t('search'))}"></label>
-  <div class="grid" id="list"><p class="note">${esc(t('loading'))}</p></div></div>`;
-  const src=isStock?stock(market).then(l=>l.map(p=>({...p,Product_Source:market}))):china().then(l=>l.map(p=>({...p,Product_Source:'China'})));
+  <div class="grid" id="list"><p class="note">${esc(t('loading'))}</p></div><div class="ask-wrap">${askBox()}</div></div>`;
+  const src=onStock?stock(market).then(l=>l.map(p=>({...p,Product_Source:market}))):allProducts();
   src.then(all=>{
+    if(!onStock){const cats=categories(all);$('#tabs').innerHTML=[['',t('catAll')],...cats.map(c=>[c.key,c.name])].map(([k,v])=>`<a class="tab" href="#/products${k?'/'+encodeURIComponent(k):''}" ${filter===k?'aria-current="page"':''}>${esc(v)}</a>`).join('')}
     const draw=()=>{const q=$('#q').value.trim().toLowerCase();
-      const l=all.filter(p=>(!filter||catOf(p)===filter)&&(!q||`${p.Product_Name} ${p.Product_Name_AR||''} ${p.Category} ${p.Description} ${p.Description_AR||''}`.toLowerCase().includes(q)));
-      fillGrid('list',l,'list',catLabel,isStock?priceText:chinaSub)};
+      const l=all.filter(p=>(!filter||catKey(p)===filter)&&(!q||`${p.Product_Name} ${p.Product_Name_AR||''} ${p.Category} ${p.Category_AR||''} ${p.Description} ${p.Description_AR||''}`.toLowerCase().includes(q)));
+      fillGrid('list',l,'list',catLabel,p=>isStock(p)?priceText(p):chinaSub(p))};
     $('#q').oninput=draw;draw();
   }).catch(()=>{$('#list').innerHTML=`<p class="empty" style="grid-column:1/-1">${esc(t('loadError'))}</p>`});
 }
@@ -224,7 +223,6 @@ function request(){
   const p=selected;selected=null;
   const key=uuid();
   const saved=(()=>{try{return JSON.parse(store.get('vioBuyer')||'{}')}catch(e){return{}}})();
-  const defaultCat=p?catOf(p):'';
   const wantCountry=presetCountry||saved.country;presetCountry='';
   app.innerHTML=`<div class="wrap page"><div class="narrow stack"><div><h1 class="page-title">${esc(t('reqTitle'))}</h1><p class="note">${esc(t('reqLead',CONFIG.quoteHours))}</p></div>
   <form class="stack" id="reqForm" novalidate>
@@ -234,7 +232,7 @@ function request(){
   <label class="f">${esc(t('productName'))}<input id="pname" maxlength="200" value="${esc(p?pName(p):'')}"></label>
   <label class="f">${esc(t('link'))}<input id="plink" type="url" inputmode="url" dir="ltr"></label>
   <div class="two"><label class="f">${esc(t('qty'))}<input id="qty" type="number" min="1" inputmode="numeric" required value="${esc(p&&p.MOQ?p.MOQ:'')}"></label>
-  <label class="f">${esc(t('category'))}<select id="cat">${opt('Electronics',t('catElectronics'),defaultCat==='electronics')}${opt('Cosmetics',t('catCosmetics'),defaultCat==='cosmetics')}${opt('Home',t('catHome'),defaultCat==='home')}</select></label></div>
+  <label class="f">${esc(t('catOptional'))}<input id="cat" maxlength="80" value="${esc(p?catName(p):'')}"></label></div>
   ${p?'':`<label class="f">${esc(t('source'))}<select id="origin">${opt('China',t('china'))}${opt('Egypt',t('egypt'))}${opt('UAE',t('uae'))}${opt('Best Option',t('bestOption'))}</select></label>`}
   <div class="two"><label class="f">${esc(t('dest'))}<select id="country">${CONFIG.countries.map(c=>opt(c,countryLabel(c),wantCountry===c)).join('')}</select></label>
   <label class="f">${esc(t('city'))}<input id="city" maxlength="60" required value="${esc(saved.city||'')}"></label></div>
@@ -256,7 +254,7 @@ function request(){
     if(!$('#pname').value.trim()&&!files.length&&!$('#plink').value.trim())return err(t('needProduct'));
     if(!f.reportValidity())return;
     const btn=$('#sendBtn');btn.disabled=true;btn.textContent=t('sending');
-    const notes=[`Category: ${$('#cat').value}`,`City: ${$('#city').value.trim()}`,$('#plink').value.trim()&&`Link: ${$('#plink').value.trim()}`,$('#notes').value.trim()].filter(Boolean).join('\n');
+    const notes=[$('#cat').value.trim()&&`Category: ${$('#cat').value.trim()}`,`City: ${$('#city').value.trim()}`,$('#plink').value.trim()&&`Link: ${$('#plink').value.trim()}`,$('#notes').value.trim()].filter(Boolean).join('\n');
     try{
       const photos=await Promise.all(files.map(resizeImage));
       const data={productId:p?p.Product_ID:'',productSource:p?p.Product_Source:'Customer Request',productName:$('#pname').value.trim()||($('#plink').value.trim()?'Product from link':''),preferredContact:'WhatsApp',name:$('#name').value.trim(),phone:$('#phone').value.trim(),email:$('#email').value.trim(),company:$('#company').value.trim(),quantity:Number($('#qty').value),country:$('#country').value,sourceOrigin:p?'':$('#origin').value,shippingMode:$('#ship').value,notes,submissionKey:key,website:f.website.value,photos};
@@ -360,20 +358,20 @@ const FAQ=[
  {k:['حد ادني','الحد الادني','اقل كميه','اقل عدد','moq','minimum'],ar:'الحد الأدنى يختلف حسب المنتج، ويظهر في صفحة كل منتج. يمكنك أيضًا طلب كمية محددة وسنرد عليك بالمتاح.',en:'The minimum depends on the product and is shown on each product page. You can also ask for a specific quantity and we will tell you what is possible.',a:['allProducts','#/products']},
  {k:['دفع','ادفع','مقدم','عربون','انستاباي','فودافون','تحويل','payment','pay','deposit','instapay','vodafone','transfer'],ar:'التوريد من الصين: 30% مقدم و70% بعد الفحص وقبل الشحن. المخزون الجاهز: الدفع كاملًا قبل الشحن. في مصر: تحويل بنكي أو إنستاباي أو فودافون كاش. في الخليج: تحويل بنكي.',en:'Sourcing from China: 30% deposit and 70% after inspection, before shipping. Ready stock: full payment before dispatch. Egypt: bank transfer, InstaPay or Vodafone Cash. GCC: bank transfer.',a:['payTitle','#/payment']},
  {k:['مده','كام يوم','متي','يوصل امتي','وقت','how long','when','lead time','arrive','days'],ar:'المدة تختلف حسب المنتج وطريقة الشحن، بحري أو جوي، وتكون مكتوبة في عرض السعر. المخزون الجاهز يشحن أسرع.',en:'It depends on the product and on sea or air shipping, and it is written on your quote. Ready stock ships faster.'},
- {k:['شحن','توصيل','دول','السعوديه','الكويت','قطر','البحرين','عمان','الامارات','باب','ship','deliver','country','countries','door','saudi','kuwait','qatar','bahrain','oman','uae'],ar:'نوصل من الباب للباب إلى مصر، الإمارات، السعودية، الكويت، قطر، البحرين وعُمان.',en:'We deliver door to door to Egypt, UAE, Saudi Arabia, Kuwait, Qatar, Bahrain and Oman.'},
+ {k:['شحن','توصيل','دول','السعوديه','الكويت','قطر','البحرين','عمان','الامارات','باب','ship','deliver','country','countries','door','saudi','kuwait','qatar','bahrain','oman','uae'],ar:'نوصل من الباب للباب إلى مصر، الإمارات، السعودية، الكويت، قطر، البحرين وعُمان. لأي بلد آخر، راسلنا على واتساب.',en:'We deliver door to door to Egypt, UAE, Saudi Arabia, Kuwait, Qatar, Bahrain and Oman. For any other country, message us on WhatsApp.',wa:1},
  {k:['تتبع','طلبي','شحنتي','فين','track','my order','shipment'],ar:'من صفحة طلباتي يمكنك متابعة كل مرحلة، بالبريد الذي استخدمته في طلبك.',en:'You can follow every stage in My orders, using the email from your request.',a:['navOrders','#/account']},
  {k:['مخزون','جاهز','متاح','stock','available','ready'],ar:'لدينا مخزون جاهز في مصر والإمارات، ويمكنك تصفحه الآن.',en:'We have ready stock in Egypt and the UAE, and you can browse it now.',a:['navStock','#/stock/Egypt']},
- {k:['منتجات','الكترونيات','تجميل','منزليه','products','electronics','cosmetics','home'],ar:'نعمل في الإلكترونيات، مستحضرات التجميل، والمنتجات المنزلية.',en:'We work in electronics, cosmetics and home products.',a:['navProducts','#/products']},
+ {k:['منتجات','قسم','الكترونيات','تجميل','منزليه','products','category','electronics','cosmetics','home'],ar:'تصفح منتجاتنا حسب القسم. وإذا لم تجد ما تريده، اطلبه وسنوفره لك.',en:'Browse our products by category. If you cannot find what you need, request it and we will source it.',a:['navProducts','#/products']},
  {k:['ربح','مكسب','حاسبه','profit','margin','calculator'],ar:'استخدم حاسبة الربح لتعرف ربح القطعة وسعر التعادل.',en:'Use the profit calculator to see your profit per piece and break-even price.',a:['navCalc','#/calculator']}
 ];
 const CHIPS={ar:[['كيف أطلب؟',0],['طريقة الدفع؟',3],['كم مدة التوريد؟',4],['إلى أين توصلون؟',5],['كيف أتابع طلبي؟',6]],en:[['How do I order?',0],['How do I pay?',3],['How long does it take?',4],['Where do you deliver?',5],['How do I track my order?',6]]};
 const normAr=x=>String(x).toLowerCase().replace(/[\u064B-\u0652]/g,'').replace(/[أإآ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').replace(/\s+/g,' ').trim();
-function faqMatch(q){const n=normAr(q);let best=-1,score=0;FAQ.forEach((f,i)=>{const sc=f.k.reduce((v,w)=>{const nw=normAr(w);return v+((/^[a-z ]+$/.test(nw)?new RegExp(`\\b${nw}\\b`).test(n):n.includes(nw))?nw.length:0)},0);if(sc>score){score=sc;best=i}});return best}
+function faqMatch(q){const n=normAr(q);let best=-1,score=0;FAQ.forEach((f,i)=>{const sc=f.k.reduce((v,w)=>{const nw=normAr(w);return v+((/^[a-z ]+$/.test(nw)?new RegExp(`\\b${nw}`).test(n):n.includes(nw))?nw.length:0)},0);if(sc>score){score=sc;best=i}});return best}
 function initChat(){
   const root=$('#chat');
   const addMsg=(html,me)=>{const box=$('#chatLog');box.insertAdjacentHTML('beforeend',`<div class="bubble ${me?'me':''}">${html}</div>`);box.scrollTop=box.scrollHeight};
-  const reply=(i,q)=>{const use=q&&/[\u0600-\u06FF]/.test(q)?'ar':lang;if(i<0){addMsg(`${esc(I18N[use].chatNo)}<a class="chat-link" target="_blank" rel="noopener" href="https://wa.me/${CONFIG.whatsapp}">${esc(t('whatsapp'))}</a>`);return}
-    const f=FAQ[i];addMsg(`${esc(f[use])}${f.a?`<a class="chat-link" href="${f.a[1]}">${esc(t(f.a[0]))}</a>`:''}`)};
+  const reply=(i,q)=>{const use=!q?lang:/[\u0600-\u06FF]/.test(q)?'ar':/[a-z]/i.test(q)?'en':lang;if(i<0){addMsg(`${esc(I18N[use].chatNo)}<a class="chat-link" target="_blank" rel="noopener" href="https://wa.me/${CONFIG.whatsapp}">${esc(I18N[use].whatsapp)}</a>`);return}
+    const f=FAQ[i];addMsg(`${esc(f[use])}${f.a?`<a class="chat-link" href="${f.a[1]}">${esc(I18N[use][f.a[0]])}</a>`:''}${f.wa?`<a class="chat-link" target="_blank" rel="noopener" href="https://wa.me/${CONFIG.whatsapp}">${esc(I18N[use].whatsapp)}</a>`:''}`)};
   const draw=()=>{root.innerHTML=`<button type="button" class="chat-btn" id="chatBtn" aria-expanded="false" aria-controls="chatPanel">${esc(t('chatOpen'))}</button>
   <div class="chat-panel" id="chatPanel" hidden><div class="chat-head"><div><b>${esc(t('chatTitle'))}</b><small>${esc(t('chatSub'))}</small></div><button type="button" class="chat-x" id="chatX" aria-label="${esc(t('close'))}">×</button></div>
   <div class="chat-log" id="chatLog" aria-live="polite"><div class="bubble">${esc(t('chatHello'))}</div></div>
@@ -400,7 +398,7 @@ function route(){
   const r=parts[0]||'';
   const path='#/'+parts.slice(0,2).join('/');
   document.querySelectorAll('.main-nav a,.bottom-nav a').forEach(a=>{const h=a.getAttribute('href');const on=h==='#/'?!r:location.hash.startsWith(h.split('/').slice(0,2).join('/'));on?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current')});
-  if(r==='products')listing('products',parts[1]);
+  if(r==='products')listing('products',parts.slice(1).join('/'));
   else if(r==='stock')listing('stock',parts[1]);
   else if(r==='request')request();
   else if(r==='account')account();

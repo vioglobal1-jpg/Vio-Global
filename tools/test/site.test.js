@@ -13,7 +13,7 @@ for(const [name,vp] of [['phone',{width:390,height:844}],['desktop',{width:1280,
  const c=await b.newContext({viewport:vp});const p=await c.newPage();const errs=[];p.on('pageerror',e=>errs.push(e.message));
  await p.route('**/macros/**',async r=>{const j=JSON.parse(r.request().postData());await r.fulfill({json:{ok:true,result:R[j.fn](...j.args)},headers:{'access-control-allow-origin':'*'}})});
  await p.route('**fonts.g**',r=>r.abort());
- await p.goto(url);await p.waitForSelector('#trend .item');await p.waitForSelector('#ready .item');
+ await p.goto(url);await p.waitForSelector('#trend .item');await p.waitForSelector('#ready .item');await p.waitForSelector('#cats .cat:not(.ask)');ok((await p.locator('#cats .cat').count())===4,name+' categories from products plus ask option');
  const over=await p.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth);ok(over<=0,name+' home no sideways scroll '+over);
  ok(await p.getAttribute('html','dir')==='rtl',name+' Arabic first');
  await p.screenshot({path:`/tmp/vio-${name}-home.png`,fullPage:true});
@@ -30,7 +30,7 @@ for(const [name,vp] of [['phone',{width:390,height:844}],['desktop',{width:1280,
   await p.screenshot({path:'/tmp/vio-tracker.png',fullPage:true});
   await p.click('#langBtn');await p.waitForSelector('.timeline');ok(await p.getAttribute('html','dir')==='ltr','English switch');
  }else{
-  await p.goto(url+'#/stock/Egypt');await p.waitForSelector('#list .item');ok((await p.innerText('#list')).includes('Test Camera'),'Egypt stock');await p.goto(url+'#/stock/Dubai');await p.waitForSelector('#list .empty');ok(true,'UAE empty message');await p.goto(url+'#/products/cosmetics');await p.waitForSelector('#list .item');ok((await p.locator('#list .item').count())===1,'category filter');
+  await p.goto(url+'#/stock/Egypt');await p.waitForSelector('#list .item');ok((await p.innerText('#list')).includes('Test Camera'),'Egypt stock');await p.goto(url+'#/stock/Dubai');await p.waitForSelector('#list .empty');ok(true,'UAE empty message');await p.goto(url+'#/products/cosmetics');await p.waitForSelector('#list .item');ok((await p.locator('#list .item').count())===1,'category filter');await p.goto(url+'#/products');await p.waitForSelector('#tabs .tab:nth-child(4)');ok((await p.locator('#list .item').count())===3&&await p.isVisible('.ask-box'),'all products and ask box');
  }
  await p.goto(url+'#/product/VIO-STK-1');await p.reload();await p.waitForSelector('#pdShare');ok((await p.innerText('.pd')).includes('Test Camera'),name+' product page');ok((await p.getAttribute('#pdShare','href')).includes('%2Fp%2FVIO-STK-1'),name+' share link');
  await p.goto(url+'#/product/NOPE');await p.reload();await p.waitForSelector('.empty');ok(true,name+' missing product message');
@@ -39,7 +39,7 @@ for(const [name,vp] of [['phone',{width:390,height:844}],['desktop',{width:1280,
  const lc=await p.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth);ok(lc<=0,name+' calculator no sideways scroll');
  await p.screenshot({path:`/tmp/vio-${name}-calc.png`,fullPage:true});
  await p.goto(url+'#/');await p.click('#chatBtn');await p.click('.chip[data-i="3"]');ok(/30/.test(await p.innerText('#chatLog')),name+' chat chip answers payment');
- for(const [q,w] of [['عايز اعرف الدفع ازاي','30'],['do you deliver to kuwait?','Kuwait|الكويت'],['xyzzy','WhatsApp|واتساب'],['الحد الأدنى كام','الحد الأدنى|minimum']]){await p.fill('#chatInput',q);await p.press('#chatInput','Enter');const tx=await p.locator('#chatLog .bubble').last().innerText();ok(new RegExp(w).test(tx),name+' chat: '+q)}
+ for(const [q,w] of [['عايز اعرف الدفع ازاي','30'],['do you deliver to kuwait?','Kuwait|الكويت'],['do u shipping to iraq?','other country'],['اريد تجميل','تصفح'],['xyzzy','WhatsApp|واتساب'],['الحد الأدنى كام','الحد الأدنى|minimum']]){await p.fill('#chatInput',q);await p.press('#chatInput','Enter');const tx=await p.locator('#chatLog .bubble').last().innerText();ok(new RegExp(w).test(tx),name+' chat: '+q)}
  await p.screenshot({path:`/tmp/vio-${name}-chat.png`});
  await p.click('#chatX');
  await p.goto(url+'#/');await p.waitForSelector('.hero-map');await p.locator('.stop[data-c="Kuwait"]:visible').click();ok(/الكويت|Kuwait/.test(await p.innerText('#routeCap')),name+' route picks Kuwait');await p.click('#routeGo');await p.waitForSelector('#country');ok(await p.inputValue('#country')==='Kuwait',name+' route presets country');
