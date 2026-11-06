@@ -7,7 +7,7 @@ const CONFIG={
 };
 const I18N={
 ar:{skip:'تخطى إلى المحتوى',navHome:'الرئيسية',navProducts:'المنتجات',navStock:'مخزون جاهز',navRequest:'اطلب سعر',navRequestShort:'اطلب سعر',navOrders:'طلباتي',whatsapp:'واتساب',footShip:'نوصل إلى مصر، الإمارات، السعودية، الكويت، قطر، البحرين وعُمان.',footCity:'القاهرة',privacy:'الخصوصية',terms:'الشروط',
-kicker:'جملة للمحلات والمتاجر الإلكترونية وصفحات البيع',heroTitle:'أرسل صورة المنتج، واحصل على سعره حتى باب مخزنك',heroLead:'توريد من الصين إلى مصر ودول الخليج، ومخزون جاهز في مصر والإمارات.',ctaQuote:'اطلب سعر الآن',ctaStock:'تصفح المخزون الجاهز',
+kicker:'جملة للمحلات والمتاجر الإلكترونية وصفحات البيع',heroTitle:'شريكك في الجملة والتوريد، من الصين إلى باب مخزنك',heroLead:'للمحلات والمتاجر الإلكترونية وصفحات البيع: مخزون جملة جاهز في مصر والإمارات، أو نورد لك ما تحتاجه من الصين بسعر واضح.',ctaQuote:'اطلب سعر الآن',ctaStock:'تصفح المخزون الجاهز',
 quickTitle:'طلب سعر سريع',quickHint:'ارفع صورة المنتج وأكمل طلبك في خطوة واحدة.',
 speed:'سرعة',speedText:h=>`عرض سعر مكتوب خلال ${h} ساعة في أيام العمل.`,price:'سعر واضح',priceText:'اعرف تكلفة البضاعة والشحن قبل تأكيد الطلب.',door:'من الباب للباب',doorText:'نتابع الشحن حتى تصل بضاعتك لمخزنك.',
 catsTitle:'تسوق حسب القسم',catAll:'الكل',catElectronics:'إلكترونيات',catCosmetics:'مستحضرات تجميل',catHome:'منتجات منزلية',catElectronicsText:'إكسسوارات وأجهزة مطلوبة للبيع أونلاين',catCosmeticsText:'منتجات مختارة للعناية والجمال',catHomeText:'أدوات عملية للبيت والمطبخ',
@@ -22,7 +22,7 @@ signTitle:'طلباتي',signLead:'ادخل بالبريد الإلكتروني 
 tabRequests:'الطلبات',tabQuotes:'عروض الأسعار',tabOrders:'الشحنات',noRequests:'لا توجد طلبات بعد.',noQuotes:'لا توجد عروض أسعار بعد.',noOrders:'لا توجد شحنات بعد.',
 total:'الإجمالي',unit:'سعر القطعة',validity:'صلاحية العرض',lead:'مدة التوريد المتوقعة',accept:'قبول العرض',reject:'رفض',counter:'طلب تعديل',confirmAccept:'هل تريد قبول هذا العرض؟',confirmReject:'هل تريد رفض هذا العرض؟',yes:'نعم، تأكيد',no:'لا',counterText:'اكتب طلبك',counterTotal:'السعر الإجمالي المطلوب (اختياري)',sendCounter:'إرسال الطلب',decisionSaved:'تم حفظ ردك.',track:'تتبع الطلب',
 aboutTitle:'شريكك في التوريد',aboutText:'شركة توريد وتجارة جملة مقرها القاهرة، تعمل مع البائعين والمتاجر في مصر ودول الخليج.',aboutAddr:'٢٩ شارع النصر، المعادي الجديدة، القاهرة، مصر',contactUs:'تواصل معنا',orderTitle:'تتبع الطلب',eta:'الوصول المتوقع',tracking:'رقم التتبع',payment:'الدفع',statusNow:'الحالة الآن',messages:'الرسائل',writeMsg:'اكتب رسالتك',sendMsg:'إرسال',back:'رجوع',cancelled:'تم إلغاء هذا الطلب.',
-navCalc:'حاسبة الربح',routeCaption:c=>`من الصين إلى ${c}`,routeCta:'اطلب سعرًا لهذا المسار',routeHint:'اختر وجهتك على الخريطة',payDeposit:'30% لبدء الطلب',payBalance:'70% بعد الفحص وقبل الشحن',payFull:'100% قبل الشحن',
+navCalc:'حاسبة الربح',doorStock:'اشترِ من المخزون الجاهز',doorStockText:'بضاعة موجودة الآن في مصر والإمارات.',doorChina:'ورّد من الصين',doorChinaText:'أرسل طلبك واحصل على عرض سعر مكتوب.',photoTitle:'معك صورة منتج؟',photoText:'ارفعها وسنرسل لك عرض سعر مكتوب.',payLinkText:'مقدم ورصيد واضحان، ووسائل دفع معروفة.',calcLinkText:'احسب ربح القطعة قبل أن تطلب.',learnMore:'اعرف التفاصيل',routeCaption:c=>`من الصين إلى ${c}`,routeCta:'اطلب سعرًا لهذا المسار',routeHint:'اختر وجهتك على الخريطة',payDeposit:'30% لبدء الطلب',payBalance:'70% بعد الفحص وقبل الشحن',payFull:'100% قبل الشحن',
 payTitle:'طريقة الدفع',payChina:'التوريد من الصين',payChinaText:'30% مقدم لبدء الطلب، و70% بعد الفحص وقبل الشحن.',payStock:'إذا كان المنتج في المخزون الجاهز',payStockText:'الدفع كاملًا قبل الشحن.',payWays:'وسائل الدفع',payWaysText:'مصر: تحويل بنكي، إنستاباي أو فودافون كاش. الخليج: تحويل بنكي.',payNote:'شروط كل طلب مكتوبة في عرض السعر.',
 calcBandTitle:'اعرف ربحك قبل ما تطلب',calcBandText:'احسب ربح القطعة وسعر التعادل في أقل من دقيقة.',calcOpen:'افتح حاسبة الربح',
 calcTitle:'حاسبة الربح',calcLead:'أدخل أرقامك بعملة واحدة لتعرف ربحك المتوقع.',calcCost:'تكلفة القطعة',calcSell:'سعر البيع للقطعة',calcShip:'تكلفة توصيل الطلب لعميلك',calcAds:'تكلفة الإعلان لكل طلب',calcReturns:'نسبة المرتجعات %',calcQty:'الكمية',calcProfit:'الربح لكل قطعة',calcMargin:'هامش الربح',calcTotal:'إجمالي الربح المتوقع',calcBreak:'سعر التعادل',calcHint:'هذه الأرقام تقديرية. نحسب تكلفة التوصيل والإعلان على كل طلب، حتى لو رجع.',calcCta:'اطلب سعر القطعة من VIO',
@@ -32,7 +32,7 @@ chatOpen:'اسأل VIO',chatTitle:'مساعد VIO',chatSub:'مساعد آلي ل
 stConfirmed:'تأكيد الطلب',stProduction:'الإنتاج',stReady:'جاهز للشحن',stTransit:'في الطريق',stDelivered:'التسليم',doneLbl:'تم',nowLbl:'الآن',nextLbl:'لاحقًا',
 status:{'New Request':'طلب جديد','In Sourcing':'جارٍ التوريد','Quoted':'تم إرسال السعر','Closed':'مغلق','Sent':'بانتظار ردك','Accepted':'مقبول','Rejected':'مرفوض','Revision Requested':'طلب تعديل','Confirmed':'مؤكد','In Production':'في الإنتاج','Quality Inspection':'فحص الجودة','Customs Clearance':'التخليص الجمركي','Ready to Ship':'جاهز للشحن','In Transit':'في الطريق','Delivered':'تم التسليم','Cancelled':'ملغي','Unpaid':'غير مدفوع','Partially Paid':'مدفوع جزئيًا','Paid':'مدفوع'}},
 en:{skip:'Skip to content',navHome:'Home',navProducts:'Products',navStock:'Ready stock',navRequest:'Get a price',navRequestShort:'Get a price',navOrders:'My orders',whatsapp:'WhatsApp',footShip:'We deliver to Egypt, UAE, Saudi Arabia, Kuwait, Qatar, Bahrain and Oman.',footCity:'Cairo',privacy:'Privacy',terms:'Terms',
-kicker:'Wholesale for shops, online stores and social sellers',heroTitle:'Send a product photo and get its price delivered to your door',heroLead:'Sourcing from China to Egypt and the GCC, with ready stock in Egypt and the UAE.',ctaQuote:'Get a price now',ctaStock:'See ready stock',
+kicker:'Wholesale for shops, online stores and social sellers',heroTitle:'Your wholesale and sourcing partner, from China to your door',heroLead:'For shops, online stores and social sellers: wholesale stock ready in Egypt and the UAE, or sourced from China at a clear price.',ctaQuote:'Get a price now',ctaStock:'See ready stock',
 quickTitle:'Quick quote',quickHint:'Add a photo or a product name in the next step.',
 speed:'Fast',speedText:h=>`A written quote within ${h} hours on working days.`,price:'Clear price',priceText:'Know the goods and shipping cost before you confirm.',door:'Door to door',doorText:'We follow your shipment until it reaches your door.',
 catsTitle:'Shop by category',catAll:'All',catElectronics:'Electronics',catCosmetics:'Cosmetics',catHome:'Home',catElectronicsText:'Accessories and devices for online sellers',catCosmeticsText:'Selected beauty and care products',catHomeText:'Practical products for home and kitchen',
@@ -47,7 +47,7 @@ signTitle:'My orders',signLead:'Enter the email you used on your request and we 
 tabRequests:'Requests',tabQuotes:'Quotes',tabOrders:'Orders',noRequests:'No requests yet.',noQuotes:'No quotes yet.',noOrders:'No orders yet.',
 total:'Total',unit:'Unit price',validity:'Valid for',lead:'Estimated lead time',accept:'Accept quote',reject:'Reject',counter:'Ask for a change',confirmAccept:'Accept this quote?',confirmReject:'Reject this quote?',yes:'Yes, confirm',no:'No',counterText:'What would you like to change?',counterTotal:'Requested total (optional)',sendCounter:'Send',decisionSaved:'Your response was saved.',track:'Track order',
 aboutTitle:'Your sourcing partner',aboutText:'A sourcing and wholesale company based in Cairo, working with sellers and stores across Egypt and the GCC.',aboutAddr:'29 Al Nasr Street, New Maadi, Cairo, Egypt',contactUs:'Contact us',orderTitle:'Track order',eta:'Estimated arrival',tracking:'Tracking number',payment:'Payment',statusNow:'Current status',messages:'Messages',writeMsg:'Write a message',sendMsg:'Send',back:'Back',cancelled:'This order was cancelled.',
-navCalc:'Profit calculator',routeCaption:c=>`China to ${c}`,routeCta:'Get a price for this route',routeHint:'Pick your destination on the map',payDeposit:'30% to start',payBalance:'70% after inspection, before shipping',payFull:'100% before dispatch',
+navCalc:'Profit calculator',doorStock:'Buy from ready stock',doorStockText:'Goods available now in Egypt and the UAE.',doorChina:'Source from China',doorChinaText:'Send your request and get a written quote.',photoTitle:'Have a product photo?',photoText:'Upload it and we will send you a written quote.',payLinkText:'A clear deposit and balance, and familiar ways to pay.',calcLinkText:'Work out your profit per piece before you order.',learnMore:'See details',routeCaption:c=>`China to ${c}`,routeCta:'Get a price for this route',routeHint:'Pick your destination on the map',payDeposit:'30% to start',payBalance:'70% after inspection, before shipping',payFull:'100% before dispatch',
 payTitle:'How payment works',payChina:'Sourcing from China',payChinaText:'30% deposit to start, and 70% after inspection and before shipping.',payStock:'If it is in ready stock',payStockText:'Full payment before dispatch.',payWays:'Ways to pay',payWaysText:'Egypt: bank transfer, InstaPay or Vodafone Cash. GCC: bank transfer.',payNote:'The terms for each order are written on your quote.',
 calcBandTitle:'Know your profit before you order',calcBandText:'Work out profit per piece and your break-even price in under a minute.',calcOpen:'Open the calculator',
 calcTitle:'Profit calculator',calcLead:'Enter your numbers in one currency to see your expected profit.',calcCost:'Cost per piece',calcSell:'Selling price per piece',calcShip:'Delivery cost per order',calcAds:'Ad cost per order',calcReturns:'Return rate %',calcQty:'Quantity',calcProfit:'Profit per piece',calcMargin:'Profit margin',calcTotal:'Expected total profit',calcBreak:'Break-even price',calcHint:'These are estimates. Delivery and ad costs count on every order, even if it comes back.',calcCta:'Get a unit price from VIO',
@@ -84,6 +84,8 @@ const load=(k,fn)=>cache[k]||(cache[k]=fn().catch(e=>{delete cache[k];throw e}))
 const china=()=>load('china',()=>api('getChinaProducts'));
 const stock=m=>load('stock'+m,()=>api('getVIOPublicStock',m));
 
+const pName=p=>lang==='ar'?(p.Product_Name_AR||p.Product_Name):(p.Product_Name||p.Product_Name_AR);
+const pDesc=p=>lang==='ar'?(p.Description_AR||p.Description):(p.Description||p.Description_AR);
 function catOf(p){
   const c=`${p.Category||''}`.toLowerCase();
   if(/electr|إلكتر|الكتر|security/.test(c))return'electronics';
@@ -93,7 +95,7 @@ function catOf(p){
 }
 function card(p,label,sub,idx,list){
   const img=httpsUrl(p.Image_URL);
-  return `<button type="button" class="item" data-list="${list}" data-idx="${idx}">${img?`<img class="thumb" loading="lazy" src="${esc(img)}" alt="${esc(p.Product_Name)}">`:'<span class="nophoto">VIO</span>'}<span class="item-body"><small>${esc(label)}</small><b>${esc(p.Product_Name)}</b><span>${esc(sub)}</span></span></button>`;
+  return `<button type="button" class="item" data-list="${list}" data-idx="${idx}">${img?`<img class="thumb" loading="lazy" src="${esc(img)}" alt="${esc(pName(p))}">`:'<span class="nophoto">VIO</span>'}<span class="item-body"><small>${esc(label)}</small><b>${esc(pName(p))}</b><span>${esc(sub)}</span></span></button>`;
 }
 const priceText=p=>p.Availability==='Out of Stock'?t('outOfStock'):(p.Price_Visibility==='Show'&&Number(p.Selling_Price)>0?`${p.Currency} ${Number(p.Selling_Price).toLocaleString('en-US')}`:t('priceOnRequest'));
 const chinaSub=p=>`${t('moq')}: ${p.MOQ||t('onRequest')}`;
@@ -111,16 +113,16 @@ function productHTML(p,page){
   const imgs=[...new Set([httpsUrl(p.Image_URL),...media].filter(Boolean))];
   const stockItem=p.Product_Source==='Egypt'||p.Product_Source==='Dubai';
   const shareUrl=p.Product_ID?`${location.origin}/p/${encodeURIComponent(p.Product_ID)}`:'';
-  return `<div class="pd"><div class="pd-top"><h2 id="pdTitle">${esc(p.Product_Name)}</h2>${page?'':`<button type="button" class="close" id="pdClose" aria-label="${esc(t('close'))}">×</button>`}</div>
-  ${imgs.length?`<img class="pd-main" id="pdMain" src="${esc(imgs[0])}" alt="${esc(p.Product_Name)}">`:'<span class="nophoto">VIO</span>'}
+  return `<div class="pd"><div class="pd-top"><h2 id="pdTitle">${esc(pName(p))}</h2>${page?'':`<button type="button" class="close" id="pdClose" aria-label="${esc(t('close'))}">×</button>`}</div>
+  ${imgs.length?`<img class="pd-main" id="pdMain" src="${esc(imgs[0])}" alt="${esc(pName(p))}">`:'<span class="nophoto">VIO</span>'}
   ${imgs.length>1?`<div class="pd-strip">${imgs.map((u,i)=>`<button type="button" data-u="${esc(u)}" aria-label="${i+1}"><img src="${esc(u)}" alt=""></button>`).join('')}</div>`:''}
   <p><b>${esc(catLabel(p))}</b></p>
-  ${p.Description&&p.Description!=='Details available on request'?`<p>${esc(p.Description)}</p>`:''}
+  ${pDesc(p)&&pDesc(p)!=='Details available on request'?`<p>${esc(pDesc(p))}</p>`:''}
   ${p.Specifications?`<p class="note">${esc(p.Specifications)}</p>`:''}
   <p>${esc(t('moq'))}: ${esc(p.MOQ||t('onRequest'))}${stockItem?` · ${esc(priceText(p))}`:''}${p.Lead_Time_Days?` · ${esc(t('leadDays'))}: ${esc(p.Lead_Time_Days)} ${esc(t('days'))}`:''}</p>
   <a class="btn gold block" id="pdReq" href="#/request">${esc(t('requestThis'))}</a>
-  <a class="btn line block" target="_blank" rel="noopener" href="${esc(waLink(t('waProduct',p.Product_Name)))}">${esc(t('askProduct'))}</a>
-  ${shareUrl?`<div class="share"><a class="btn line small" id="pdShare" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(`${p.Product_Name} ${shareUrl}`)}">${esc(t('share'))}</a><button type="button" class="btn line small" id="pdCopy" data-u="${esc(shareUrl)}">${esc(t('copyLink'))}</button></div>`:''}</div>`;
+  <a class="btn line block" target="_blank" rel="noopener" href="${esc(waLink(t('waProduct',pName(p))))}">${esc(t('askProduct'))}</a>
+  ${shareUrl?`<div class="share"><a class="btn line small" id="pdShare" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(`${pName(p)} ${shareUrl}`)}">${esc(t('share'))}</a><button type="button" class="btn line small" id="pdCopy" data-u="${esc(shareUrl)}">${esc(t('copyLink'))}</button></div>`:''}</div>`;
 }
 function bindProduct(root,p,done){
   $('#pdReq',root).onclick=()=>{selected=p;done&&done()};
@@ -165,21 +167,18 @@ function setRoute(c){
   const cap=$('#routeCap');if(cap)cap.textContent=t('routeCaption',countryLabel(c));
 }
 function home(){
-  app.innerHTML=`<section class="hero"><div class="wrap hero-grid"><div class="hero-copy"><p class="kicker">${esc(t('kicker'))}</p><h1>${esc(t('heroTitle'))}</h1><p class="lead">${esc(t('heroLead'))}</p></div>
-  <div class="hero-map">${routeSvg('wide')}${routeSvg('tall')}<div class="route-foot"><b id="routeCap"></b><a class="btn line-light small" id="routeGo" href="#/request">${esc(t('routeCta'))}</a></div></div>
-  <div class="quick"><div class="quick-t"><h2>${esc(t('quickTitle'))}</h2><p class="note">${esc(t('quickHint'))}</p></div><label class="drop"><span>${esc(t('photoLabel'))}</span><small>${esc(t('photoHint'))}</small><input type="file" id="homePhotos" accept="image/jpeg,image/png,image/webp" multiple></label><a class="btn gold" href="#/request">${esc(t('ctaQuote'))}</a></div></div></section>
+  app.innerHTML=`<section class="hero"><div class="wrap hero-grid"><div class="hero-copy"><h1>${esc(t('heroTitle'))}</h1><p class="lead">${esc(t('heroLead'))}</p>
+  <div class="doors"><a class="door main" href="#/stock/Egypt"><b>${esc(t('doorStock'))}</b><span>${esc(t('doorStockText'))}</span></a><a class="door" href="#/request"><b>${esc(t('doorChina'))}</b><span>${esc(t('doorChinaText'))}</span></a></div></div>
+  <div class="hero-map">${routeSvg('wide')}${routeSvg('tall')}<div class="route-foot"><b id="routeCap"></b><a id="routeGo" href="#/request">${esc(t('routeCta'))}</a></div></div></div></section>
   <div class="wrap"><div class="promises">
   <div><h3>${esc(t('speed'))}</h3><p>${esc(t('speedText',CONFIG.quoteHours))}</p></div><div><h3>${esc(t('price'))}</h3><p>${esc(t('priceText'))}</p></div><div><h3>${esc(t('door'))}</h3><p>${esc(t('doorText'))}</p></div></div>
   <section class="block"><div class="sec-head"><h2>${esc(t('catsTitle'))}</h2></div><div class="cats">
   ${['Electronics','Cosmetics','Home'].map(c=>`<a class="cat" data-cat="${c.toLowerCase()}" href="#/products/${c.toLowerCase()}"><span class="cat-art">${ICONS[c]}</span><span class="cat-t"><b>${esc(t('cat'+c))}</b><span>${esc(t('cat'+c+'Text'))}</span></span></a>`).join('')}</div></section>
-  <section class="block" id="trendSec"><div class="sec-head"><h2>${esc(t('trendTitle'))}</h2><a href="#/products">${esc(t('seeAll'))}</a></div><div class="grid" id="trend"><p class="note">${esc(t('loading'))}</p></div></section>
   <section class="block"><div class="sec-head"><h2>${esc(t('stockTitle'))}</h2><a href="#/stock/Egypt">${esc(t('seeAll'))}</a></div><div class="grid" id="ready"><p class="note">${esc(t('loading'))}</p></div></section>
+  <section class="block" id="trendSec"><div class="sec-head"><h2>${esc(t('trendTitle'))}</h2><a href="#/products">${esc(t('seeAll'))}</a></div><div class="grid" id="trend"><p class="note">${esc(t('loading'))}</p></div></section>
   <section class="block"><div class="sec-head"><h2>${esc(t('howTitle'))}</h2></div><ol class="steps">${[1,2,3,4].map(n=>`<li><span class="num" aria-hidden="true">${n}</span><h3>${esc(t('s'+n))}</h3><p>${esc(t('s'+n+'t'))}</p></li>`).join('')}</ol></section>
-  <section class="block" id="payment"><div class="sec-head"><h2>${esc(t('payTitle'))}</h2></div><div class="pay">
-  <div class="pay-row"><h3>${esc(t('payChina'))}</h3><div class="bar"><span class="seg dep" style="flex:30">${esc(t('payDeposit'))}</span><span class="seg bal" style="flex:70">${esc(t('payBalance'))}</span></div></div>
-  <div class="pay-row"><h3>${esc(t('payStock'))}</h3><div class="bar"><span class="seg dep" style="flex:100">${esc(t('payFull'))}</span></div></div>
-  <div class="pay-row"><h3>${esc(t('payWays'))}</h3><p>${esc(t('payWaysText'))}</p></div></div><p class="note pay-note">${esc(t('payNote'))}</p></section>
-  <section class="block"><div class="band"><div><h2>${esc(t('calcBandTitle'))}</h2><p>${esc(t('calcBandText'))}</p></div><a class="btn" href="#/calculator">${esc(t('calcOpen'))}</a></div></section>
+  <section class="block"><div class="quick"><div class="quick-t"><h2>${esc(t('photoTitle'))}</h2><p class="note">${esc(t('photoText'))}</p></div><label class="drop"><span>${esc(t('photoLabel'))}</span><small>${esc(t('photoHint'))}</small><input type="file" id="homePhotos" accept="image/jpeg,image/png,image/webp" multiple></label><a class="btn gold" href="#/request">${esc(t('ctaQuote'))}</a></div></section>
+  <section class="block"><div class="links2"><a href="#/payment"><b>${esc(t('payTitle'))}</b><span>${esc(t('payLinkText'))}</span></a><a href="#/calculator"><b>${esc(t('navCalc'))}</b><span>${esc(t('calcLinkText'))}</span></a></div></section>
   <section class="block"><div class="about"><div><h2>${esc(t('aboutTitle'))}</h2><p>${esc(t('aboutText'))}</p></div><div class="about-side"><p>${esc(t('aboutAddr'))}</p><a class="btn gold" href="https://wa.me/${CONFIG.whatsapp}" target="_blank" rel="noopener">${esc(t('contactUs'))}</a></div></div></section></div>`;
   $('#homePhotos').onchange=e=>{pendingFiles=[...e.target.files].slice(0,5);location.hash='#/request'};
   app.querySelectorAll('.stop').forEach(g=>{g.onclick=()=>setRoute(g.dataset.c);g.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setRoute(g.dataset.c)}}});
@@ -205,7 +204,7 @@ function listing(kind,arg){
   const src=isStock?stock(market).then(l=>l.map(p=>({...p,Product_Source:market}))):china().then(l=>l.map(p=>({...p,Product_Source:'China'})));
   src.then(all=>{
     const draw=()=>{const q=$('#q').value.trim().toLowerCase();
-      const l=all.filter(p=>(!filter||catOf(p)===filter)&&(!q||`${p.Product_Name} ${p.Category} ${p.Description}`.toLowerCase().includes(q)));
+      const l=all.filter(p=>(!filter||catOf(p)===filter)&&(!q||`${p.Product_Name} ${p.Product_Name_AR||''} ${p.Category} ${p.Description} ${p.Description_AR||''}`.toLowerCase().includes(q)));
       fillGrid('list',l,'list',catLabel,isStock?priceText:chinaSub)};
     $('#q').oninput=draw;draw();
   }).catch(()=>{$('#list').innerHTML=`<p class="empty" style="grid-column:1/-1">${esc(t('loadError'))}</p>`});
@@ -232,7 +231,7 @@ function request(){
   <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
   <label class="drop"><span>${esc(t('photoLabel'))}</span><small>${esc(t('photoHint'))}</small><input type="file" id="photos" accept="image/jpeg,image/png,image/webp" multiple></label>
   <div class="previews" id="prev"></div>
-  <label class="f">${esc(t('productName'))}<input id="pname" maxlength="200" value="${esc(p?p.Product_Name:'')}"></label>
+  <label class="f">${esc(t('productName'))}<input id="pname" maxlength="200" value="${esc(p?pName(p):'')}"></label>
   <label class="f">${esc(t('link'))}<input id="plink" type="url" inputmode="url" dir="ltr"></label>
   <div class="two"><label class="f">${esc(t('qty'))}<input id="qty" type="number" min="1" inputmode="numeric" required value="${esc(p&&p.MOQ?p.MOQ:'')}"></label>
   <label class="f">${esc(t('category'))}<select id="cat">${opt('Electronics',t('catElectronics'),defaultCat==='electronics')}${opt('Cosmetics',t('catCosmetics'),defaultCat==='cosmetics')}${opt('Home',t('catHome'),defaultCat==='home')}</select></label></div>
@@ -330,6 +329,12 @@ async function orderPage(id){
   $('#mForm').onsubmit=async e=>{e.preventDefault();const b=e.target.querySelector('button');b.disabled=true;
     try{await api('vioCPSendMessage',{token:session.token,rfqId:o.rfqId,message:$('#mText').value.trim()});dash=await api('vioCPDashboard',session.token);orderPage(id)}catch(x){b.disabled=false}};
 }
+function paymentPage(){
+  app.innerHTML=`<div class="wrap page"><div class="narrow stack"><h1 class="page-title">${esc(t('payTitle'))}</h1><div class="pay">
+  <div class="pay-row"><h3>${esc(t('payChina'))}</h3><div class="bar"><span class="seg dep" style="flex:30">${esc(t('payDeposit'))}</span><span class="seg bal" style="flex:70">${esc(t('payBalance'))}</span></div></div>
+  <div class="pay-row"><h3>${esc(t('payStock'))}</h3><div class="bar"><span class="seg dep" style="flex:100">${esc(t('payFull'))}</span></div></div>
+  <div class="pay-row"><h3>${esc(t('payWays'))}</h3><p>${esc(t('payWaysText'))}</p></div></div><p class="note">${esc(t('payNote'))}</p><a class="btn gold block" href="#/request">${esc(t('ctaQuote'))}</a></div></div>`;
+}
 function calculator(){
   const field=(id,label,val='')=>`<label class="f">${esc(t(label))}<input id="${id}" type="number" min="0" step="any" inputmode="decimal" value="${val}"></label>`;
   app.innerHTML=`<div class="wrap page"><div class="narrow stack"><div><h1 class="page-title">${esc(t('calcTitle'))}</h1><p class="note">${esc(t('calcLead'))}</p></div>
@@ -353,7 +358,7 @@ const FAQ=[
  {k:['كيف اطلب','طريقه الطلب','اطلب','ابدا','صوره','how order','how do i','order','start','photo'],ar:'أرسل صورة أو رابط المنتج مع الكمية ومكان التوصيل، وسنرسل لك عرض سعر مكتوب.',en:'Send a product photo or link with the quantity and delivery location, and we will send you a written quote.',a:['ctaQuote','#/request']},
  {k:['سعر','عرض','تكلفه','بكام','quote','price','cost'],ar:'نرسل عرض سعر مكتوب خلال 48 ساعة في أيام العمل، ويوضح تكلفة البضاعة والشحن.',en:'We send a written quote within 48 hours on working days, showing the goods and shipping cost.',a:['ctaQuote','#/request']},
  {k:['حد ادني','الحد الادني','اقل كميه','اقل عدد','moq','minimum'],ar:'الحد الأدنى يختلف حسب المنتج، ويظهر في صفحة كل منتج. يمكنك أيضًا طلب كمية محددة وسنرد عليك بالمتاح.',en:'The minimum depends on the product and is shown on each product page. You can also ask for a specific quantity and we will tell you what is possible.',a:['allProducts','#/products']},
- {k:['دفع','ادفع','مقدم','عربون','انستاباي','فودافون','تحويل','payment','pay','deposit','instapay','vodafone','transfer'],ar:'التوريد من الصين: 30% مقدم و70% بعد الفحص وقبل الشحن. المخزون الجاهز: الدفع كاملًا قبل الشحن. في مصر: تحويل بنكي أو إنستاباي أو فودافون كاش. في الخليج: تحويل بنكي.',en:'Sourcing from China: 30% deposit and 70% after inspection, before shipping. Ready stock: full payment before dispatch. Egypt: bank transfer, InstaPay or Vodafone Cash. GCC: bank transfer.'},
+ {k:['دفع','ادفع','مقدم','عربون','انستاباي','فودافون','تحويل','payment','pay','deposit','instapay','vodafone','transfer'],ar:'التوريد من الصين: 30% مقدم و70% بعد الفحص وقبل الشحن. المخزون الجاهز: الدفع كاملًا قبل الشحن. في مصر: تحويل بنكي أو إنستاباي أو فودافون كاش. في الخليج: تحويل بنكي.',en:'Sourcing from China: 30% deposit and 70% after inspection, before shipping. Ready stock: full payment before dispatch. Egypt: bank transfer, InstaPay or Vodafone Cash. GCC: bank transfer.',a:['payTitle','#/payment']},
  {k:['مده','كام يوم','متي','يوصل امتي','وقت','how long','when','lead time','arrive','days'],ar:'المدة تختلف حسب المنتج وطريقة الشحن، بحري أو جوي، وتكون مكتوبة في عرض السعر. المخزون الجاهز يشحن أسرع.',en:'It depends on the product and on sea or air shipping, and it is written on your quote. Ready stock ships faster.'},
  {k:['شحن','توصيل','دول','السعوديه','الكويت','قطر','البحرين','عمان','الامارات','باب','ship','deliver','country','countries','door','saudi','kuwait','qatar','bahrain','oman','uae'],ar:'نوصل من الباب للباب إلى مصر، الإمارات، السعودية، الكويت، قطر، البحرين وعُمان.',en:'We deliver door to door to Egypt, UAE, Saudi Arabia, Kuwait, Qatar, Bahrain and Oman.'},
  {k:['تتبع','طلبي','شحنتي','فين','track','my order','shipment'],ar:'من صفحة طلباتي يمكنك متابعة كل مرحلة، بالبريد الذي استخدمته في طلبك.',en:'You can follow every stage in My orders, using the email from your request.',a:['navOrders','#/account']},
@@ -402,6 +407,7 @@ function route(){
   else if(r==='order')orderPage(parts[1]);
   else if(r==='product')productPage(parts[1]);
   else if(r==='calculator')calculator();
+  else if(r==='payment')paymentPage();
   else home();
   window.scrollTo(0,0);
   return path;
