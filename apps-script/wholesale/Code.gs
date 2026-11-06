@@ -657,7 +657,7 @@ function submitPriceInquiry(data) {
 
 
 
-  if (!['Egypt','UAE'].includes(country)) throw new Error('Select Egypt or UAE');
+  if (!['Egypt','UAE','Saudi Arabia','Kuwait','Qatar','Bahrain','Oman'].includes(country)) throw new Error('Select a delivery country');
 
 
 
