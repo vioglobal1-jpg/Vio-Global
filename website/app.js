@@ -67,7 +67,7 @@ const $=(s,r=document)=>r.querySelector(s);
 const app=$('#app');
 const money=(c,v)=>`${esc(c||'')} ${Number(v||0).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}`;
 const uuid=()=>(crypto.randomUUID?crypto.randomUUID():String(Date.now())+Math.random().toString(16).slice(2)).replace(/[^a-zA-Z0-9-]/g,'');
-const httpsUrl=u=>/^https:\/\//i.test(String(u||''))?String(u):'';
+const httpsUrl=u=>{const v=String(u||'').replace(/^'/,'').replace(/\\/g,'');return /^https:\/\//i.test(v)?v:''};
 const waLink=text=>`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(text)}`;
 const countryLabel=c=>({Egypt:t('egypt'),UAE:t('uae'),'Saudi Arabia':t('Saudi'),Kuwait:t('Kuwait'),Qatar:t('Qatar'),Bahrain:t('Bahrain'),Oman:t('Oman')}[c]||c);
 

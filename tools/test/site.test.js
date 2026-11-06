@@ -3,7 +3,7 @@ const {chromium}=require('playwright');const http=require('http'),fs=require('fs
 const dir=path.join(__dirname,'../../website');
 const types={'.html':'text/html','.css':'text/css','.js':'text/javascript','.png':'image/png'};
 const srv=http.createServer((q,s)=>{const f=path.join(dir,q.url==='/'?'index.html':q.url.split('?')[0]);if(!fs.existsSync(f)){s.writeHead(404);return s.end()}s.writeHead(200,{'Content-Type':types[path.extname(f)]||'text/plain'});s.end(fs.readFileSync(f))});
-const P=[{Product_ID:'VIO-PRD-1',Product_Name:'Test Blender',Category:'Home',Description:'x',Image_URL:'',MOQ:100,Media:[]},{Product_ID:'VIO-PRD-2',Product_Name:'Test Cream',Category:'Cosmetics',Image_URL:'',MOQ:'',Media:[]}];
+const P=[{Product_ID:'VIO-PRD-1',Product_Name:'Test Blender',Product_Name_AR:'خلاط تجريبي',Category:'Home',Description:'x',Image_URL:'',MOQ:100,Media:[]},{Product_ID:'VIO-PRD-2',Product_Name:'Test Cream',Category:'Cosmetics',Image_URL:'',MOQ:'',Media:[]}];
 const S=[{Product_ID:'VIO-STK-1',Product_Name:'Test Camera',Category:'Security',Image_URL:'',MOQ:50,Availability:'In Stock',Price_Visibility:'Show',Selling_Price:990,Currency:'EGP',Media:[]}];
 let sent=null,decision=null;const D={email:'a@b.co',rfqs:[{id:'R1',product:'Test',quantity:10,status:'Quoted'}],quotes:[{id:'Q1',rfqId:'R1',product:'<b>Test</b>',quantity:10,currency:'EGP',total:1000,leadDays:30,validityDays:7,status:'Sent',decision:''}],orders:[{id:'O1',rfqId:'R1',product:'Test',status:'In Transit',paymentStatus:'Paid',shipmentStatus:'In Transit',tracking:'T1',eta:'2026-12-01'}],messages:[],negotiations:[]};
 const R={getChinaProducts:()=>P,getVIOPublicStock:m=>m==='Egypt'?S:[],submitPriceInquiry:a=>{sent=a;return{ok:true,rfqId:'VIO-RFQ-TEST'}},vioCPRequestCode:()=>({ok:true}),vioCPVerifyCode:()=>({ok:true,token:'t'.repeat(50),email:'a@b.co'}),vioCPDashboard:()=>D,vioCPDecision:a=>{decision=a;return{ok:true}},vioCPSendMessage:()=>({ok:true}),vioCPLogout:()=>({ok:true})};
@@ -18,7 +18,7 @@ for(const [name,vp] of [['phone',{width:390,height:844}],['desktop',{width:1280,
  ok(await p.getAttribute('html','dir')==='rtl',name+' Arabic first');
  await p.screenshot({path:`/tmp/vio-${name}-home.png`,fullPage:true});
  if(name==='phone'){
-  await p.click('#trend .item');ok(await p.isVisible('#productDialog'),'product details open');await p.click('#pdReq');await p.waitForSelector('#reqForm');ok(await p.inputValue('#pname')==='Test Blender','request prefilled');ok(!(await p.$('#origin')),'catalog hides source');
+  await p.click('#trend .item');ok(await p.isVisible('#productDialog'),'product details open');ok((await p.innerText('#pdTitle'))==='خلاط تجريبي','Arabic product name shows');await p.click('#pdReq');await p.waitForSelector('#reqForm');ok(await p.inputValue('#pname')==='خلاط تجريبي','request prefilled');ok(!(await p.$('#origin')),'catalog hides source');
   await p.goto(url+'#/request');await p.waitForSelector('#reqForm');await p.reload();await p.waitForSelector('#origin');
   await p.fill('#pname','Widget');await p.fill('#qty','500');await p.fill('#city','Cairo');await p.fill('#name','Test');await p.fill('#phone','+201000000000');await p.fill('#email','a@b.co');
   await p.screenshot({path:'/tmp/vio-request.png',fullPage:true});

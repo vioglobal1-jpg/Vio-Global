@@ -21,7 +21,8 @@ export async function onRequest({params,request}){
   const shown=p&&p.Price_Visibility==='Show'&&Number(p.Selling_Price)>0?`${p.Currency} ${Number(p.Selling_Price).toLocaleString('en-US')} · `:'';
   const text=p&&(p.Description_AR||p.Description);
   const about=text&&text!=='Details available on request'?String(text).slice(0,120):'توريد وجملة إلى مصر ودول الخليج';
-  const image=p&&/^https:\/\//i.test(String(p.Image_URL||''))?p.Image_URL:`${origin}/assets/og.png`;
+  const raw=p?String(p.Image_URL||'').replace(/^'/,'').replace(/\\/g,''):'';
+  const image=/^https:\/\//i.test(raw)?raw:`${origin}/assets/og.png`;
   const html=`<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>${esc(name)}</title><meta name="description" content="${esc(shown+about)}"><meta property="og:title" content="${esc(name)}"><meta property="og:description" content="${esc(shown+about)}"><meta property="og:image" content="${esc(image)}"><meta property="og:url" content="${esc(`${origin}/p/${encodeURIComponent(id)}`)}"><meta property="og:type" content="product"><meta name="twitter:card" content="summary_large_image"><meta http-equiv="refresh" content="0;url=${esc(target)}"><script>location.replace(${JSON.stringify(target).replace(/</g,'\\u003c')})</script></head><body><a href="${esc(target)}">${esc(name)}</a></body></html>`;
   return new Response(html,{status:p?200:404,headers:{'Content-Type':'text/html;charset=utf-8','Cache-Control':'public, max-age=300'}});
 }
