@@ -1,7 +1,7 @@
 // Tests the customer website with a mock server. Run: NODE_PATH=$(npm root -g) node tools/test/site.test.js
 const {chromium}=require('playwright');const http=require('http'),fs=require('fs'),path=require('path');
 const dir=path.join(__dirname,'../../website');
-const types={'.html':'text/html','.css':'text/css','.js':'text/javascript'};
+const types={'.html':'text/html','.css':'text/css','.js':'text/javascript','.png':'image/png'};
 const srv=http.createServer((q,s)=>{const f=path.join(dir,q.url==='/'?'index.html':q.url.split('?')[0]);if(!fs.existsSync(f)){s.writeHead(404);return s.end()}s.writeHead(200,{'Content-Type':types[path.extname(f)]||'text/plain'});s.end(fs.readFileSync(f))});
 const P=[{Product_ID:'VIO-PRD-1',Product_Name:'Test Blender',Category:'Home',Description:'x',Image_URL:'',MOQ:100,Media:[]},{Product_ID:'VIO-PRD-2',Product_Name:'Test Cream',Category:'Cosmetics',Image_URL:'',MOQ:'',Media:[]}];
 const S=[{Product_ID:'VIO-STK-1',Product_Name:'Test Camera',Category:'Security',Image_URL:'',MOQ:50,Availability:'In Stock',Price_Visibility:'Show',Selling_Price:990,Currency:'EGP',Media:[]}];
