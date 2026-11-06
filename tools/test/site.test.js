@@ -38,8 +38,8 @@ for(const [name,vp] of [['phone',{width:390,height:844}],['desktop',{width:1280,
  ok(await p.innerText('#rProfit')==='60'&&await p.innerText('#rTotal')==='6,000'&&await p.innerText('#rBreak')==='133.33',name+' calculator '+await p.innerText('#rProfit')+' '+await p.innerText('#rTotal')+' '+await p.innerText('#rBreak'));
  const lc=await p.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth);ok(lc<=0,name+' calculator no sideways scroll');
  await p.screenshot({path:`/tmp/vio-${name}-calc.png`,fullPage:true});
- await p.goto(url+'#/');await p.click('#chatBtn');await p.click('.chip[data-i="3"]');ok(/30/.test(await p.innerText('#chatLog')),name+' chat chip answers payment');
- for(const [q,w] of [['عايز اعرف الدفع ازاي','30'],['do you deliver to kuwait?','Kuwait|الكويت'],['do u shipping to iraq?','other country'],['اريد تجميل','تصفح'],['xyzzy','WhatsApp|واتساب'],['الحد الأدنى كام','الحد الأدنى|minimum']]){await p.fill('#chatInput',q);await p.press('#chatInput','Enter');const tx=await p.locator('#chatLog .bubble').last().innerText();ok(new RegExp(w).test(tx),name+' chat: '+q)}
+ await p.goto(url+'#/');await p.click('#chatBtn');await p.click('.chip[data-i="4"]');ok(/30/.test(await p.innerText('#chatLog')),name+' chat chip answers payment');
+ for(const [q,w] of [['عايز اعرف الدفع ازاي','30'],['do you deliver to kuwait?','Kuwait|الكويت'],['do u shipping to iraq?','other country'],['اريد تجميل','تصفح'],['can i get a refund?','refundable'],['xyzzy','WhatsApp|واتساب'],['الحد الأدنى كام','الحد الأدنى|minimum']]){await p.fill('#chatInput',q);await p.press('#chatInput','Enter');const tx=await p.locator('#chatLog .bubble').last().innerText();ok(new RegExp(w).test(tx),name+' chat: '+q)}
  await p.screenshot({path:`/tmp/vio-${name}-chat.png`});
  await p.click('#chatX');
  await p.goto(url+'#/');await p.waitForSelector('.hero-map');await p.locator('.stop[data-c="Kuwait"]:visible').click();ok(/الكويت|Kuwait/.test(await p.innerText('#routeCap')),name+' route picks Kuwait');await p.click('#routeGo');await p.waitForSelector('#country');ok(await p.inputValue('#country')==='Kuwait',name+' route presets country');
