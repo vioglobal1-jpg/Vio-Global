@@ -387,12 +387,12 @@ function vioComputeQuote_(x){if(!x)throw Error('Missing quote');if(String(x.meas
 
 
 
- const extraUsd=0; // VIO Stage 1D: goods + international freight only
+ const rawCustoms=x.customsUsd===undefined?0:String(x.customsUsd).trim();if(rawCustoms===''||!Number.isFinite(Number(rawCustoms))||Number(rawCustoms)<0)throw Error('Enter customs and clearance in USD. Enter 0 if there are none.');const extraUsd=Number(rawCustoms);
  const supplierUsd=qty*unit*supplierFx.usdPerUnit,landedUsd=supplierUsd+freightUsd+extraUsd,landedLocal=landedUsd/localFx.usdPerUnit,landedUnit=landedLocal/qty,sellingUnit=landedUnit/(1-margin/100),lead={Transit_Days:0};
 
 
 
- const transit=Number(rate.Transit_Max_Days||0),customsDays=0,deliveryDays=0;if(!(transit>0))throw Error('Shipping transit days not configured for this freight route. Open Shipping Rates and edit the active rate.');
+ const transit=Number(rate.Transit_Max_Days||0),customsDays=Math.max(0,Math.round(Number(x.customsDays)||0)),deliveryDays=0;if(!(transit>0))throw Error('Shipping transit days not configured for this freight route. Open Shipping Rates and edit the active rate.');
 
 
 
@@ -408,7 +408,7 @@ function saveSupplierQuote(x){const a=access_(['Admin','Buyer']);const r=vioComp
 
 
 
- append_('Supplier_Quotations',{Supplier_Quote_ID:id,RFQ_ID:x.rfqId,Created_At:new Date(),Supplier_Name:supplier,Supplier_Currency:x.currency,Unit_Price:Number(x.unitPrice),MOQ:Number(x.moq),Quantity:qty,PCS_Per_Carton:Number(x.pcsPerCarton)||0,Carton_L_CM:Number(x.length)||0,Carton_W_CM:Number(x.width)||0,Carton_H_CM:Number(x.height)||0,Net_Unit_KG:Number(x.netUnitKg)||0,Gross_Carton_KG:Number(x.grossCartonKg)||0,Production_Days:r.productionDays,Payment_Terms:String(x.paymentTerms||'').slice(0,500),Supplier_Media_URLs:String(x.mediaUrls||'').slice(0,2000),Destination:x.destination,Shipping_Mode:x.mode,Goods_Type:x.goods,Extra_Charges_USD:0,Customs_USD:0,Clearance_USD:0,Local_Delivery_USD:0,Margin_Percent:Number(x.margin),Validity_Days:Number(x.validityDays||7),Transit_Days:r.transitDays,Customs_Days:r.customsDays,Local_Delivery_Days:r.deliveryDays,Measurement_Mode:String(x.measurementMode||'carton'),Cartons:r.cartons,Total_CBM:r.totalCbm,Gross_KG:r.grossKg,Chargeable_KG:r.chargeableKg,Freight_USD:r.freightUsd,Landed_Unit_Local:r.landedUnit,Suggested_Unit_Local:r.sellingUnit,Currency:r.currency,Approval_Status:'Draft',Created_By:a.email,Notes:String(x.notes||'').slice(0,1000)});
+ append_('Supplier_Quotations',{Supplier_Quote_ID:id,RFQ_ID:x.rfqId,Created_At:new Date(),Supplier_Name:supplier,Supplier_Currency:x.currency,Unit_Price:Number(x.unitPrice),MOQ:Number(x.moq),Quantity:qty,PCS_Per_Carton:Number(x.pcsPerCarton)||0,Carton_L_CM:Number(x.length)||0,Carton_W_CM:Number(x.width)||0,Carton_H_CM:Number(x.height)||0,Net_Unit_KG:Number(x.netUnitKg)||0,Gross_Carton_KG:Number(x.grossCartonKg)||0,Production_Days:r.productionDays,Payment_Terms:String(x.paymentTerms||'').slice(0,500),Supplier_Media_URLs:String(x.mediaUrls||'').slice(0,2000),Destination:x.destination,Shipping_Mode:x.mode,Goods_Type:x.goods,Extra_Charges_USD:0,Customs_USD:r.extraUsd,Clearance_USD:0,Local_Delivery_USD:0,Margin_Percent:Number(x.margin),Validity_Days:Number(x.validityDays||7),Transit_Days:r.transitDays,Customs_Days:r.customsDays,Local_Delivery_Days:r.deliveryDays,Measurement_Mode:String(x.measurementMode||'carton'),Cartons:r.cartons,Total_CBM:r.totalCbm,Gross_KG:r.grossKg,Chargeable_KG:r.chargeableKg,Freight_USD:r.freightUsd,Landed_Unit_Local:r.landedUnit,Suggested_Unit_Local:r.sellingUnit,Currency:r.currency,Approval_Status:'Draft',Created_By:a.email,Notes:String(x.notes||'').slice(0,1000)});
 
 
 
