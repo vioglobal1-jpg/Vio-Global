@@ -26,7 +26,7 @@ execFileSync('python3',['-c',`
 import openpyxl,sys
 w=openpyxl.Workbook();s=w.active
 s.append(['Code','Name English','Name Arabic','Location','Category','Category Arabic','Qty','Price','MOQ','Lead Days','Description English','Description Arabic'])
-s.append(['EXAMPLE-1','Sample','','Egypt','Electronics','',1,1,1,None,'',''])
+s.append(['EXAMPLE-1','Solar Camera','','Egypt','Electronics','',1,1,1,None,'',''])
 s.append(['EL-001','Camera','كاميرا','مصر','إلكترونيات','',200,990.5,50,None,'Nice & clear',''])
 s.append(['H-1',None,'مقلاة','China','Toys','',None,None,None,30,'',''])
 s.append(['BAD 1',None,None,'Mars','','',-1,None,None,None,'',''])
